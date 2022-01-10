@@ -6,8 +6,9 @@ html {
     width: 100%;
     height: 100%;
 }
-img {
-	border-radius: 50%;
+figcaption {
+	font-size: 15px;
+	color: #666666;
 }
 
 @media(min-width:767px) {
@@ -44,21 +45,39 @@ img {
 #back2Top:hover {
     color: #000;
 }
-.white-section {
-    height: 80%;
-    padding-top: 130px;
+
+#picture {
+	height: 220px;
+	padding: 10px;
+}
+
+/* Boxes */
+.open-section {
+    padding-top: 50px;
     text-align: center;
     background: #fff;
 	font-size: 20px;
 }
-.blue-section {
-    height: 80%;
-    padding-top: 130px;
+.section {
+    padding-top: 20px;
     text-align: center;
-    background: #c7e2ec; /*cde9ef 89b8ca c7e2ec */
+    background: #fff;
 	font-size: 20px;
 }
+.project-section {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 10px;
+	/*border: 3px dashed red;*/
+}
+.format-box {
+	display: flex;
+	align-items: center;
+	padding-bottom: 10px;
+	/*border: 3px dashed black;*/
+}
 
+/* Text */
 .overlay-contain {
 	position: relative;
 }
@@ -69,12 +88,17 @@ img {
     padding-left: 30px;
 	font-size: 140%;
 }
+.list-text {
+	text-align: left;
+	font-size:18px;
+}
 
+/* Skills Bars */
 .bar {
 	background: #353b48;
 	display: block;
 	height: 30px;
-	width: 100%;
+	width: 96%;
 	margin: 15px;
 	overflow: hidden;
 	box-shadow: 0 0 5px #60696b;
@@ -189,9 +213,10 @@ img {
 	background-color: #F0F0F0;
 }
 .navbar-default {
-    background-color: #b7bbc1; /* 007992 EBFAFF 1c478b */
-    border-color: #f3f6f4; /* e7e7e7 f3f6f4 */
+    background-color: #1c478b;
+    border-color: #f3f6f4;
+	font-size: 20px;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #000;
+    color: #F0F0F0;
 }
