@@ -11,6 +11,13 @@ figcaption {
 	color: #666666;
 }
 
+/* Phone Scaling */
+@media screen and (max-device-width: 480px) {
+	.format-box {
+		flex-direction: column !important;
+	}
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
