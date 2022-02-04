@@ -52,19 +52,11 @@ figcaption {
 }
 
 /* Boxes */
-.open-section {
-	padding-top: 50px;
+.section {
+	padding-top: 20px;
 	text-align: center;
 	background: #fff;
-	font-size: 22px;
-}
-.contain-section {
-	display: flex;
-	flex-direction: column;
-	padding-top: 20px;
-	align-items: center;
 	font-size: 20px;
-	background: #fff;
 }
 .about-section {
 	display: flex;
@@ -76,16 +68,6 @@ figcaption {
 }
 
 /* Text */
-.overlay-contain {
-	position: relative;
-}
-.text-overlay {
-	position: absolute;
-	top: -50px;
-	padding-right: 30px;
-	padding-left: 30px;
-	font-size: 140%;
-}
 .text {
 	text-align: left;
 	font-size:20px;

@@ -7,7 +7,6 @@ html {
 	height: 100%;
 }
 figcaption {
-	font-size: 15px;
 	color: #666666;
 }
 
@@ -76,6 +75,7 @@ figcaption {
 	flex-direction: column;
 	padding-bottom: 10px;
 	gap: 10px;
+	background: #F0F0F0;
 	/*border: 3px dashed red;*/
 }
 .format-box {
@@ -84,21 +84,19 @@ figcaption {
 	padding-bottom: 10px;
 	/*border: 3px dashed black;*/
 }
+.skills-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	/*border: 3px dashed purple;*/
+}
 
 /* Text */
-.overlay-contain {
-	position: relative;
-}
-.text-overlay {
-	position: absolute;
-	top: -50px;
-	padding-right: 30px;
-	padding-left: 30px;
-	font-size: 140%;
+.project-text {
+	font-size: 25px;
 }
 .list-text {
 	text-align: left;
-	font-size:18px;
 }
 
 /* Skills Bars */

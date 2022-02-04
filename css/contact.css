@@ -77,16 +77,6 @@ figcaption {
 }
 
 /* Text */
-.overlay-contain {
-	position: relative;
-}
-.text-overlay {
-	position: absolute;
-	top: -50px;
-	padding-right: 30px;
-    padding-left: 30px;
-	font-size: 140%;
-}
 .text {
 	text-align: left;
 	font-size:20px;
