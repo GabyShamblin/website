@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a53dee50.css",
+    "main.js": "/static/js/main.7bde9e1d.js",
+    "static/js/787.37faa4c4.chunk.js": "/static/js/787.37faa4c4.chunk.js",
+    "static/media/Group 1 TOTS Presentation.pdf": "/static/media/Group 1 TOTS Presentation.f2ad5c18297bf86f9510.pdf",
+    "static/media/Small Project.pdf": "/static/media/Small Project.54b0507f61c1802aa442.pdf",
+    "static/media/scheduler.jpg": "/static/media/scheduler.05226f7a285abed7e833.jpg",
+    "static/media/grayWebsite.jpg": "/static/media/grayWebsite.3c375cfc00a9a5c679bd.jpg",
+    "static/media/diceGame.jpg": "/static/media/diceGame.7e7c3e618bfeefe6d02d.jpg",
+    "static/media/pythonMenu.jpg": "/static/media/pythonMenu.58bac00dfec4fcfa1c78.jpg",
+    "static/media/contactManager.jpg": "/static/media/contactManager.abddbb36bc176a0fd4ed.jpg",
+    "static/media/Resume.pdf": "/static/media/Resume.7cd7e4a9257a0379bd3c.pdf",
+    "index.html": "/index.html",
+    "main.a53dee50.css.map": "/static/css/main.a53dee50.css.map",
+    "main.7bde9e1d.js.map": "/static/js/main.7bde9e1d.js.map",
+    "787.37faa4c4.chunk.js.map": "/static/js/787.37faa4c4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a53dee50.css",
+    "static/js/main.7bde9e1d.js"
+  ]
+}
