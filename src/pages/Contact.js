@@ -11,13 +11,6 @@ import FeedIcon from '@mui/icons-material/Feed';
 
 import Resume from './public/Gabriela Shamblin Resume.pdf';
 
-const downloadResume = () => {
-	const link = document.createElement("a");
-	link.download = `Gabriela Shamblin Resume.pdf`;
-	link.href = "./files/Gabriela Shamblin Resume.pdf";
-	link.click();
-};
-
 function Contact() {
 	useEffect(() => {
 		document.title = 'Contact';
@@ -83,7 +76,7 @@ function Contact() {
 						</Grid>
 
 						<Grid item>
-							<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank'>
+							<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank' rel="noreferrer">
 								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
 								aria-label='github' size='large'>
 									<FeedIcon/>

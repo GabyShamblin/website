@@ -257,7 +257,7 @@ function Portfolio() {
 							</Box>
 						</Grid>
 
-						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank'>
+						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noreferrer">
 							<CustomButton variant="outlined">
 								View presentation
 							</CustomButton>
@@ -310,7 +310,7 @@ function Portfolio() {
 								View site
 							</CustomButton>
 						</Link>
-						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank'>
+						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noreferrer">
 							<CustomButton variant="outlined">
 							View presentation
 							</CustomButton>
