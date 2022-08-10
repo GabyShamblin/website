@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Grid, Grow, Typography, 
@@ -25,6 +25,10 @@ const SliderBox = styled(Box)(() => ({
 }));
 
 function Resume() {
+	useEffect(() => {
+		document.title = 'Resume';
+	});
+
 	const boxWidth = 1200;
 	const [showBox1, setShowBox1] = useState(false);
 	const [showBox2, setShowBox2] = useState(false);
@@ -35,6 +39,7 @@ function Resume() {
 	const [showBox7, setShowBox7] = useState(false);
 	const [showBox8, setShowBox8] = useState(false);
 	const [showBox9, setShowBox9] = useState(false);
+	const [showBox10, setShowBox10] = useState(false);
 
   return (
 		<React.Fragment>
@@ -79,7 +84,7 @@ function Resume() {
 								Expected Graduation: December 2023
 							</Typography>
 							<Typography sx={{fontSize: 20}}>
-								GPA: 3.62/4.00
+								GPA: 3.65/4.00
 							</Typography>
 						</Box>
 					</CustomBox>
@@ -101,7 +106,7 @@ function Resume() {
 						</Typography>
 
 						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<List sx={{fontSize: 20, maxWidth: 600}} >
+							<List sx={{fontSize: 20, mr: 8}} >
 									<ListItem disablePadding>
 										- Computer Science I
 									</ListItem>
@@ -135,7 +140,7 @@ function Resume() {
 						</Typography>
 
 						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<List sx={{fontSize: 20, maxWidth: 600}} >
+							<List sx={{fontSize: 20, mr: 8}} >
 									<ListItem disablePadding>
 										- Florida Bright Futures Academic Scholarship
 									</ListItem>
@@ -247,7 +252,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(247, 223, 29)',
 							borderRadius: 10,  
-							width: '45%'}}>
+							width: '50%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									JavaScript
 								</Typography>
@@ -273,7 +278,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(98, 218, 252)',
 							borderRadius: 10,  
-							width: '40%'}}>
+							width: '45%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									React
 								</Typography>
@@ -295,7 +300,7 @@ function Resume() {
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
 
-						<Grid container spacing={2} sx={{textAlign: 'left', ml: 5, fontSize: 20}}>
+						<Grid container spacing={2} sx={{textAlign: 'left', ml: 5, mr: 8, fontSize: 20}}>
 							<Grid item xs={6}>
 								- Object-Oriented Programming
 							</Grid>
@@ -351,25 +356,19 @@ function Resume() {
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Teaching Assistant
+							Web Development Intern
 						</Typography>
 
 						<Box sx={{ml: 5, textAlign: 'left'}}>
 							<Typography sx={{fontSize: 20}}>
-								University of Central Florida, Orlando, FL
+								Epic North LLC, Remote
 							</Typography>
 							<Typography sx={{fontSize: 20}}>
-								July 2021 - May 2022
+								June 2022 - Present
 							</Typography>
-							<List sx={{fontSize: 20, maxWidth: 600, mx: 3}} >
-								<ListItem disablePadding>
-									- Assist in teaching introductory programming topics in Python to a class of about 230 students.
-								</ListItem>
-								<ListItem disablePadding>
-									- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
-								</ListItem>
-								<ListItem disablePadding>
-									- Hold two labs weekly and office hours to offer students extra support.
+							<List dense sx={{fontSize: 20, mx: 3, mr: 8}} >
+								<ListItem>
+									- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
 								</ListItem>
 							</List>
 						</Box>
@@ -393,16 +392,53 @@ function Resume() {
 
 						<Box sx={{ml: 5, textAlign: 'left'}}>
 							<Typography sx={{fontSize: 20}}>
+								University of Central Florida, Orlando, FL
+							</Typography>
+							<Typography sx={{fontSize: 20}}>
+								July 2021 - May 2022
+							</Typography>
+							<List dense sx={{fontSize: 20, mx: 3, mr: 8}}>
+								<ListItem>
+									- Assist in teaching introductory programming topics in Python to a class of about 230 students.
+								</ListItem>
+								<ListItem>
+									- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
+								</ListItem>
+								<ListItem>
+									- Hold two labs weekly and office hours to offer students extra support.
+								</ListItem>
+							</List>
+						</Box>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={(isVisible) => {
+							setShowBox8(isVisible);
+					}} >
+					<Grow in={showBox8}>
+					<CustomBox sx={{
+						maxWidth: boxWidth,
+						backgroundColor: 'rgba(51, 155, 158, 0.5)',
+						m: 'auto', mb: 1, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Teaching Assistant
+						</Typography>
+
+						<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Typography sx={{fontSize: 20}}>
 								UCF Computer Science Summer Institute, Orlando, FL
 							</Typography>
 							<Typography sx={{fontSize: 20}}>
 								June 2021
 							</Typography>
-							<List sx={{fontSize: 20, maxWidth: 600, mx: 3}} >
-								<ListItem disablePadding>
+							<List dense sx={{fontSize: 20, mx: 3, mr: 8}} >
+								<ListItem>
 									- Graded assignments and provided appropriate feedback in a timely manner.
 								</ListItem>
-								<ListItem disablePadding>
+								<ListItem>
 									- Taught topics in Python to a class of eight students and offered support with questions.
 								</ListItem>
 							</List>
@@ -426,9 +462,9 @@ function Resume() {
 					<VizSensor
 						partialVisibility
 						onChange={(isVisible) => {
-							setShowBox8(isVisible);
+							setShowBox9(isVisible);
 					}} >
-					<Grow in={showBox8}>
+					<Grow in={showBox9}>
 					<CustomBox sx={{
 						maxWidth: boxWidth,
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
@@ -441,7 +477,7 @@ function Resume() {
 							<Typography sx={{fontSize: 20}}>
 								January 2022 - Present
 							</Typography>
-							<Typography sx={{fontSize: 20, mx: 3}}>
+							<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
 								Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
 							</Typography>
 						</Box>
@@ -452,9 +488,9 @@ function Resume() {
 					<VizSensor
 						partialVisibility
 						onChange={(isVisible) => {
-							setShowBox9(isVisible);
+							setShowBox10(isVisible);
 					}} >
-					<Grow in={showBox9}>
+					<Grow in={showBox10}>
 					<CustomBox sx={{
 						maxWidth: boxWidth,
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
@@ -467,7 +503,7 @@ function Resume() {
 							<Typography sx={{fontSize: 20}}>
 								August 2020 - Present
 							</Typography>
-							<Typography sx={{fontSize: 20, mx: 3}}>
+							<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
 								Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
 							</Typography>
 						</Box>

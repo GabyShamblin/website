@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { Box, Button, Grid, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
@@ -8,16 +9,20 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FeedIcon from '@mui/icons-material/Feed';
 
-import Resume from './public/Resume.pdf';
+import Resume from './public/Gabriela Shamblin Resume.pdf';
 
 const downloadResume = () => {
 	const link = document.createElement("a");
-	link.download = `Resume.pdf`;
-	link.href = "./files/Resume.pdf";
+	link.download = `Gabriela Shamblin Resume.pdf`;
+	link.href = "./files/Gabriela Shamblin Resume.pdf";
 	link.click();
 };
 
 function Contact() {
+	useEffect(() => {
+		document.title = 'Contact';
+	});
+
   return (
 		<React.Fragment>
 			<div className="App">
@@ -78,7 +83,7 @@ function Contact() {
 						</Grid>
 
 						<Grid item>
-							<a href={Resume} download="Resume.pdf" target='_blank'>
+							<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank'>
 								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
 								aria-label='github' size='large'>
 									<FeedIcon/>

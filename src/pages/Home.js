@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import './App.css';
+
+
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1200,
@@ -14,6 +17,10 @@ const CustomBox = styled(Box)(() => ({
 }));
 
 function Home() {
+	useEffect(() => {
+		document.title = 'Home';
+	});
+
   return (
 		<React.Fragment>
 			<div className="App">
@@ -21,7 +28,7 @@ function Home() {
 						display: flexbox,
 						justifyContent: 'center',
 						backgroundColor: '#edf0f0',
-						minHeight: '90vh',
+						minHeight: '92vh',
 						px: 2, py: 1}}>
 
 					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10, pb: 1}}>
@@ -43,7 +50,7 @@ function Home() {
 
 						<Box>
 							<Typography sx={{fontSize: 20}}>
-								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time as a TA. I expect to graduate with my Bachelors in Spring 2024, and plan to begin my Masters in Computer Science soon after.
+								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time as a TA. I expect to graduate with my Bachelors in Fall 2023, and plan to begin my Masters in Computer Science soon after.
 							</Typography>
 						</Box>
 					</CustomBox>
@@ -64,10 +71,6 @@ function Home() {
 						</Box>
 
 					</CustomBox>
-					
-					<Typography sx={{fontSize: 20}}>
-							*This site is a work in progress, it may change in the coming weeks*
-					</Typography>
 				
 				</Box>
 			</div>

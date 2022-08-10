@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Button, Grid, Grow, Typography, 
@@ -37,6 +37,10 @@ const CustomButton = styled(Button)(() => ({
 }));
 
 function Portfolio() {
+	useEffect(() => {
+		document.title = 'Portfolio';
+	});
+
 	const [showProject1, setShowProject1] = useState(false);
 	const [showProject2, setShowProject2] = useState(false);
 	const [showProject3, setShowProject3] = useState(false);
