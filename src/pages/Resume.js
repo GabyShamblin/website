@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Grid, Grow, Typography, 
-	List, ListItem } from '@mui/material';
+	List, ListItem, Hidden } from '@mui/material';
 import { flexbox } from '@mui/system';
 
 const CustomBox = styled(Box)(() => ({
-  maxWidth: 1200,
+  maxWidth: 1000,
 	backgroundColor: "rgba(51, 155, 158, 0.5)", 
 	m: 'auto',
 	mb: 5, 
@@ -105,22 +105,55 @@ function Resume() {
 							Relevant Coursework
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<List sx={{fontSize: 20, mr: 8}} >
-									<ListItem disablePadding>
-										- Computer Science I
-									</ListItem>
-									<ListItem disablePadding>
-										- Computer Science I
-									</ListItem>
-									<ListItem disablePadding>
-										- Object-Oriented Programming
-									</ListItem>
-									<ListItem disablePadding>
-										- Processes of Object-Oriented Software Development
-									</ListItem>
-								</List>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<List sx={{fontSize: 20}} >
+										<ListItem>
+											- Computer Science I
+										</ListItem>
+										<ListItem>
+											- Computer Science I
+										</ListItem>
+										<ListItem>
+											- Object-Oriented Programming
+										</ListItem>
+										<ListItem>
+											- Processes of Object-Oriented Software Development
+										</ListItem>
+										<ListItem>
+											- Artificial Intelligence
+										</ListItem>
+										<ListItem>
+											- Programming Languages
+										</ListItem>
+									</List>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'left'}}>
+								<List sx={{fontSize: 20}} >
+										<ListItem>
+											- Computer Science I
+										</ListItem>
+										<ListItem>
+											- Computer Science I
+										</ListItem>
+										<ListItem>
+											- Object-Oriented Programming
+										</ListItem>
+										<ListItem>
+											- Processes of Object-Oriented Software Development
+										</ListItem>
+										<ListItem>
+											- Artificial Intelligence
+										</ListItem>
+										<ListItem>
+											- Programming Languages
+										</ListItem>
+									</List>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -139,22 +172,43 @@ function Resume() {
 							Honors
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<List sx={{fontSize: 20, mr: 8}} >
-									<ListItem disablePadding>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<List sx={{fontSize: 20}} >
+									<ListItem>
 										- Florida Bright Futures Academic Scholarship
 									</ListItem>
-									<ListItem disablePadding>
+									<ListItem>
 										- UCF Pegasus Gold Scholarship
 									</ListItem>
-									<ListItem disablePadding>
+									<ListItem>
 										- UCF EXCEL Program
 									</ListItem>
-									<ListItem disablePadding>
+									<ListItem>
 										- UCF Dean's List
 									</ListItem>
 								</List>
-						</Box>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'left'}}>
+								<List sx={{fontSize: 20}} >
+									<ListItem>
+										- Florida Bright Futures Academic Scholarship
+									</ListItem>
+									<ListItem>
+										- UCF Pegasus Gold Scholarship
+									</ListItem>
+									<ListItem>
+										- UCF EXCEL Program
+									</ListItem>
+									<ListItem>
+										- UCF Dean's List
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -180,6 +234,19 @@ function Resume() {
 						maxWidth: boxWidth,
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
+
+						<SliderBox sx={{
+						backgroundColor: 'rgba(105, 105, 105)',
+						m: 'auto', p: 0.5, mb: 1}}>
+							<Box sx={{
+							backgroundColor: 'rgba(221, 0, 49)',
+							borderRadius: 10,  
+							width: '40%'}}>
+								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1, color: "#ffffff"}}>
+									Angular
+								</Typography>
+							</Box>
+						</SliderBox>
 						
 						<SliderBox sx={{
 						backgroundColor: 'rgba(105, 105, 105)',
@@ -187,7 +254,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(168, 185, 203)',
 							borderRadius: 10,  
-							width: '50%'}}>
+							width: '30%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									C
 								</Typography>
@@ -200,7 +267,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(158, 114, 212)',
 							borderRadius: 10,
-							width: '30%'}}>
+							width: '40%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									C#
 								</Typography>
@@ -252,7 +319,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(247, 223, 29)',
 							borderRadius: 10,  
-							width: '50%'}}>
+							width: '60%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									JavaScript
 								</Typography>
@@ -265,7 +332,7 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(53, 122, 177)',
 							borderRadius: 10,  
-							width: '70%'}}>
+							width: '65%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1, color: "#ffffff"}}>
 									Python
 								</Typography>
@@ -278,12 +345,13 @@ function Resume() {
 							<Box sx={{
 							backgroundColor: 'rgba(98, 218, 252)',
 							borderRadius: 10,  
-							width: '45%'}}>
+							width: '55%'}}>
 								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
 									React
 								</Typography>
 							</Box>
 						</SliderBox>
+
 
 					</CustomBox>
 					</Grow>
@@ -300,35 +368,85 @@ function Resume() {
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
 
-						<Grid container spacing={2} sx={{textAlign: 'left', ml: 5, mr: 8, fontSize: 20}}>
-							<Grid item xs={6}>
-								- Object-Oriented Programming
+						<Hidden smDown>
+							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
+										<ListItem>
+											- Object-Oriented Programming
+										</ListItem>
+										<ListItem>
+											- Microsoft Word
+										</ListItem>
+										<ListItem>
+											- Microsoft Powerpoint
+										</ListItem>
+										<ListItem>
+											- Microsoft Excel
+										</ListItem>
+										<ListItem>
+											- Intermediate Spanish
+										</ListItem>
+									</List>
+								</Grid>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
+										<ListItem>
+											- Leadership
+										</ListItem>
+										<ListItem>
+											- Organization
+										</ListItem>
+										<ListItem>
+											- Teamwork
+										</ListItem>
+										<ListItem>
+											- Communication
+										</ListItem>
+									</List>
+								</Grid>
 							</Grid>
-							<Grid item xs={6}>
-								- Microsoft Word
+						</Hidden>
+
+						<Hidden smUp>
+							<Grid container spacing={1} sx={{textAlign: 'left', fontSize: 20}}>
+								<Grid item xs={6}>
+									<List>
+										<ListItem>
+											Object-Oriented Programming
+										</ListItem>
+										<ListItem>
+											Microsoft Word
+										</ListItem>
+										<ListItem>
+											Microsoft Powerpoint
+										</ListItem>
+										<ListItem>
+											Microsoft Excel
+										</ListItem>
+									</List>
+								</Grid>
+								<Grid item xs={6}>
+									<List>
+										<ListItem>
+											Leadership
+										</ListItem>
+										<ListItem>
+											Organization
+										</ListItem>
+										<ListItem>
+											Teamwork
+										</ListItem>
+										<ListItem>
+											Communication
+										</ListItem>
+										<ListItem>
+											Intermediate Spanish
+										</ListItem>
+									</List>
+								</Grid>
 							</Grid>
-							<Grid item xs={6}>
-								- Microsoft Powerpoint
-							</Grid>
-							<Grid item xs={6}>
-								- Microsoft Excel
-							</Grid>
-							<Grid item xs={6}>
-								- Intermediate Spanish
-							</Grid>
-							<Grid item xs={6}>
-								- Leadership
-							</Grid>
-							<Grid item xs={6}>
-								- Organization
-							</Grid>
-							<Grid item xs={6}>
-								- Teamwork
-							</Grid>
-							<Grid item xs={6}>
-								- Communication
-							</Grid>
-						</Grid>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -359,19 +477,37 @@ function Resume() {
 							Web Development Intern
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								Epic North LLC, Remote
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								June 2022 - Present
-							</Typography>
-							<List dense sx={{fontSize: 20, mx: 3, mr: 8}} >
-								<ListItem>
-									- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
-								</ListItem>
-							</List>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									Epic North LLC, Remote
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									June 2022 - Present
+								</Typography>
+								<List dense sx={{fontSize: 20, mx: 2}} >
+									<ListItem>
+										- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									Epic North LLC, Remote
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									June 2022 - Present
+								</Typography>
+								<List dense sx={{fontSize: 20}} >
+									<ListItem>
+										- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -390,25 +526,49 @@ function Resume() {
 							Teaching Assistant
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								University of Central Florida, Orlando, FL
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								July 2021 - May 2022
-							</Typography>
-							<List dense sx={{fontSize: 20, mx: 3, mr: 8}}>
-								<ListItem>
-									- Assist in teaching introductory programming topics in Python to a class of about 230 students.
-								</ListItem>
-								<ListItem>
-									- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
-								</ListItem>
-								<ListItem>
-									- Hold two labs weekly and office hours to offer students extra support.
-								</ListItem>
-							</List>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									University of Central Florida, Orlando, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									July 2021 - May 2022
+								</Typography>
+								<List dense sx={{fontSize: 20, mx: 2}}>
+									<ListItem>
+										- Assist in teaching introductory programming topics in Python to a class of about 230 students.
+									</ListItem>
+									<ListItem>
+										- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
+									</ListItem>
+									<ListItem>
+										- Hold two labs weekly and office hours to offer students extra support.
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									University of Central Florida, Orlando, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									July 2021 - May 2022
+								</Typography>
+								<List dense sx={{fontSize: 20}}>
+									<ListItem>
+										- Assist in teaching introductory programming topics in Python to a class of about 230 students.
+									</ListItem>
+									<ListItem>
+										- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
+									</ListItem>
+									<ListItem>
+										- Hold two labs weekly and office hours to offer students extra support.
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -427,22 +587,43 @@ function Resume() {
 							Teaching Assistant
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								UCF Computer Science Summer Institute, Orlando, FL
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								June 2021
-							</Typography>
-							<List dense sx={{fontSize: 20, mx: 3, mr: 8}} >
-								<ListItem>
-									- Graded assignments and provided appropriate feedback in a timely manner.
-								</ListItem>
-								<ListItem>
-									- Taught topics in Python to a class of eight students and offered support with questions.
-								</ListItem>
-							</List>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									UCF Computer Science Summer Institute, Orlando, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									June 2021
+								</Typography>
+								<List dense sx={{fontSize: 20, mx: 2}} >
+									<ListItem>
+										- Graded assignments and provided appropriate feedback in a timely manner.
+									</ListItem>
+									<ListItem>
+										- Taught topics in Python to a class of eight students and offered support with questions.
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									UCF Computer Science Summer Institute, Orlando, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									June 2021
+								</Typography>
+								<List dense sx={{fontSize: 20}} >
+									<ListItem>
+										- Graded assignments and provided appropriate feedback in a timely manner.
+									</ListItem>
+									<ListItem>
+										- Taught topics in Python to a class of eight students and offered support with questions.
+									</ListItem>
+								</List>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -473,14 +654,27 @@ function Resume() {
 							eXtended Reality & Training Lab Volunteer
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								January 2022 - Present
-							</Typography>
-							<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
-								Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
-							</Typography>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									January 2022 - Present
+								</Typography>
+								<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
+									Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
+								</Typography>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									January 2022 - Present
+								</Typography>
+								<Typography sx={{fontSize: 20, mx: 1, textAlign: 'left'}}>
+									Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
+								</Typography>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -499,14 +693,27 @@ function Resume() {
 							University of Central Florida Knight Hacks
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								August 2020 - Present
-							</Typography>
-							<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
-								Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
-							</Typography>
-						</Box>
+						<Hidden smDown>
+							<Box sx={{ml: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									August 2020 - Present
+								</Typography>
+								<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
+									Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
+								</Typography>
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									August 2020 - Present
+								</Typography>
+								<Typography sx={{fontSize: 20, mx: 1, textAlign: 'left'}}>
+									Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
+								</Typography>
+							</Box>
+						</Hidden>
 					</CustomBox>
 					</Grow>
 					</VizSensor>

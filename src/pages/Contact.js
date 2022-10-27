@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Button, Grid, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
@@ -10,11 +10,31 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FeedIcon from '@mui/icons-material/Feed';
 
 import Resume from './public/Gabriela Shamblin Resume.pdf';
+// import emailjs from '@emailjs/browser';
 
 function Contact() {
 	useEffect(() => {
 		document.title = 'Contact';
 	});
+
+	const [toSend, setToSend] = useState({
+		name: '',
+		email: '',
+		message: '',
+	});
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		// emailjs.sendForm('service_gu427bp', 'template_jqizbmj', toSend, '_wu6HQWfsViVJ8OBD')
+    //   .then((result) => {
+    //       console.log(result.text);
+    //   }, (error) => {
+    //       console.log(error.text);
+    //   });
+	};
+	const handleChange = (e) => {
+		setToSend({ ...toSend, [e.target.name]: e.target.value });
+	};
 
   return (
 		<React.Fragment>
@@ -35,7 +55,6 @@ function Contact() {
 					</Typography>
 
 					<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
-
 						<Grid item>
 							<Link href="mailto:gabyshamblin@gmail.com" 
 							target="_blank" rel="noopener">
@@ -89,38 +108,44 @@ function Contact() {
 					</Grid>
 
 					<Box component="form" sx={{display: flexbox, justifyContent: 'center'}}>
-						<Stack component="form" spacing={2} sx={{pb: 2, maxWidth: '500px', m: 'auto'}}>
+						<Stack spacing={2} sx={{pb: 2, maxWidth: '500px', m: 'auto'}}>
 							<TextField 
 								required
-								disabled
 								id="name" 
+								name="name"
 								label="Name"
-								variant="standard"/>
+								value={toSend.name}
+								variant="standard"
+								onChange={handleChange}/>
 							<TextField 
 								required
-								disabled
 								id="email" 
+								name="email"
 								label="Email Address"
-								variant="standard"/>
+								value={toSend.email}
+								variant="standard"
+								onChange={handleChange}/>
 							<TextField 
 								required
-								disabled
-								id="subject" 
-								label="Subject"
-								variant="standard"/>
-							<TextField 
-								required
-								disabled
 								multiline
 								rows={5}
 								id="message" 
+								name="message"
 								label="Message"
-								variant="standard"/>
-
+								value={toSend.message}
+								variant="standard"
+								onChange={handleChange}/>
+								<div class="g-recaptcha" data-sitekey="your_site_key"></div>
 						</Stack>
-						<Button disabled style={{backgroundColor: "rgba(51, 155, 158, 0.3)", borderRadius: 50, width: 200}}
-						aria-label='github' size='large'>
-						<EmailIcon/>
+
+						<Button style={{backgroundColor: "rgba(51, 155, 158, 0.3)", 
+							color: "#000000", 
+							borderRadius: 50, 
+							width: 200}}
+							aria-label='github' 
+							size='large'
+						>
+							<EmailIcon/>
 							<Typography sx={{fontSize: 16, p: 1}}>
 								Submit
 							</Typography>
