@@ -5,6 +5,7 @@ import VizSensor from 'react-visibility-sensor';
 import { Box, Button, Grid, Grow, Typography, 
 	Link, List, ListItem } from '@mui/material';
 import { flexbox } from '@mui/system';
+import './App.css';
 
 import pythonGame from './public/pythonMenu.jpg';
 import grayWebsite from './public/grayWebsite.jpg';
