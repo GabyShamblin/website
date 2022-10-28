@@ -5,7 +5,7 @@ import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import './App.css';
 
-
+import me from './public/picture.jpg';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1200,
@@ -28,7 +28,7 @@ function Home() {
 						display: flexbox,
 						justifyContent: 'center',
 						backgroundColor: '#edf0f0',
-						minHeight: '92vh',
+						minHeight: '100vh',
 						px: 2, py: 1}}>
 
 					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10, pb: 1}}>
@@ -38,6 +38,14 @@ function Home() {
 					<Typography sx={{fontSize: 24, letterSpacing: 2, p: 10, pt: 0}}>
 							Student and Programmer
 					</Typography>
+
+					<Box item sx={{mb: 10}}>
+						<img 
+							id="me"
+							src={me} 
+							alt="A white/hispanic woman with brown curly hair standing in front of a fountain in a park. She is wearing a dark grey shirt that says 'UCF Knights', jeans, and pearl earrings and necklace">
+						</img>
+					</Box>
 
 					<CustomBox id="project1" sx={{
 						maxWidth: 1200,
@@ -50,7 +58,7 @@ function Home() {
 
 						<Box>
 							<Typography sx={{fontSize: 20}}>
-								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time as a TA. I expect to graduate with my Bachelors in Fall 2023, and plan to begin my Masters in Computer Science soon after.
+								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time as a TA. I expect to graduate with my Bachelors in Fall 2023 and begin my Masters in Computer Science soon after.
 							</Typography>
 						</Box>
 					</CustomBox>
@@ -66,7 +74,7 @@ function Home() {
 
 						<Box>
 							<Typography sx={{fontSize: 20}}>
-								I was recently accepted into the Computer Science Accelerated BS to MS program. I'm also doing research this semester and working in one of the virtual reality labs here at UCF.
+								I was recently accepted into the Computer Science Accelerated BS to MS program. I'm also participating in research this semester and working in one of the virtual reality labs here at UCF.
 							</Typography>
 						</Box>
 

@@ -29,7 +29,7 @@ function App() {
 					display: 'flex', 
 					justifyContent: 'space-evenly', 
 					textAlign: 'center',
-					width: 1000}}>
+					width: '80%'}}>
 
 					<Link to="/" style={{textDecoration: 'none'}}>
 						<MenuText sx={{m: 'auto'}}>
