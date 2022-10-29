@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Note to self: npm run deploy to update site after updating master.
+
 In the project directory, you can run:
 
 ### `npm start`
