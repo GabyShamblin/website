@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Grid, Grow, Typography, 
-	List, ListItem, Hidden } from '@mui/material';
+	List, ListItem, Hidden, Slide } from '@mui/material';
+import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
 
 const CustomBox = styled(Box)(() => ({
@@ -21,7 +22,8 @@ const SliderBox = styled(Box)(() => ({
 	mb: 5,
 	p: 1,
 	display: 'flex',
-	justifyContent: 'flex-start'
+	justifyContent: 'flex-start',
+	overflow: 'hidden'
 }));
 
 function Resume() {
@@ -41,9 +43,13 @@ function Resume() {
 	const [showBox9, setShowBox9] = useState(false);
 	const [showBox10, setShowBox10] = useState(false);
 
+	const containerRef = React.useRef(null);
+
   return (
 		<React.Fragment>
 			<div className="App">
+				
+				{/* Education */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
@@ -70,13 +76,10 @@ function Resume() {
 						m: 'auto', mb: 1, p: 1}}>
 
 						<Typography sx={{fontSize: 20}}>
-							University of Central Florida
+							University of Central Florida, Orlando, FL
 						</Typography>
 
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								Orlando, FL
-							</Typography>
+						<Box sx={{ml: 5, mb: 3, textAlign: 'left'}}>
 							<Typography sx={{fontSize: 20}}>
 								Bachelor of Science, Computer Science
 							</Typography>
@@ -85,6 +88,17 @@ function Resume() {
 							</Typography>
 							<Typography sx={{fontSize: 20}}>
 								GPA: 3.65/4.00
+							</Typography>
+						</Box>
+						<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Typography sx={{fontSize: 20}}>
+								Master of Science, Computer Science
+							</Typography>
+							<Typography sx={{fontSize: 20}}>
+								Expected Start: January 2024
+							</Typography>
+							<Typography sx={{fontSize: 20}}>
+								Expected Graduation: December 2024
 							</Typography>
 						</Box>
 					</CustomBox>
@@ -106,13 +120,14 @@ function Resume() {
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
-								<List sx={{fontSize: 20}} >
+							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
 										<ListItem>
 											- Computer Science I
 										</ListItem>
 										<ListItem>
-											- Computer Science I
+											- Computer Science II
 										</ListItem>
 										<ListItem>
 											- Object-Oriented Programming
@@ -120,24 +135,36 @@ function Resume() {
 										<ListItem>
 											- Processes of Object-Oriented Software Development
 										</ListItem>
+									</List>
+								</Grid>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
 										<ListItem>
 											- Artificial Intelligence
 										</ListItem>
 										<ListItem>
+											- Machine Learning
+										</ListItem>
+										<ListItem>
 											- Programming Languages
 										</ListItem>
+										<ListItem>
+											- Virtual Reality Engineering
+										</ListItem>
 									</List>
-							</Box>
+								</Grid>
+							</Grid>
 						</Hidden>
 
 						<Hidden smUp>
-							<Box sx={{textAlign: 'left'}}>
-								<List sx={{fontSize: 20}} >
+							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
 										<ListItem>
 											- Computer Science I
 										</ListItem>
 										<ListItem>
-											- Computer Science I
+											- Computer Science II
 										</ListItem>
 										<ListItem>
 											- Object-Oriented Programming
@@ -145,14 +172,25 @@ function Resume() {
 										<ListItem>
 											- Processes of Object-Oriented Software Development
 										</ListItem>
+									</List>
+								</Grid>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
 										<ListItem>
 											- Artificial Intelligence
 										</ListItem>
 										<ListItem>
+											- Machine Learning
+										</ListItem>
+										<ListItem>
 											- Programming Languages
 										</ListItem>
+										<ListItem>
+											- Virtual Reality Engineering
+										</ListItem>
 									</List>
-							</Box>
+								</Grid>
+							</Grid>
 						</Hidden>
 					</CustomBox>
 					</Grow>
@@ -214,6 +252,7 @@ function Resume() {
 					</VizSensor>
 				</Box>
 
+				{/* Skills */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
@@ -235,123 +274,103 @@ function Resume() {
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(221, 0, 49)',
-							borderRadius: 10,  
-							width: '40%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1, color: "#ffffff"}}>
-									Angular
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="Angular" 
+							color="rgba(221, 0, 49)"
+							textWhite={true}
+							length="40%"
+							showBox={showBox4}
+						/>
+
+						<SkillSlider 
+							name="C" 
+							color="rgba(168, 185, 203)"
+							length="30%"
+							showBox={showBox4}
+						/>
 						
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(168, 185, 203)',
-							borderRadius: 10,  
-							width: '30%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									C
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="C#" 
+							color="rgba(158, 114, 212)"
+							length="45%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(158, 114, 212)',
-							borderRadius: 10,
-							width: '40%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									C#
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="C++" 
+							color="rgba(0, 66, 131)"
+							textWhite={true}
+							length="20%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(0, 150, 219)',
-							borderRadius: 10,  
-							width: '35%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									CSS
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="CSS" 
+							color="rgba(0, 150, 219)"
+							textWhite={true}
+							length="35%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(241, 101, 40)',
-							borderRadius: 10,  
-							width: '35%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									HTML5
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="Haskell" 
+							color="rgba(142, 80, 138)"
+							textWhite={true}
+							length="20%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(248, 153, 23)',
-							borderRadius: 10,  
-							width: '80%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									Java
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="HTML5" 
+							color="rgba(241, 101, 40)"
+							length="35%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(247, 223, 29)',
-							borderRadius: 10,  
-							width: '60%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									JavaScript
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="Java" 
+							color="rgba(248, 153, 23)"
+							length="80%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5, mb: 1}}>
-							<Box sx={{
-							backgroundColor: 'rgba(53, 122, 177)',
-							borderRadius: 10,  
-							width: '65%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1, color: "#ffffff"}}>
-									Python
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="JavaScript" 
+							color="rgba(247, 223, 29)"
+							length="60%"
+							showBox={showBox4}
+						/>
 
-						<SliderBox sx={{
-						backgroundColor: 'rgba(105, 105, 105)',
-						m: 'auto', p: 0.5}}>
-							<Box sx={{
-							backgroundColor: 'rgba(98, 218, 252)',
-							borderRadius: 10,  
-							width: '55%'}}>
-								<Typography sx={{fontSize: 20, textAlign: 'right', mr: 1}}>
-									React
-								</Typography>
-							</Box>
-						</SliderBox>
+						<SkillSlider 
+							name="Python" 
+							color="rgba(53, 122, 177)"
+							textWhite={true}
+							length="55%"
+							showBox={showBox4}
+						/>
 
+						<SkillSlider 
+							name="React" 
+							color="rgba(98, 218, 252)"
+							length="65%"
+							showBox={showBox4}
+						/>
+
+						<SkillSlider 
+							name="TypeScript" 
+							color="rgba(45, 121, 199)"
+							textWhite={true}
+							length="60%"
+							showBox={showBox4}
+						/>
+
+						<SkillSlider 
+							name="Unity" 
+							color="rgba(50, 50, 50)"
+							textWhite={true}
+							length="45%"
+							showBox={showBox4}
+						/>
 
 					</CustomBox>
 					</Grow>
@@ -453,6 +472,7 @@ function Resume() {
 
 				</Box>
 
+				{/* Experience */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
@@ -487,7 +507,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, mx: 2}} >
 									<ListItem>
-										- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -503,7 +523,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}} >
 									<ListItem>
-										- Use Angular, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -630,6 +650,7 @@ function Resume() {
 
 				</Box>
 
+				{/* Activities */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
@@ -651,7 +672,7 @@ function Resume() {
 						backgroundColor: 'rgba(51, 155, 158, 0.5)',
 						m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							eXtended Reality & Training Lab Volunteer
+							Extended Reality & Training Lab Volunteer
 						</Typography>
 
 						<Hidden smDown>
@@ -660,7 +681,7 @@ function Resume() {
 									January 2022 - Present
 								</Typography>
 								<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
-									Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
+									Currently a volunteer in a research lab here at UCF. I worked on a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
 								</Typography>
 							</Box>
 						</Hidden>

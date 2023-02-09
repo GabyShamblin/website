@@ -47,6 +47,7 @@ function Portfolio() {
 	const [showProject3, setShowProject3] = useState(false);
 	const [showProject4, setShowProject4] = useState(false);
 	const [showProject5, setShowProject5] = useState(false);
+	const [showProject6, setShowProject6] = useState(false);
 
   return (
 		<React.Fragment>
@@ -58,7 +59,7 @@ function Portfolio() {
 					px: 2, py: 1}}>
 
 					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10}}>
-						Personal Projects
+						Portfolio
 					</Typography>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
@@ -73,7 +74,7 @@ function Portfolio() {
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Python Jeopardy Game - June 2021
+							Virtual Reality Engineering - January 2023-Present
 						</Typography>
 
 						<Grid container sx={{
@@ -84,32 +85,30 @@ function Portfolio() {
 							flexWrap: 'wrap',
 							p: 1}}>
 
-							<Box item width='700' >
-								<img src={pythonGame} alt="A 4x4 game board meant to mimic the TV game show Jeopardy. It's titled 'Trivia Time' and has score counters in the top corners, '2 correct out of 3' and 'Score: 20'"></img>
+							{/* <Box item width='700'>
+								<img src={grayWebsite} alt="A simple website. Includes a navigation bar (Home, Bio, Books, Events, Contact), a header with a black background, purple wisps, and the words 'Emily Gray. Sparks to flames romance.'. Beneath is 'What's New' and 'Books' sections."></img>
+							</Box> */}
+
+							<Box item width='700'>
+								<iframe width="540" height="305" src="https://www.youtube.com/embed/videoseries?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</Box>
 
-							<Box item m='auto'>
-								<List sx={{fontSize: 20, maxWidth: 600}}>
-									<ListItem disablePadding>
-										- Includes file to change questions
+							<Box item m='auto' >
+								<List sx={{fontSize: 20, maxWidth: 600}} >
+									<ListItem>
+										- Unity projects on different topics created for CAP 5115: Virtual Reality Engineering
 									</ListItem>
-									<ListItem disablePadding>
-										- Incorrect answer options are randomized
-									</ListItem>
-									<ListItem disablePadding>
-										- Keeps track of answered questions and tallys score
-									</ListItem>
-									<ListItem disablePadding>
-										- Contains multiple game screens for start menu, game menu, questions, and end menu 
+									<ListItem>
+										- Unity, C#
 									</ListItem>
 								</List>
 							</Box>
 						</Grid>
 
-						<Link href="https://github.com/GabyShamblin/Examples/tree/master/Python%20Jeopardy%20Game" 
+						<Link href="https://youtube.com/playlist?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR"
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
-								View GitHub page
+								View playlist
 							</CustomButton>
 						</Link>
 					</CustomBox>
@@ -136,13 +135,16 @@ function Portfolio() {
 							p: 1}}>
 
 							<Box item width='700'>
-								<img src={grayWebsite} alt="A simple website. Includes a navigation bar (Home, Bio, Books, Events, Contact), a header with a wooden background with the words 'Emily Gray. Writing sparks to flames romance.', and a 'What's New' section. This section contains two book covers and states that they are new releases currently available on Amazon."></img>
+								<img src={grayWebsite} alt="A simple website. Includes a navigation bar (Home, Bio, Books, Events, Contact), a header with a black background, purple wisps, and the words 'Emily Gray. Sparks to flames romance.'. Beneath is 'What's New' and 'Books' sections."></img>
 							</Box>
 
 							<Box item m='auto' >
 								<List sx={{fontSize: 20, maxWidth: 600}} >
-									<ListItem disablePadding>
+									<ListItem>
 										- Creation and maintenance of website for bestselling author
+									</ListItem>
+									<ListItem>
+										- HTML, CSS
 									</ListItem>
 								</List>
 							</Box>
@@ -152,6 +154,61 @@ function Portfolio() {
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
 								View site
+							</CustomButton>
+						</Link>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={(isVisible) => {
+							setShowProject3(isVisible);
+					}} >
+					<Grow in={showProject3}>
+					
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Python Jeopardy Game - June 2021
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700' >
+								<img src={pythonGame} alt="A 4x4 game board meant to mimic the TV game show Jeopardy. It's titled 'Trivia Time' and has score counters in the top corners, '2 correct out of 3' and 'Score: 20'"></img>
+							</Box>
+
+							<Box item m='auto'>
+								<List sx={{fontSize: 20, maxWidth: 600}}>
+									<ListItem>
+										- Includes file to change questions
+									</ListItem>
+									<ListItem>
+										- Incorrect answer options are randomized
+									</ListItem>
+									<ListItem>
+										- Keeps track of answered questions and tallys score
+									</ListItem>
+									<ListItem>
+										- Contains multiple game screens for start menu, game menu, questions, and end menu 
+									</ListItem>
+									<ListItem>
+										- Python, Pygame
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<Link href="https://github.com/GabyShamblin/Examples/tree/master/Python%20Jeopardy%20Game" 
+						target="_blank" rel="noopener">
+							<CustomButton variant="outlined">
+								View GitHub page
 							</CustomButton>
 						</Link>
 					</CustomBox>
@@ -172,107 +229,9 @@ function Portfolio() {
 					<VizSensor
 						partialVisibility
 						onChange={(isVisible) => {
-							setShowProject3(isVisible);
-					}} >
-					<Grow in={showProject3}>
-					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
-							Liar's Dice Game - November 2021
-						</Typography>
-
-						<Grid container sx={{
-							display: flexbox, 
-							flexDirection: 'row',
-							alignContent: 'center',
-							justifyContent: 'center',
-							flexWrap: 'wrap',
-							p: 1}}>
-
-							<Box item width='700'>
-								<img src={diceGame} alt="A 4x5 game board filled with dice, only the bottom row of dice (Player four's dice) are showing their faces. There is a top bar showing player points, a black box on the left showing all of the player guesses, challenges, and points won, and a small box with buttons on the bottom that allows the player to enter a guess or challenge the previous guess."></img>
-							</Box>
-
-							<Box item m='auto'>
-								<List sx={{fontSize: 20, maxWidth: 600}} >
-									<ListItem disablePadding>
-										- A group project created for KnightHacks 2021
-									</ListItem>
-									<ListItem disablePadding>
-										- I mostly worked in JavaScript on the base game rules
-									</ListItem>
-									<ListItem disablePadding>
-										- Includes a game log to can keep track of players guesses
-									</ListItem>
-									<ListItem disablePadding>
-										- Keeps track of answered questions and tallys score 
-									</ListItem>
-								</List>
-							</Box>
-						</Grid>
-
-						<Link href="https://devpost.com/software/liar-s-dice-8qen14?ref_content=my-projects-tab&ref_feature=my_projects" 
-						target="_blank" rel="noopener">
-							<CustomButton variant="outlined">
-								View hackathon page
-							</CustomButton>
-						</Link>
-					</CustomBox>
-					</Grow>
-					</VizSensor>
-
-					<VizSensor
-						partialVisibility
-						onChange={(isVisible) => {
 							setShowProject4(isVisible);
 					}} >
 					<Grow in={showProject4}>
-					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
-							Knight's Contact Manager - February 2022
-						</Typography>
-
-						<Grid container sx={{
-							display: flexbox, 
-							flexDirection: 'row',
-							alignContent: 'center',
-							justifyContent: 'center',
-							flexWrap: 'wrap',
-							p: 1}}>
-
-							<Box item width='700'>
-								<img src={contact} alt="A simple website with 'Knight's Contact Manager' and a sword through the K at the top. There is a large blue box beneath with two gray boxes labeled 'Register' and 'Login'. Register contains the input fields first name, last name, username, and password and a button. Login contains the input fields username and password and a button."></img>
-							</Box>
-
-							<Box item m='auto'>
-								<List sx={{fontSize: 20, maxWidth: 600}} >
-									<ListItem disablePadding>
-										- A group project for COP4331
-									</ListItem>
-									<ListItem disablePadding>
-										- Users can login or register an account
-									</ListItem>
-									<ListItem disablePadding>
-										- Allows logged in user to create, search, update, and delete contacts
-									</ListItem>
-								</List>
-							</Box>
-						</Grid>
-
-						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noreferrer">
-							<CustomButton variant="outlined">
-								View presentation
-							</CustomButton>
-						</a>
-					</CustomBox>
-					</Grow>
-					</VizSensor>
-
-					<VizSensor
-						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject5(isVisible);
-					}} >
-					<Grow in={showProject5}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Top of the Schedule - February-April 2022
@@ -292,31 +251,139 @@ function Portfolio() {
 
 							<Box item m='auto'>
 								<List sx={{fontSize: 20, maxWidth: 600}} >
-									<ListItem disablePadding>
-										- A group project for COP4331
+									<ListItem>
+										- A group project of 7 people for COP4331
 									</ListItem>
-									<ListItem disablePadding>
+									<ListItem>
 										- Allows users to create a college career schedule for the UCF Computer Science undergraduate program
 									</ListItem>
-									<ListItem disablePadding>
+									<ListItem>
 										- Uses an algorithm based on the importance of classes to create the schedule
+									</ListItem>
+									<ListItem>
+										- React, Material UI, JavaScript, ExpressJS, Mongoose, MongoDB
 									</ListItem>
 								</List>
 							</Box>
 						</Grid>
 
-						<Link href="https://group1-tots-mern.herokuapp.com/" 
+						{/* <Link href="https://group1-tots-mern.herokuapp.com/" 
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
 								View site
 							</CustomButton>
-						</Link>
+						</Link> */}
 						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noreferrer">
 							<CustomButton variant="outlined">
 							View presentation
 							</CustomButton>
 						</a>
 					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={(isVisible) => {
+							setShowProject5(isVisible);
+					}} >
+					<Grow in={showProject5}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Knight's Contact Manager - February 2022
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700'>
+								<img src={contact} alt="A simple website with 'Knight's Contact Manager' and a sword through the K at the top. There is a large blue box beneath with two gray boxes labeled 'Register' and 'Login'. Register contains the input fields first name, last name, username, and password and a button. Login contains the input fields username and password and a button."></img>
+							</Box>
+
+							<Box item m='auto'>
+								<List sx={{fontSize: 20, maxWidth: 600}} >
+									<ListItem>
+										- A group project of 4 people for COP4331
+									</ListItem>
+									<ListItem>
+										- Users can login or register an account
+									</ListItem>
+									<ListItem>
+										- Allows logged in user to create, search, update, and delete contacts
+									</ListItem>
+									<ListItem>
+										- HTML, CSS, Bootstrap, PHP, SQL
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noreferrer">
+							<CustomButton variant="outlined">
+								View presentation
+							</CustomButton>
+						</a>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={(isVisible) => {
+							setShowProject6(isVisible);
+					}} >
+					<Grow in={showProject6}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Liar's Dice Game - November 2021
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700'>
+								<img src={diceGame} alt="A 4x5 game board filled with dice, only the bottom row of dice (Player four's dice) are showing their faces. There is a top bar showing player points, a black box on the left showing all of the player guesses, challenges, and points won, and a small box with buttons on the bottom that allows the player to enter a guess or challenge the previous guess."></img>
+							</Box>
+
+							<Box item m='auto'>
+								<List sx={{fontSize: 20, maxWidth: 600}} >
+									<ListItem>
+										- A group project of 4 people created for KnightHacks 2021
+									</ListItem>
+									<ListItem>
+										- I mostly worked in JavaScript on the base game rules
+									</ListItem>
+									<ListItem>
+										- Includes a game log to can keep track of players guesses
+									</ListItem>
+									<ListItem>
+										- Keeps track of answered questions and tallys score 
+									</ListItem>
+									<ListItem>
+										- HTML, CSS, JavaScript 
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<Link href="https://devpost.com/software/liar-s-dice-8qen14?ref_content=my-projects-tab&ref_feature=my_projects" 
+						target="_blank" rel="noopener">
+							<CustomButton variant="outlined">
+								View hackathon page
+							</CustomButton>
+						</Link>
+					</CustomBox>
+
 					</Grow>
 					</VizSensor>
 				</Box>

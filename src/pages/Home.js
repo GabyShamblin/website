@@ -43,7 +43,7 @@ function Home() {
 						<img 
 							id="me"
 							src={me} 
-							alt="A white/hispanic woman with brown curly hair standing in front of a fountain in a park. She is wearing a dark grey shirt that says 'UCF Knights', jeans, and pearl earrings and necklace">
+							alt="A white/hispanic woman in a white button up shirt and suit jacket sitting in front of a dark background">
 						</img>
 					</Box>
 
@@ -58,7 +58,7 @@ function Home() {
 
 						<Box>
 							<Typography sx={{fontSize: 20}}>
-								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time as a TA. I expect to graduate with my Bachelors in Fall 2023 and begin my Masters in Computer Science soon after.
+								I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time maintaining websites. I expect to graduate with my Bachelors in Fall 2023 and begin my Masters in Computer Science soon after.
 							</Typography>
 						</Box>
 					</CustomBox>
@@ -74,7 +74,7 @@ function Home() {
 
 						<Box>
 							<Typography sx={{fontSize: 20}}>
-								I was recently accepted into the Computer Science Accelerated BS to MS program. I'm also participating in research this semester and working in one of the virtual reality labs here at UCF.
+								I'm participating in research and volunteering at one of the virtual reality labs here at UCF.
 							</Typography>
 						</Box>
 

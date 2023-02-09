@@ -34,6 +34,7 @@ function Contact() {
       }, (error) => {
 				console.log("EMAIL SEND ERROR");
 				console.log(error.text);
+				alert("Message failed to send\n" + error.text)
       });
 	};
 	const handleChange = (e) => {
