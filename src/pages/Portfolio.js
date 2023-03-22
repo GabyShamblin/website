@@ -17,7 +17,8 @@ import ContactPresentation from './public/Small Project.pdf';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1200,
-	backgroundColor: "rgba(51, 155, 158, 0.5)", 
+	backgroundColor: "#73bed9", 
+	color: 'black',
 	m: 'auto',
 	mb: 5, 
 	p: 1,
@@ -26,8 +27,8 @@ const CustomBox = styled(Box)(() => ({
 
 const CustomButton = styled(Button)(() => ({
   minWidth: 150,
-	backgroundColor: "rgba(51, 155, 158, 0.5)", 
-	color: "#000000", 
+	backgroundColor: "#3067a7", 
+	color: 'white',
 	borderColor: "#000000", 
 	borderRadius: 50,
 	fontSize: 18,
@@ -55,10 +56,9 @@ function Portfolio() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
 					px: 2, py: 1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10}}>
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5}}>
 						Portfolio
 					</Typography>
 
@@ -68,8 +68,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject1(isVisible);
+						onChange={() => {
+							setShowProject1(true);
 					}} >
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
@@ -85,12 +85,8 @@ function Portfolio() {
 							flexWrap: 'wrap',
 							p: 1}}>
 
-							{/* <Box item width='700'>
-								<img src={grayWebsite} alt="A simple website. Includes a navigation bar (Home, Bio, Books, Events, Contact), a header with a black background, purple wisps, and the words 'Emily Gray. Sparks to flames romance.'. Beneath is 'What's New' and 'Books' sections."></img>
-							</Box> */}
-
 							<Box item width='700'>
-								<iframe width="540" height="305" src="https://www.youtube.com/embed/videoseries?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe id='video' src="https://www.youtube.com/embed/videoseries?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</Box>
 
 							<Box item m='auto' >
@@ -117,8 +113,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject2(isVisible);
+						onChange={() => {
+							setShowProject2(true);
 					}} >
 					<Grow in={showProject2}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
@@ -162,8 +158,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject3(isVisible);
+						onChange={() => {
+							setShowProject3(true);
 					}} >
 					<Grow in={showProject3}>
 					
@@ -219,7 +215,6 @@ function Portfolio() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
 					px: 2, py: 1}}>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
@@ -228,8 +223,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject4(isVisible);
+						onChange={() => {
+							setShowProject4(true);
 					}} >
 					<Grow in={showProject4}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
@@ -284,8 +279,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject5(isVisible);
+						onChange={() => {
+							setShowProject5(true);
 					}} >
 					<Grow in={showProject5}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
@@ -334,8 +329,8 @@ function Portfolio() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowProject6(isVisible);
+						onChange={() => {
+							setShowProject6(true);
 					}} >
 					<Grow in={showProject6}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>

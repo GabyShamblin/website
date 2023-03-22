@@ -47,8 +47,6 @@ function Contact() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
-					minHeight: '95vh',
 					px: 2, py: 1}}>
 
 					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10}}>

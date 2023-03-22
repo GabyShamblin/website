@@ -2,28 +2,33 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
-import { Box, Grid, Grow, Typography, 
-	List, ListItem, Hidden, Slide } from '@mui/material';
+import { Box, Grid, Grow, Hidden, Typography, 
+	List, ListItem } from '@mui/material';
 import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
 
+import angular from './public/logos/angular.png';
+import c from './public/logos/c.png';
+import cpp from './public/logos/c++.png';
+import csharp from './public/logos/csharp.png';
+import css from './public/logos/css.png';
+import haskell from './public/logos/haskell.png';
+import html from './public/logos/html.png';
+import java from './public/logos/java.png';
+import javascript from './public/logos/javascript.png';
+import python from './public/logos/python.png';
+import react from './public/logos/react.png';
+import typescript from './public/logos/typescript.png';
+import unity from './public/logos/unity.png';
+
 const CustomBox = styled(Box)(() => ({
-  maxWidth: 1000,
-	backgroundColor: "rgba(51, 155, 158, 0.5)", 
+  maxWidth: 1200,
+	backgroundColor: "#73bed9", 
+	color: 'black',
 	m: 'auto',
-	mb: 5, 
+	mb: 1, 
 	p: 1,
 	borderRadius: 8,
-}));
-
-const SliderBox = styled(Box)(() => ({
-  backgroundColor: 'rgba(105, 105, 105)',
-	borderRadius: 50,
-	mb: 5,
-	p: 1,
-	display: 'flex',
-	justifyContent: 'flex-start',
-	overflow: 'hidden'
 }));
 
 function Resume() {
@@ -43,20 +48,17 @@ function Resume() {
 	const [showBox9, setShowBox9] = useState(false);
 	const [showBox10, setShowBox10] = useState(false);
 
-	const containerRef = React.useRef(null);
-
   return (
 		<React.Fragment>
 			<div className="App">
-				
+
 				{/* Education */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
-					px: 2, py: 1}}>
+					p:1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10}}>
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5}}>
 							Resume
 					</Typography>
 
@@ -66,14 +68,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox1(isVisible);
+						onChange={() => {
+							setShowBox1(true);
 					}} >
 					<Grow in={showBox1}>
-					<CustomBox id="project1" sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox id="project1" sx={{m: 'auto', mb: 1, p: 1}}>
 
 						<Typography sx={{fontSize: 20}}>
 							University of Central Florida, Orlando, FL
@@ -107,146 +106,86 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox2(isVisible);
+						onChange={() => {
+							setShowBox2(true);
 					}} >
 					<Grow in={showBox2}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Relevant Coursework
 						</Typography>
 
-						<Hidden smDown>
-							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Computer Science I
-										</ListItem>
-										<ListItem>
-											- Computer Science II
-										</ListItem>
-										<ListItem>
-											- Object-Oriented Programming
-										</ListItem>
-										<ListItem>
-											- Processes of Object-Oriented Software Development
-										</ListItem>
-									</List>
-								</Grid>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Artificial Intelligence
-										</ListItem>
-										<ListItem>
-											- Machine Learning
-										</ListItem>
-										<ListItem>
-											- Programming Languages
-										</ListItem>
-										<ListItem>
-											- Virtual Reality Engineering
-										</ListItem>
-									</List>
-								</Grid>
+						<Grid container spacing={1} sx={{textAlign: 'left', fontSize: 20}}>
+							<Grid item xs={6}>
+								<List sx={{fontSize: 20}} >
+									<ListItem>
+										- Computer Science I
+									</ListItem>
+									<ListItem>
+										- Computer Science II
+									</ListItem>
+									<ListItem>
+										- Object-Oriented Programming
+									</ListItem>
+									<ListItem>
+										- Processes of Object-Oriented Software Development
+									</ListItem>
+									<ListItem>
+										- Matrix & Linear Algebra
+									</ListItem>
+								</List>
 							</Grid>
-						</Hidden>
-
-						<Hidden smUp>
-							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Computer Science I
-										</ListItem>
-										<ListItem>
-											- Computer Science II
-										</ListItem>
-										<ListItem>
-											- Object-Oriented Programming
-										</ListItem>
-										<ListItem>
-											- Processes of Object-Oriented Software Development
-										</ListItem>
-									</List>
-								</Grid>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Artificial Intelligence
-										</ListItem>
-										<ListItem>
-											- Machine Learning
-										</ListItem>
-										<ListItem>
-											- Programming Languages
-										</ListItem>
-										<ListItem>
-											- Virtual Reality Engineering
-										</ListItem>
-									</List>
-								</Grid>
+							<Grid item xs={6}>
+								<List sx={{fontSize: 20}} >
+									<ListItem>
+										- Artificial Intelligence
+									</ListItem>
+									<ListItem>
+										- Machine Learning
+									</ListItem>
+									<ListItem>
+										- Programming Languages
+									</ListItem>
+									<ListItem>
+										- Virtual Reality Engineering
+									</ListItem>
+									<ListItem>
+										- Senior Design
+									</ListItem>
+								</List>
 							</Grid>
-						</Hidden>
+						</Grid>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox3(isVisible);
+						onChange={() => {
+							setShowBox3(true);
 					}} >
 					<Grow in={showBox3}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Honors
 						</Typography>
 
-						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
-								<List sx={{fontSize: 20}} >
-									<ListItem>
-										- Florida Bright Futures Academic Scholarship
-									</ListItem>
-									<ListItem>
-										- UCF Pegasus Gold Scholarship
-									</ListItem>
-									<ListItem>
-										- UCF EXCEL Program
-									</ListItem>
-									<ListItem>
-										- UCF Dean's List
-									</ListItem>
-								</List>
-							</Box>
-						</Hidden>
-
-						<Hidden smUp>
-							<Box sx={{textAlign: 'left'}}>
-								<List sx={{fontSize: 20}} >
-									<ListItem>
-										- Florida Bright Futures Academic Scholarship
-									</ListItem>
-									<ListItem>
-										- UCF Pegasus Gold Scholarship
-									</ListItem>
-									<ListItem>
-										- UCF EXCEL Program
-									</ListItem>
-									<ListItem>
-										- UCF Dean's List
-									</ListItem>
-								</List>
-							</Box>
-						</Hidden>
+						<Box sx={{textAlign: 'left'}}>
+							<List sx={{fontSize: 20}} >
+								<ListItem>
+									- Florida Bright Futures Academic Scholarship
+								</ListItem>
+								<ListItem>
+									- UCF Pegasus Gold Scholarship
+								</ListItem>
+								<ListItem>
+									- UCF EXCEL Program
+								</ListItem>
+								<ListItem>
+									- UCF Dean's List
+								</ListItem>
+							</List>
+						</Box>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -256,8 +195,7 @@ function Resume() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
-					px: 2, py: 1}}>
+					p: 1}}>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Skills
@@ -265,112 +203,74 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox4(isVisible);
+						onChange={() => {
+							setShowBox4(true);
 					}} >
 					<Grow in={showBox4}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 
-						<SkillSlider 
+						{/* <SkillSlider 
 							name="Angular" 
 							color="rgba(221, 0, 49)"
 							textWhite={true}
 							length="40%"
 							showBox={showBox4}
-						/>
+						/> */}
 
-						<SkillSlider 
-							name="C" 
-							color="rgba(168, 185, 203)"
-							length="30%"
-							showBox={showBox4}
-						/>
-						
-						<SkillSlider 
-							name="C#" 
-							color="rgba(158, 114, 212)"
-							length="45%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="C++" 
-							color="rgba(0, 66, 131)"
-							textWhite={true}
-							length="20%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="CSS" 
-							color="rgba(0, 150, 219)"
-							textWhite={true}
-							length="35%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="Haskell" 
-							color="rgba(142, 80, 138)"
-							textWhite={true}
-							length="20%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="HTML5" 
-							color="rgba(241, 101, 40)"
-							length="35%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="Java" 
-							color="rgba(248, 153, 23)"
-							length="80%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="JavaScript" 
-							color="rgba(247, 223, 29)"
-							length="60%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="Python" 
-							color="rgba(53, 122, 177)"
-							textWhite={true}
-							length="55%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="React" 
-							color="rgba(98, 218, 252)"
-							length="65%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="TypeScript" 
-							color="rgba(45, 121, 199)"
-							textWhite={true}
-							length="60%"
-							showBox={showBox4}
-						/>
-
-						<SkillSlider 
-							name="Unity" 
-							color="rgba(50, 50, 50)"
-							textWhite={true}
-							length="45%"
-							showBox={showBox4}
-						/>
+						<Grid container spacing={2} justifyContent='center'>
+							<Grid item>
+								<img id='logo' src={angular}/>
+								<Typography>Angular</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={c}/>
+								<Typography>C</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={csharp}/>
+								<Typography>C#</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={cpp}/>
+								<Typography>C++</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={css}/>
+								<Typography>CSS</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={haskell}/>
+								<Typography>Haskell</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={html}/>
+								<Typography>HTML</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={java}/>
+								<Typography>Java</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={javascript}/>
+								<Typography>JavaScript</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={python}/>
+								<Typography>Python</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={react}/>
+								<Typography>React</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={typescript}/>
+								<Typography>TypeScript</Typography>
+							</Grid>
+							<Grid item>
+								<img id='logo' src={unity}/>
+								<Typography>Unity</Typography>
+							</Grid>
+						</Grid>
 
 					</CustomBox>
 					</Grow>
@@ -378,14 +278,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox5(isVisible);
+						onChange={() => {
+							setShowBox5(true);
 					}} >
 					<Grow in={showBox5}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 
 						<Hidden smDown>
 							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
@@ -476,8 +373,7 @@ function Resume() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
-					px: 2, py: 1}}>
+					p: 1}}>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Experience
@@ -485,16 +381,13 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox6(isVisible);
+						onChange={() => {
+							setShowBox6(true);
 					}} >
 					<Grow in={showBox6}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Web Development Intern
+							Full Stack Intern
 						</Typography>
 
 						<Hidden smDown>
@@ -507,7 +400,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, mx: 2}} >
 									<ListItem>
-										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -534,14 +427,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox7(isVisible);
+						onChange={() => {
+							setShowBox7(true);
 					}} >
 					<Grow in={showBox7}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Teaching Assistant
 						</Typography>
@@ -595,14 +485,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox8(isVisible);
+						onChange={() => {
+							setShowBox8(true);
 					}} >
 					<Grow in={showBox8}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Teaching Assistant
 						</Typography>
@@ -654,8 +541,7 @@ function Resume() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					backgroundColor: '#edf0f0',
-					px: 2, py: 1}}>
+					p: 1}}>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Activities
@@ -663,14 +549,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox9(isVisible);
+						onChange={() => {
+							setShowBox9(true);
 					}} >
 					<Grow in={showBox9}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Extended Reality & Training Lab Volunteer
 						</Typography>
@@ -702,14 +585,11 @@ function Resume() {
 
 					<VizSensor
 						partialVisibility
-						onChange={(isVisible) => {
-							setShowBox10(isVisible);
+						onChange={() => {
+							setShowBox10(true);
 					}} >
 					<Grow in={showBox10}>
-					<CustomBox sx={{
-						maxWidth: boxWidth,
-						backgroundColor: 'rgba(51, 155, 158, 0.5)',
-						m: 'auto', mb: 1, p: 1}}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							University of Central Florida Knight Hacks
 						</Typography>

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Outlet, Link } from "react-router-dom";
 
 const MenuText = styled(Typography)(() => ({
   minWidth: 100,
-	fontSize: 20,
-	color: "#000000",
+	fontSize: 24,
+	color: "#a3aab4",
 	transition: '0.2s',
 	'&:hover': {
 		color: "#ffffff",
@@ -14,51 +14,74 @@ const MenuText = styled(Typography)(() => ({
 }));
 
 function App() {
-
+	const [path, setPath] = React.useState('');
+	if (path != window.location.pathname) {
+		setPath(window.location.pathname);
+	}
+	
   return (
 		<React.Fragment>
-			<Box alignItems='center' sx={{
-				display: 'flex', 
-				justifyContent: 'center', 
-				fontSize: 20,
-				minHeight: 50,
-				backgroundColor: '#c2c2c2',
-				top: 0}}>
-
-				<Box alignItems='center' sx={{
+			<div className="App-header">
+				<Box alignItems='flex-end' sx={{
 					display: 'flex', 
-					justifyContent: 'space-evenly', 
-					textAlign: 'center',
-					width: '80%'}}>
+					justifyContent: 'center',
+					minHeight: 50,
+					top: 0, bottom: 0}}>
 
-					<Link to="/" style={{textDecoration: 'none'}}>
-						<MenuText sx={{m: 'auto'}}>
-								<strong>Home</strong>
-						</MenuText>
-					</Link>
+					<Grid container justifyContent='space-evenly' sx={{textAlign: 'center'}}>
 
-					<Link to="/portfolio" style={{textDecoration: 'none'}}>
-						<MenuText sx={{m: 'auto'}}>
-								<strong>Portfolio</strong>
-						</MenuText>
-					</Link>
+						<Grid item sx={{p:0.5, px:1, mr:0.2,
+							backgroundColor: path == '/' ? '#1e1e1e' : '#26262f'}}>
+							<Link to="/" 
+								onClick={() => setPath('/')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Home</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
-					<Link to="/resume" style={{textDecoration: 'none'}}>
-						<MenuText sx={{m: 'auto'}}>
-								<strong>Resume</strong>
-						</MenuText>
-					</Link>
+						<Grid item sx={{p:0.5, px:1, mr:0.2,
+							backgroundColor: path == '/portfolio' ? '#1e1e1e' : '#26262f'}}>
+							<Link to="/portfolio" 
+								onClick={() => setPath('/portfolio')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Portfolio</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
-					<Link to="/contact" style={{textDecoration: 'none'}}>
-						<MenuText sx={{m: 'auto'}}>
-								<strong>Contact</strong>
-						</MenuText>
-					</Link>
+						<Grid item sx={{p:0.5, px:1, mr:0.2,
+							backgroundColor: path == '/resume' ? '#1e1e1e' : '#26262f'}}>
+							<Link to="/resume" 
+								onClick={() => setPath('/resume')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Resume</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
+						<Grid item sx={{p:0.5, px:1, mr:0.2,
+							backgroundColor: path == '/contact' ? '#1e1e1e' : '#26262f'}}>
+							<Link to="/contact" 
+								onClick={() => setPath('/contact')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Contact</strong>
+								</MenuText>
+							</Link>
+						</Grid>
+					</Grid>
 				</Box>
-			</Box>
 
-			<Outlet />
+				<Outlet />
+			</div>
 		</React.Fragment>
   );
 }
