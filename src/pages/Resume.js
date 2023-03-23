@@ -2,10 +2,12 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
-import { Box, Grid, Grow, Hidden, Typography, 
+import { Box, Button, Grid, Grow, Hidden, Typography, 
 	List, ListItem } from '@mui/material';
 import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
+
+import FeedIcon from '@mui/icons-material/Feed';
 
 import angular from './public/logos/angular.png';
 import c from './public/logos/c.png';
@@ -25,10 +27,20 @@ const CustomBox = styled(Box)(() => ({
   maxWidth: 1200,
 	backgroundColor: "#73bed9", 
 	color: 'black',
-	m: 'auto',
-	mb: 1, 
-	p: 1,
+	m: 'auto', mb: 1, p: 1,
+	fontSize: 20,
 	borderRadius: 8,
+}));
+
+const CustomButton = styled(Button)(() => ({
+	minWidth: 250,
+  backgroundColor: "#a8659d", 
+	color: "#000000", 
+	borderRadius: 50,
+	'&:hover': {
+		backgroundColor: "rgba(194, 194, 194)", 
+		borderColor: "#000000", 
+	}
 }));
 
 function Resume() {
@@ -36,7 +48,6 @@ function Resume() {
 		document.title = 'Resume';
 	});
 
-	const boxWidth = 1200;
 	const [showBox1, setShowBox1] = useState(false);
 	const [showBox2, setShowBox2] = useState(false);
 	const [showBox3, setShowBox3] = useState(false);
@@ -52,17 +63,32 @@ function Resume() {
 		<React.Fragment>
 			<div className="App">
 
+				<Box sx={{
+					display: flexbox,
+					justifyContent: 'center',
+					p:1, fontSize: 20}}>
+
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Resume */
+					</Typography>
+
+					<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank' rel="noreferrer">
+						<CustomButton aria-label='github' size='large'>
+							<FeedIcon/>
+							<Typography sx={{fontSize: 16, p: 1}}>
+								PDF Version
+							</Typography>
+						</CustomButton>
+					</a>
+				</Box>
+
 				{/* Education */}
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					p:1}}>
+					p:1, fontSize: 20}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5}}>
-							Resume
-					</Typography>
-
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
+					<Typography variant='h5' sx={{letterSpacing: 5, p: 2, pt: 5}}>
 						Education
 					</Typography>
 
@@ -74,7 +100,7 @@ function Resume() {
 					<Grow in={showBox1}>
 					<CustomBox id="project1" sx={{m: 'auto', mb: 1, p: 1}}>
 
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							University of Central Florida, Orlando, FL
 						</Typography>
 
@@ -111,7 +137,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox2}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Relevant Coursework
 						</Typography>
 
@@ -119,38 +145,38 @@ function Resume() {
 							<Grid item xs={6}>
 								<List sx={{fontSize: 20}} >
 									<ListItem>
-										- Computer Science I
+										Computer Science I
 									</ListItem>
 									<ListItem>
-										- Computer Science II
+										Computer Science II
 									</ListItem>
 									<ListItem>
-										- Object-Oriented Programming
+										Object-Oriented Programming
 									</ListItem>
 									<ListItem>
-										- Processes of Object-Oriented Software Development
+										Processes of Object-Oriented Software Development
 									</ListItem>
 									<ListItem>
-										- Matrix & Linear Algebra
+										Matrix & Linear Algebra
 									</ListItem>
 								</List>
 							</Grid>
-							<Grid item xs={6}>
+							<Grid item>
 								<List sx={{fontSize: 20}} >
 									<ListItem>
-										- Artificial Intelligence
+										Artificial Intelligence
 									</ListItem>
 									<ListItem>
-										- Machine Learning
+										Machine Learning
 									</ListItem>
 									<ListItem>
-										- Programming Languages
+										Programming Languages
 									</ListItem>
 									<ListItem>
-										- Virtual Reality Engineering
+										Virtual Reality Engineering
 									</ListItem>
 									<ListItem>
-										- Senior Design
+										Senior Design
 									</ListItem>
 								</List>
 							</Grid>
@@ -166,25 +192,33 @@ function Resume() {
 					}} >
 					<Grow in={showBox3}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Honors
 						</Typography>
 
 						<Box sx={{textAlign: 'left'}}>
-							<List sx={{fontSize: 20}} >
-								<ListItem>
-									- Florida Bright Futures Academic Scholarship
-								</ListItem>
-								<ListItem>
-									- UCF Pegasus Gold Scholarship
-								</ListItem>
-								<ListItem>
-									- UCF EXCEL Program
-								</ListItem>
-								<ListItem>
-									- UCF Dean's List
-								</ListItem>
-							</List>
+							<Grid container>
+								<Grid item xs={6}>
+									<List sx={{fontSize: 20}} >
+										<ListItem>
+											Florida Bright Futures Academic Scholarship
+										</ListItem>
+										<ListItem>
+											UCF Pegasus Gold Scholarship
+										</ListItem>
+									</List>
+								</Grid>
+								<Grid item>
+								<List sx={{fontSize: 20}} >
+										<ListItem>
+											UCF EXCEL Program
+										</ListItem>
+										<ListItem>
+											UCF Dean's List
+										</ListItem>
+									</List>
+								</Grid>
+							</Grid>
 						</Box>
 					</CustomBox>
 					</Grow>
@@ -197,7 +231,7 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
+					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
 						Skills
 					</Typography>
 
@@ -217,57 +251,57 @@ function Resume() {
 							showBox={showBox4}
 						/> */}
 
-						<Grid container spacing={2} justifyContent='center'>
+						<Grid container spacing={2.5} justifyContent='center'>
 							<Grid item>
-								<img id='logo' src={angular}/>
+								<img id='logo' src={angular} alt="Angular programming language logo"/>
 								<Typography>Angular</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={c}/>
+								<img id='logo' src={c} alt="C programming language logo"/>
 								<Typography>C</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={csharp}/>
+								<img id='logo' src={csharp} alt="C sharp programming language logo"/>
 								<Typography>C#</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={cpp}/>
+								<img id='logo' src={cpp} alt="C plus plus programming language logo"/>
 								<Typography>C++</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={css}/>
+								<img id='logo' src={css} alt="CSS programming language logo"/>
 								<Typography>CSS</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={haskell}/>
+								<img id='logo' src={haskell} alt="Haskell programming language logo"/>
 								<Typography>Haskell</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={html}/>
+								<img id='logo' src={html} alt="HTML programming language logo"/>
 								<Typography>HTML</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={java}/>
+								<img id='logo' src={java} alt="Java programming language logo"/>
 								<Typography>Java</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={javascript}/>
+								<img id='logo' src={javascript} alt="Java script programming language logo"/>
 								<Typography>JavaScript</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={python}/>
+								<img id='logo' src={python} alt="Python programming language logo"/>
 								<Typography>Python</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={react}/>
+								<img id='logo' src={react} alt="React programming language logo"/>
 								<Typography>React</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={typescript}/>
+								<img id='logo' src={typescript} alt="Type script programming language logo"/>
 								<Typography>TypeScript</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={unity}/>
+								<img id='logo' src={unity} alt="Unity game engine logo"/>
 								<Typography>Unity</Typography>
 							</Grid>
 						</Grid>
@@ -283,86 +317,43 @@ function Resume() {
 					}} >
 					<Grow in={showBox5}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-
-						<Hidden smDown>
-							<Grid container spacing={1} sx={{textAlign: 'left', ml: 5, mr: 5, fontSize: 20}}>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Object-Oriented Programming
-										</ListItem>
-										<ListItem>
-											- Microsoft Word
-										</ListItem>
-										<ListItem>
-											- Microsoft Powerpoint
-										</ListItem>
-										<ListItem>
-											- Microsoft Excel
-										</ListItem>
-										<ListItem>
-											- Intermediate Spanish
-										</ListItem>
-									</List>
-								</Grid>
-								<Grid item xs={6}>
-									<List sx={{fontSize: 20}} >
-										<ListItem>
-											- Leadership
-										</ListItem>
-										<ListItem>
-											- Organization
-										</ListItem>
-										<ListItem>
-											- Teamwork
-										</ListItem>
-										<ListItem>
-											- Communication
-										</ListItem>
-									</List>
-								</Grid>
+						<Grid container sx={{textAlign: 'left', fontSize: 20}}>
+							<Grid item xs={6}>
+								<List>
+									<ListItem>
+										Object-Oriented Programming
+									</ListItem>
+									<ListItem>
+										Microsoft Word
+									</ListItem>
+									<ListItem>
+										Microsoft Powerpoint
+									</ListItem>
+									<ListItem>
+										Microsoft Excel
+									</ListItem>
+								</List>
 							</Grid>
-						</Hidden>
-
-						<Hidden smUp>
-							<Grid container spacing={1} sx={{textAlign: 'left', fontSize: 20}}>
-								<Grid item xs={6}>
-									<List>
-										<ListItem>
-											Object-Oriented Programming
-										</ListItem>
-										<ListItem>
-											Microsoft Word
-										</ListItem>
-										<ListItem>
-											Microsoft Powerpoint
-										</ListItem>
-										<ListItem>
-											Microsoft Excel
-										</ListItem>
-									</List>
-								</Grid>
-								<Grid item xs={6}>
-									<List>
-										<ListItem>
-											Leadership
-										</ListItem>
-										<ListItem>
-											Organization
-										</ListItem>
-										<ListItem>
-											Teamwork
-										</ListItem>
-										<ListItem>
-											Communication
-										</ListItem>
-										<ListItem>
-											Intermediate Spanish
-										</ListItem>
-									</List>
-								</Grid>
+							<Grid item>
+								<List>
+									<ListItem>
+										Leadership
+									</ListItem>
+									<ListItem>
+										Organization
+									</ListItem>
+									<ListItem>
+										Teamwork
+									</ListItem>
+									<ListItem>
+										Communication
+									</ListItem>
+									<ListItem>
+										Conversational Spanish
+									</ListItem>
+								</List>
 							</Grid>
-						</Hidden>
+						</Grid>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -375,7 +366,7 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
+					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
 						Experience
 					</Typography>
 
@@ -386,7 +377,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox6}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Full Stack Intern
 						</Typography>
 
@@ -400,7 +391,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, mx: 2}} >
 									<ListItem>
-										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
+										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -416,7 +407,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}} >
 									<ListItem>
-										- Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -432,7 +423,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox7}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Teaching Assistant
 						</Typography>
 
@@ -446,13 +437,13 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, mx: 2}}>
 									<ListItem>
-										- Assist in teaching introductory programming topics in Python to a class of about 230 students.
+										Assist in teaching introductory programming topics in Python to a class of about 230 students.
 									</ListItem>
 									<ListItem>
-										- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
+										Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
 									</ListItem>
 									<ListItem>
-										- Hold two labs weekly and office hours to offer students extra support.
+										Hold two labs weekly and office hours to offer students extra support.
 									</ListItem>
 								</List>
 							</Box>
@@ -468,13 +459,13 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}}>
 									<ListItem>
-										- Assist in teaching introductory programming topics in Python to a class of about 230 students.
+										Assist in teaching introductory programming topics in Python to a class of about 230 students.
 									</ListItem>
 									<ListItem>
-										- Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
+										Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
 									</ListItem>
 									<ListItem>
-										- Hold two labs weekly and office hours to offer students extra support.
+										Hold two labs weekly and office hours to offer students extra support.
 									</ListItem>
 								</List>
 							</Box>
@@ -490,7 +481,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox8}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Teaching Assistant
 						</Typography>
 
@@ -504,10 +495,10 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, mx: 2}} >
 									<ListItem>
-										- Graded assignments and provided appropriate feedback in a timely manner.
+										Graded assignments and provided appropriate feedback in a timely manner.
 									</ListItem>
 									<ListItem>
-										- Taught topics in Python to a class of eight students and offered support with questions.
+										Taught topics in Python to a class of eight students and offered support with questions.
 									</ListItem>
 								</List>
 							</Box>
@@ -523,10 +514,10 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}} >
 									<ListItem>
-										- Graded assignments and provided appropriate feedback in a timely manner.
+										Graded assignments and provided appropriate feedback in a timely manner.
 									</ListItem>
 									<ListItem>
-										- Taught topics in Python to a class of eight students and offered support with questions.
+										Taught topics in Python to a class of eight students and offered support with questions.
 									</ListItem>
 								</List>
 							</Box>
@@ -543,7 +534,7 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
+					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
 						Activities
 					</Typography>
 
@@ -554,7 +545,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox9}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							Extended Reality & Training Lab Volunteer
 						</Typography>
 
@@ -590,7 +581,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox10}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h5'>
 							University of Central Florida Knight Hacks
 						</Typography>
 

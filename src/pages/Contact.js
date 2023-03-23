@@ -1,22 +1,54 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Box, Button, Grid, Typography, 
+import VizSensor from 'react-visibility-sensor';
+import { styled } from '@mui/material/styles';
+import { Box, Button, IconButton, Grid, Grow, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
 
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FeedIcon from '@mui/icons-material/Feed';
 
-import Resume from './public/Gabriela Shamblin Resume.pdf';
 import emailjs from '@emailjs/browser';
+
+const CustomBox = styled(Box)(() => ({
+  maxWidth: 800,
+	backgroundColor: "#73bed9", 
+	color: 'black',
+	m: 'auto', mb: 1,
+	fontSize: 20,
+	borderRadius: 8,
+}));
+
+const CustomButton = styled(Button)(() => ({
+  minWidth: 150,
+	backgroundColor: "#3067a7", 
+	color: 'white',
+	borderColor: "#000000", 
+	borderRadius: 50,
+	fontSize: 18,
+	'&:hover': {
+		backgroundColor: "rgba(194, 194, 194)", 
+		borderColor: "#000000", 
+		color: 'black',
+	}
+}));
+
+const CustomIconButton = styled(IconButton)(() => ({
+	color: "#a3aab4", 
+	borderRadius: 50,
+	'&:hover': {
+		color: "white", 
+	}
+}));
 
 function Contact() {
 	useEffect(() => {
 		document.title = 'Contact';
 	});
 
+	const [showBox1, setShowBox1] = useState(false);
 	const [toSend, setToSend] = useState({
 		name: '',
 		email: '',
@@ -47,70 +79,48 @@ function Contact() {
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
-					px: 2, py: 1}}>
+					p: 1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 10}}>
-						Contact Me!
-					</Typography>
-
-					<Typography sx={{fontSize: 30, letterSpacing: 5, p: 3}}>
-						Gabriela Shamblin
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Contact Me! */
 					</Typography>
 
 					<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
-						{/* <Grid item>
-							<Link href="mailto:gabyshamblin@gmail.com" 
-							target="_blank" rel="noopener">
-								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
-									aria-label='github' size='large' m='1'>
-									<EmailIcon/>
-									<Typography sx={{fontSize: 16, p: 1}}>
-										Send an email
-									</Typography>
-								</Button>
-							</Link>
-						</Grid> */}
-
 						<Grid item>
 							<Link href="https://github.com/GabyShamblin" 
 							target="_blank" rel="noopener">
-								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
-									aria-label='github' size='large' m='1'>
-									<GitHubIcon/>
-									<Typography sx={{fontSize: 16, p: 1}}>
-										See my GitHub
-									</Typography>
-								</Button>
+								<CustomIconButton aria-label='Github'>
+									<GitHubIcon fontSize='large'/>
+								</CustomIconButton>
 							</Link>
 						</Grid>
 
 						<Grid item>
 							<Link href="https://www.linkedin.com/in/gabriela-shamblin-7416611b7/" 
 							target="_blank" rel="noopener">
-								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
-									aria-label='github' size='large'>
-									<LinkedInIcon/>
-									<Typography sx={{fontSize: 16, p: 1}}>
-										See my LinkedIn
-									</Typography>
-								</Button>
+								<CustomIconButton aria-label='LinkedIn'>
+									<LinkedInIcon fontSize='large'/>
+								</CustomIconButton>
 							</Link>
 						</Grid>
 
 						<Grid item>
-							<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank' rel="noreferrer">
-								<Button style={{backgroundColor: "rgba(51, 155, 158, 0.5)", color: "#000000", borderRadius: 50}}
-								aria-label='github' size='large'>
-									<FeedIcon/>
-									<Typography sx={{fontSize: 16, p: 1}}>
-										Download my resume
-									</Typography>
-								</Button>
-							</a>
+							<Link href="mailto:gabyshamblin@gmail.com" 
+							target="_blank" rel="noopener">
+								<CustomIconButton aria-label='Email'>
+									<EmailIcon fontSize='large'/>
+								</CustomIconButton>
+							</Link>
 						</Grid>
 					</Grid>
 
-					<Box component='form' sx={{display: flexbox, justifyContent: 'center'}}>
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowBox1(true);
+					}} >
+					<Grow in={showBox1}>
+					<CustomBox component='form' sx={{display: flexbox, justifyContent: 'center', m:'auto', p:1}}>
 						<Stack spacing={2} sx={{pb: 2, maxWidth: '500px', m: 'auto'}}>
 							<TextField 
 								required
@@ -119,7 +129,8 @@ function Contact() {
 								label="Name"
 								value={toSend.name}
 								variant="standard"
-								onChange={handleChange}/>
+								onChange={handleChange}
+								sx={{input: {color: 'white'}}}/>
 							<TextField 
 								required
 								id="email" 
@@ -141,10 +152,7 @@ function Contact() {
 								<div class="g-recaptcha" data-sitekey="your_site_key"></div>
 						</Stack>
 
-						<Button style={{backgroundColor: "rgba(51, 155, 158, 0.3)", 
-							color: "#000000", 
-							borderRadius: 50, 
-							width: 250}}
+						<CustomButton 
 							aria-label='github' 
 							size='large'
 							type='submit'
@@ -154,8 +162,10 @@ function Contact() {
 							<Typography sx={{fontSize: 16, p: 1}}>
 								Send a message
 							</Typography>
-						</Button>
-					</Box>
+						</CustomButton>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
 
 				</Box>
 			</div>

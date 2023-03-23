@@ -26,16 +26,13 @@ function Home() {
 		<React.Fragment>
 			<div class="App">
 				<Box sx={{
-						display: flexbox,
-						justifyContent: 'center',
-						px: 2, py: 1}}>
+					display: flexbox,
+					justifyContent: 'center',
+					px: 2, py: 1}}
+				>
 
-					<Typography sx={{fontSize:40, letterSpacing:5, p:5, pb:1}}>
-							Gabriela Shamblin
-					</Typography>
-
-					<Typography sx={{fontSize: 24, letterSpacing: 2, p: 5, pt: 0}}>
-							Student and Programmer
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Student and Programmer */
 					</Typography>
 
 					<Grid container spacing={{xs: 6, sm: 5, md: 2}} justifyContent='center' alignItems='center'>

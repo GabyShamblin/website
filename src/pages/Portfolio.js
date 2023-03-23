@@ -33,8 +33,9 @@ const CustomButton = styled(Button)(() => ({
 	borderRadius: 50,
 	fontSize: 18,
 	'&:hover': {
-		backgroundColor: "rgba(194, 194, 194, 0.5)", 
+		backgroundColor: "rgba(194, 194, 194)", 
 		borderColor: "#000000", 
+		color: 'black',
 	}
 }));
 
@@ -58,8 +59,8 @@ function Portfolio() {
 					justifyContent: 'center',
 					px: 2, py: 1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5}}>
-						Portfolio
+					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Portfolio */
 					</Typography>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
