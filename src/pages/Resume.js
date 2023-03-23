@@ -24,7 +24,7 @@ import typescript from './public/logos/typescript.png';
 import unity from './public/logos/unity.png';
 
 const CustomBox = styled(Box)(() => ({
-  maxWidth: 1200,
+  maxWidth: 1100,
 	backgroundColor: "#73bed9", 
 	color: 'black',
 	m: 'auto', mb: 1, p: 1,
@@ -68,9 +68,16 @@ function Resume() {
 					justifyContent: 'center',
 					p:1, fontSize: 20}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-						/* Resume */
-					</Typography>
+					<Hidden smDown>
+						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Resume */
+						</Typography>
+					</Hidden>
+					<Hidden smUp>
+						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Resume */
+						</Typography>
+					</Hidden>
 
 					<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank' rel="noreferrer">
 						<CustomButton aria-label='github' size='large'>
@@ -104,28 +111,35 @@ function Resume() {
 							University of Central Florida, Orlando, FL
 						</Typography>
 
-						<Box sx={{ml: 5, mb: 3, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								Bachelor of Science, Computer Science
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								Expected Graduation: December 2023
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								GPA: 3.65/4.00
-							</Typography>
-						</Box>
-						<Box sx={{ml: 5, textAlign: 'left'}}>
-							<Typography sx={{fontSize: 20}}>
-								Master of Science, Computer Science
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								Expected Start: January 2024
-							</Typography>
-							<Typography sx={{fontSize: 20}}>
-								Expected Graduation: December 2024
-							</Typography>
-						</Box>
+						<Grid container spacing={1} sx={{textAlign: 'left', fontSize: 20}}>
+							<Grid item sm={12} md={6}>
+								<List dense>
+									<ListItem>
+										Bachelor of Science, Computer Science
+									</ListItem>
+									<ListItem>
+										Expected Graduation: December 2023
+									</ListItem>
+									<ListItem>
+										GPA: 3.65/4.00
+									</ListItem>
+								</List>
+							</Grid>
+
+							<Grid item>
+								<List dense>
+									<ListItem>
+										Master of Science, Computer Science
+									</ListItem>
+									<ListItem>
+										Expected Start: January 2024
+									</ListItem>
+									<ListItem>
+										Expected Graduation: December 2024
+									</ListItem>
+								</List>
+							</Grid>
+						</Grid>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
@@ -142,7 +156,7 @@ function Resume() {
 						</Typography>
 
 						<Grid container spacing={1} sx={{textAlign: 'left', fontSize: 20}}>
-							<Grid item xs={6}>
+							<Grid item xs={12} sm={6}>
 								<List sx={{fontSize: 20}} >
 									<ListItem>
 										Computer Science I
@@ -198,7 +212,7 @@ function Resume() {
 
 						<Box sx={{textAlign: 'left'}}>
 							<Grid container>
-								<Grid item xs={6}>
+								<Grid item xs={12} sm={6}>
 									<List sx={{fontSize: 20}} >
 										<ListItem>
 											Florida Bright Futures Academic Scholarship
@@ -251,7 +265,7 @@ function Resume() {
 							showBox={showBox4}
 						/> */}
 
-						<Grid container spacing={2.5} justifyContent='center'>
+						<Grid container spacing={1.5} justifyContent='center'>
 							<Grid item>
 								<img id='logo' src={angular} alt="Angular programming language logo"/>
 								<Typography>Angular</Typography>
@@ -297,7 +311,7 @@ function Resume() {
 								<Typography>React</Typography>
 							</Grid>
 							<Grid item>
-								<img id='logo' src={typescript} alt="Type script programming language logo"/>
+								<img id='logo' src={typescript} alt="Type script logo"/>
 								<Typography>TypeScript</Typography>
 							</Grid>
 							<Grid item>
@@ -318,7 +332,7 @@ function Resume() {
 					<Grow in={showBox5}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Grid container sx={{textAlign: 'left', fontSize: 20}}>
-							<Grid item xs={6}>
+							<Grid item xs={12} sm={6}>
 								<List>
 									<ListItem>
 										Object-Oriented Programming
@@ -378,18 +392,64 @@ function Resume() {
 					<Grow in={showBox6}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
 						<Typography variant='h5'>
+							Software Engineering Intern
+						</Typography>
+
+						<Hidden smDown>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20}}>
+									JP Morgan & Chase, Tampa, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									Expected Start: June 2023
+								</Typography>
+								{/* <List dense sx={{fontSize: 20, ml: 2}} >
+									<ListItem>
+										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
+									</ListItem>
+								</List> */}
+							</Box>
+						</Hidden>
+
+						<Hidden smUp>
+							<Box sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 20}}>
+									JP Morgan & Chase, Tampa, FL
+								</Typography>
+								<Typography sx={{fontSize: 20}}>
+									Expected Start: June 2023
+								</Typography>
+								{/* <List dense sx={{fontSize: 20}} >
+									<ListItem>
+										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+									</ListItem>
+								</List> */}
+							</Box>
+						</Hidden>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowBox6(true);
+					}} >
+					<Grow in={showBox6}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
+						<Typography variant='h5'>
 							Full Stack Intern
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
 								<Typography sx={{fontSize: 20}}>
 									Epic North LLC, Remote
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
 									June 2022 - Present
 								</Typography>
-								<List dense sx={{fontSize: 20, mx: 2}} >
+								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>
 										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
 									</ListItem>
@@ -428,14 +488,14 @@ function Resume() {
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
 								<Typography sx={{fontSize: 20}}>
 									University of Central Florida, Orlando, FL
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
 									July 2021 - May 2022
 								</Typography>
-								<List dense sx={{fontSize: 20, mx: 2}}>
+								<List dense sx={{fontSize: 20, ml: 2}}>
 									<ListItem>
 										Assist in teaching introductory programming topics in Python to a class of about 230 students.
 									</ListItem>
@@ -486,14 +546,14 @@ function Resume() {
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
 								<Typography sx={{fontSize: 20}}>
 									UCF Computer Science Summer Institute, Orlando, FL
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
 									June 2021
 								</Typography>
-								<List dense sx={{fontSize: 20, mx: 2}} >
+								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>
 										Graded assignments and provided appropriate feedback in a timely manner.
 									</ListItem>
@@ -550,11 +610,11 @@ function Resume() {
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
 								<Typography sx={{fontSize: 20}}>
 									January 2022 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
+								<Typography sx={{fontSize: 20, ml: 3, mr: 8}}>
 									Currently a volunteer in a research lab here at UCF. I worked on a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
 								</Typography>
 							</Box>
@@ -565,7 +625,7 @@ function Resume() {
 								<Typography sx={{fontSize: 20}}>
 									January 2022 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, mx: 1, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20, ml: 1, textAlign: 'left'}}>
 									Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
 								</Typography>
 							</Box>
@@ -586,11 +646,11 @@ function Resume() {
 						</Typography>
 
 						<Hidden smDown>
-							<Box sx={{ml: 5, textAlign: 'left'}}>
+							<Box sx={{mx: 5, textAlign: 'left'}}>
 								<Typography sx={{fontSize: 20}}>
 									August 2020 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, mx: 3, mr: 8}}>
+								<Typography sx={{fontSize: 20, ml: 3, mr: 8}}>
 									Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
 								</Typography>
 							</Box>
@@ -601,7 +661,7 @@ function Resume() {
 								<Typography sx={{fontSize: 20}}>
 									August 2020 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, mx: 1, textAlign: 'left'}}>
+								<Typography sx={{fontSize: 20, ml: 1, textAlign: 'left'}}>
 									Knight Hacks is a club that focuses on giving students a space to learn and create outside of the classroom. They hold weekly workshops on various programming topics and a yearly hackathon.
 								</Typography>
 							</Box>

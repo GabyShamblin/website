@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Hidden, Typography } from '@mui/material';
 import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import './App.css';
@@ -31,9 +31,16 @@ function Home() {
 					px: 2, py: 1}}
 				>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-						/* Student and Programmer */
-					</Typography>
+					<Hidden smDown>
+						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Student and Programmer */
+						</Typography>
+					</Hidden>
+					<Hidden smUp>
+						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Student and Programmer */
+						</Typography>
+					</Hidden>
 
 					<Grid container spacing={{xs: 6, sm: 5, md: 2}} justifyContent='center' alignItems='center'>
 						<Grid item s={12} md={3}>

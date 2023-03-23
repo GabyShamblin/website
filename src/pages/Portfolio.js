@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
-import { Box, Button, Grid, Grow, Typography, 
+import { Box, Button, Grid, Grow, Hidden, Typography, 
 	Link, List, ListItem } from '@mui/material';
 import { flexbox } from '@mui/system';
 import './App.css';
@@ -59,9 +59,16 @@ function Portfolio() {
 					justifyContent: 'center',
 					px: 2, py: 1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-						/* Portfolio */
-					</Typography>
+					<Hidden smDown>
+						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Portfolio */
+						</Typography>
+					</Hidden>
+					<Hidden smUp>
+						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Portfolio */
+						</Typography>
+					</Hidden>
 
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
 						Solo Projects

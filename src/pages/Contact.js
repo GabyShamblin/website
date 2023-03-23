@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import VizSensor from 'react-visibility-sensor';
 import { styled } from '@mui/material/styles';
-import { Box, Button, IconButton, Grid, Grow, Typography, 
+import { Box, Button, Grid, Grow, IconButton, Hidden, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
 
@@ -81,9 +81,16 @@ function Contact() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-						/* Contact Me! */
-					</Typography>
+					<Hidden smDown>
+						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Contact Me! */
+						</Typography>
+					</Hidden>
+					<Hidden smUp>
+						<Typography sx={{fontSize: 26, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+							/* Contact Me! */
+						</Typography>
+					</Hidden>
 
 					<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
 						<Grid item>

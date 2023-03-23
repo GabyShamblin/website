@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Hidden, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Outlet, Link } from "react-router-dom";
 
@@ -26,11 +26,11 @@ function App() {
 					display: 'flex', 
 					justifyContent: 'center',
 					minHeight: 50,
-					width: '95%',
-					top: 0, bottom: 0}}>
+					minWidth: '95%',
+					x: 0}}>
 
-					<Grid container justifyContent='space-between' direction={{sm:'column-reverse', md:'row'}}>
-						<Grid container item justifyContent='flex-start' sm={12} md={6} sx={{textAlign: 'center'}}>
+					<Grid container justifyContent='space-between' direction={{xs:'column-reverse', sm:'column-reverse', md:'row'}}>
+						<Grid container item justifyContent={{xs:'center', sm:'center', md:'flex-start'}} xs={12} sm={12} md={6} sx={{textAlign: 'center'}}>
 
 							<Grid item sx={{p:0.5, px:1, mr:0.2,
 								backgroundColor: path == '/' ? '#1e1e1e' : '#26262f'}}>
@@ -38,9 +38,16 @@ function App() {
 									onClick={() => setPath('/')} 
 									style={{textDecoration: 'none'}}
 								>
-									<MenuText>
-											<strong>Home</strong>
-									</MenuText>
+									<Hidden smDown>
+										<MenuText>
+												<strong>Home</strong>
+										</MenuText>
+									</Hidden>
+									<Hidden smUp>
+										<MenuText sx={{fontSize: 18, minWidth: 70}}>
+												<strong>Home</strong>
+										</MenuText>
+									</Hidden>
 								</Link>
 							</Grid>
 
@@ -50,9 +57,16 @@ function App() {
 									onClick={() => setPath('/portfolio')} 
 									style={{textDecoration: 'none'}}
 								>
-									<MenuText>
-											<strong>Portfolio</strong>
-									</MenuText>
+									<Hidden smDown>
+										<MenuText>
+												<strong>Portfolio</strong>
+										</MenuText>
+									</Hidden>
+									<Hidden smUp>
+										<MenuText sx={{fontSize: 18, minWidth: 70}}>
+												<strong>Portfolio</strong>
+										</MenuText>
+									</Hidden>
 								</Link>
 							</Grid>
 
@@ -62,9 +76,16 @@ function App() {
 									onClick={() => setPath('/resume')} 
 									style={{textDecoration: 'none'}}
 								>
-									<MenuText>
-											<strong>Resume</strong>
-									</MenuText>
+									<Hidden smDown>
+										<MenuText>
+												<strong>Resume</strong>
+										</MenuText>
+									</Hidden>
+									<Hidden smUp>
+										<MenuText sx={{fontSize: 18, minWidth: 70}}>
+												<strong>Resume</strong>
+										</MenuText>
+									</Hidden>
 								</Link>
 							</Grid>
 
@@ -74,13 +95,20 @@ function App() {
 									onClick={() => setPath('/contact')} 
 									style={{textDecoration: 'none'}}
 								>
-									<MenuText>
-											<strong>Contact</strong>
-									</MenuText>
+									<Hidden smDown>
+										<MenuText>
+												<strong>Contact</strong>
+										</MenuText>
+									</Hidden>
+									<Hidden smUp>
+										<MenuText sx={{fontSize: 18, minWidth: 70}}>
+												<strong>Contact</strong>
+										</MenuText>
+									</Hidden>
 								</Link>
 							</Grid>
 						</Grid>
-						<Grid item>
+						<Grid item sx={{textAlign: 'center'}}>
 							<Typography sx={{fontSize: 30, letterSpacing: 5}}>
 								Gabriela Shamblin
 							</Typography>
