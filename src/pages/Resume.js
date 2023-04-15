@@ -447,7 +447,7 @@ function Resume() {
 									Epic North LLC, Remote
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
-									June 2022 - Present
+									June 2022 - April 2023
 								</Typography>
 								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>

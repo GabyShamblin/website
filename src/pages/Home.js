@@ -42,8 +42,8 @@ function Home() {
 						</Typography>
 					</Hidden>
 
-					<Grid container spacing={{xs: 6, sm: 5, md: 2}} justifyContent='center' alignItems='center'>
-						<Grid item s={12} md={3}>
+					<Grid container spacing={{xs: 6, sm: 5, md: 2}} justifyContent='center' alignItems='center' direction="column">
+						<Grid item>
 							<img 
 								id="me"
 								src={me} 
@@ -52,7 +52,7 @@ function Home() {
 
 						<Grid item>
 							<CustomBox id="project1" sx={{
-								m: 'auto', p: 1}}>
+								m: 'auto', p: 2}}>
 
 								<Typography sx={{fontSize: 25}}>
 									About
@@ -64,10 +64,11 @@ function Home() {
 									</Typography>
 								</Box>
 							</CustomBox>
+						</Grid>
 
-							{/* <CustomBox id="project1" sx={{
-								maxWidth: 1200,
-								m: 'auto', mb: 2, p: 1}}>
+						<Grid item>
+							<CustomBox id="project1" sx={{
+								m: 'auto', p: 2}}>
 
 								<Typography sx={{fontSize: 25}}>
 									What's New
@@ -78,9 +79,9 @@ function Home() {
 										I'm participating in research and volunteering at one of the virtual reality labs here at UCF.
 									</Typography>
 								</Box>
-
-							</CustomBox> */}
+							</CustomBox>
 						</Grid>
+							
 					</Grid>
 				
 				</Box>

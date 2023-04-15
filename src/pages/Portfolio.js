@@ -103,6 +103,9 @@ function Portfolio() {
 										- Unity projects on different topics created for CAP 5115: Virtual Reality Engineering
 									</ListItem>
 									<ListItem>
+										- Topics include virtual environments, traveling, interactions, physics, animations, and user interfaces
+									</ListItem>
+									<ListItem>
 										- Unity, C#
 									</ListItem>
 								</List>
