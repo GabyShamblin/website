@@ -74,6 +74,7 @@ function Contact() {
 	};
 
   return (
+		
 		<React.Fragment>
 			<div className="App">
 				<Box sx={{

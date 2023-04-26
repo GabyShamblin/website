@@ -7,13 +7,14 @@ import { Box, Button, Grid, Grow, Hidden, Typography,
 import { flexbox } from '@mui/system';
 import './App.css';
 
-import pythonGame from './public/pythonMenu.jpg';
 import grayWebsite from './public/grayWebsite.jpg';
-import diceGame from './public/diceGame.jpg';
-import contact from './public/contactManager.jpg';
+import pythonGame from './public/pythonMenu.jpg';
+import car from './public/car.jpg';
 import scheduler from './public/scheduler.jpg';
 import TOTSPresentation from './public/Group 1 TOTS Presentation.pdf';
+import contact from './public/contactManager.jpg';
 import ContactPresentation from './public/Small Project.pdf';
+import diceGame from './public/diceGame.jpg';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1200,
@@ -82,7 +83,7 @@ function Portfolio() {
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Virtual Reality Engineering - January 2023-Present
+							Virtual Reality Engineering - January-April 2023
 						</Typography>
 
 						<Grid container sx={{
@@ -100,13 +101,13 @@ function Portfolio() {
 							<Box item m='auto' >
 								<List sx={{fontSize: 20, maxWidth: 600}} >
 									<ListItem>
-										- Unity projects on different topics created for CAP 5115: Virtual Reality Engineering
+										Unity projects on different topics created for CAP 5115: Virtual Reality Engineering
 									</ListItem>
 									<ListItem>
-										- Topics include virtual environments, traveling, interactions, physics, animations, and user interfaces
+										Topics include virtual environments, traveling, interactions, physics, animations, and user interfaces
 									</ListItem>
 									<ListItem>
-										- Unity, C#
+										Unity, C#
 									</ListItem>
 								</List>
 							</Box>
@@ -148,10 +149,10 @@ function Portfolio() {
 							<Box item m='auto' >
 								<List sx={{fontSize: 20, maxWidth: 600}} >
 									<ListItem>
-										- Creation and maintenance of website for bestselling author
+										Creation and maintenance of website for bestselling author
 									</ListItem>
 									<ListItem>
-										- HTML, CSS
+										HTML, CSS
 									</ListItem>
 								</List>
 							</Box>
@@ -173,7 +174,6 @@ function Portfolio() {
 							setShowProject3(true);
 					}} >
 					<Grow in={showProject3}>
-					
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
 							Python Jeopardy Game - June 2021
@@ -194,19 +194,19 @@ function Portfolio() {
 							<Box item m='auto'>
 								<List sx={{fontSize: 20, maxWidth: 600}}>
 									<ListItem>
-										- Includes file to change questions
+										Includes file to change questions
 									</ListItem>
 									<ListItem>
-										- Incorrect answer options are randomized
+										Incorrect answer options are randomized
 									</ListItem>
 									<ListItem>
-										- Keeps track of answered questions and tallys score
+										Keeps track of answered questions and tallys score
 									</ListItem>
 									<ListItem>
-										- Contains multiple game screens for start menu, game menu, questions, and end menu 
+										Contains multiple game screens for start menu, game menu, questions, and end menu 
 									</ListItem>
 									<ListItem>
-										- Python, Pygame
+										Python, Pygame
 									</ListItem>
 								</List>
 							</Box>
@@ -223,6 +223,8 @@ function Portfolio() {
 					</VizSensor>
 				</Box>
 
+				{/* Group Projects */}
+
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
@@ -231,6 +233,56 @@ function Portfolio() {
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Group Projects
 					</Typography>
+
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowProject4(true);
+					}} >
+					<Grow in={showProject4}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							SenseRator (February 2023 - Present)
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='400' m='auto'>
+								<img src={car} alt="A website with a black background. In the top left corner there is a 'reset nodes' button, in the middle text saying 'Schedule Builder', and in the top right corner a 'logout' button. There is a large white box below with a graph of nodes that contain class names. A smaller white box is on the right with elective boxes 1-6, a 'Math/Science' number box, 'Season' and 'Year' boxes, and a yellow submit button."></img>
+							</Box>
+
+							<Box item m='auto'>
+								<List sx={{fontSize: 20, maxWidth: 600}} >
+									<ListItem>
+										A group project of 5 people for Senior Design
+									</ListItem>
+									<ListItem>
+										Uses a lidar and a camera to capture the environment
+									</ListItem>
+									<ListItem>
+										Performs object detection on combined data and displays output to user
+									</ListItem>
+									<ListItem>
+										Python, CARLA, Open3D
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						{/* <a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noreferrer">
+							<CustomButton variant="outlined">
+							View presentation
+							</CustomButton>
+						</a> */}
+					</CustomBox>
+					</Grow>
+					</VizSensor>
 
 					<VizSensor
 						partialVisibility
@@ -258,16 +310,16 @@ function Portfolio() {
 							<Box item m='auto'>
 								<List sx={{fontSize: 20, maxWidth: 600}} >
 									<ListItem>
-										- A group project of 7 people for COP4331
+										A group project of 7 people for COP4331
 									</ListItem>
 									<ListItem>
-										- Allows users to create a college career schedule for the UCF Computer Science undergraduate program
+										Allows users to create a college career schedule for the UCF Computer Science undergraduate program
 									</ListItem>
 									<ListItem>
-										- Uses an algorithm based on the importance of classes to create the schedule
+										Uses an algorithm based on the importance of classes to create the schedule
 									</ListItem>
 									<ListItem>
-										- React, Material UI, JavaScript, ExpressJS, Mongoose, MongoDB
+										React, Material UI, JavaScript, ExpressJS, Mongoose, MongoDB
 									</ListItem>
 								</List>
 							</Box>
@@ -314,16 +366,16 @@ function Portfolio() {
 							<Box item m='auto'>
 								<List sx={{fontSize: 20, maxWidth: 600}} >
 									<ListItem>
-										- A group project of 4 people for COP4331
+										A group project of 4 people for COP4331
 									</ListItem>
 									<ListItem>
-										- Users can login or register an account
+										Users can login or register an account
 									</ListItem>
 									<ListItem>
-										- Allows logged in user to create, search, update, and delete contacts
+										Allows logged in user to create, search, update, and delete contacts
 									</ListItem>
 									<ListItem>
-										- HTML, CSS, Bootstrap, PHP, SQL
+										HTML, CSS, Bootstrap, PHP, SQL
 									</ListItem>
 								</List>
 							</Box>
@@ -364,19 +416,19 @@ function Portfolio() {
 							<Box item m='auto'>
 								<List sx={{fontSize: 20, maxWidth: 600}} >
 									<ListItem>
-										- A group project of 4 people created for KnightHacks 2021
+										A group project of 4 people created for KnightHacks 2021
 									</ListItem>
 									<ListItem>
-										- I mostly worked in JavaScript on the base game rules
+										I mostly worked in JavaScript on the base game rules
 									</ListItem>
 									<ListItem>
-										- Includes a game log to can keep track of players guesses
+										Includes a game log to can keep track of players guesses
 									</ListItem>
 									<ListItem>
-										- Keeps track of answered questions and tallys score 
+										Keeps track of answered questions and tallys score 
 									</ListItem>
 									<ListItem>
-										- HTML, CSS, JavaScript 
+										HTML, CSS, JavaScript 
 									</ListItem>
 								</List>
 							</Box>
