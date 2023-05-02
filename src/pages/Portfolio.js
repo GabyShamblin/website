@@ -83,7 +83,7 @@ function Portfolio() {
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Virtual Reality Engineering - January-April 2023
+							Virtual Reality Engineering (January - April 2023)
 						</Typography>
 
 						<Grid container sx={{
@@ -131,7 +131,7 @@ function Portfolio() {
 					<Grow in={showProject2}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							emilygrayauthor.com - December 2021-Present
+							emilygrayauthor.com (December 2021 - Present)
 						</Typography>
 
 						<Grid container sx={{
@@ -176,7 +176,7 @@ function Portfolio() {
 					<Grow in={showProject3}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Python Jeopardy Game - June 2021
+							Python Jeopardy Game (June 2021)
 						</Typography>
 
 						<Grid container sx={{
@@ -254,7 +254,7 @@ function Portfolio() {
 							p: 1}}>
 
 							<Box item width='400' m='auto'>
-								<img src={car} alt="A website with a black background. In the top left corner there is a 'reset nodes' button, in the middle text saying 'Schedule Builder', and in the top right corner a 'logout' button. There is a large white box below with a graph of nodes that contain class names. A smaller white box is on the right with elective boxes 1-6, a 'Math/Science' number box, 'Season' and 'Year' boxes, and a yellow submit button."></img>
+								<img src={car} alt="A small 3-wheeled, 2-seater car. It is black with yellow paint with the UCF and pegasus logo on the front and the words 'Future City Initiative' on the right side. It has a large glass windshield and a glass roof."></img>
 							</Box>
 
 							<Box item m='auto'>
@@ -292,7 +292,7 @@ function Portfolio() {
 					<Grow in={showProject4}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Top of the Schedule - February-April 2022
+							Top of the Schedule (February - April 2022)
 						</Typography>
 
 						<Grid container sx={{
@@ -348,7 +348,7 @@ function Portfolio() {
 					<Grow in={showProject5}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Knight's Contact Manager - February 2022
+							Knight's Contact Manager (February 2022)
 						</Typography>
 
 						<Grid container sx={{
@@ -398,7 +398,7 @@ function Portfolio() {
 					<Grow in={showProject6}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Liar's Dice Game - November 2021
+							Liar's Dice Game (November 2021)
 						</Typography>
 
 						<Grid container sx={{
