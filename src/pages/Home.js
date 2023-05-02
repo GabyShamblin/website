@@ -66,7 +66,7 @@ function Home() {
 							</CustomBox>
 						</Grid>
 
-						<Grid item>
+						{/* <Grid item>
 							<CustomBox id="project1" sx={{
 								m: 'auto', p: 2}}>
 
@@ -80,7 +80,7 @@ function Home() {
 									</Typography>
 								</Box>
 							</CustomBox>
-						</Grid>
+						</Grid> */}
 							
 					</Grid>
 				
