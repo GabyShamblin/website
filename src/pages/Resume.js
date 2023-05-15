@@ -8,6 +8,7 @@ import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
 
 import FeedIcon from '@mui/icons-material/Feed';
+import resume from './public/Gabriela Shamblin Resume.pdf';
 
 import angular from './public/logos/angular.png';
 import c from './public/logos/c.png';
@@ -79,7 +80,7 @@ function Resume() {
 						</Typography>
 					</Hidden>
 
-					<a href={Resume} download="Gabriela Shamblin Resume.pdf" target='_blank' rel="noreferrer">
+					<a href={resume} download target='_blank' rel="noreferrer">
 						<CustomButton aria-label='github' size='large'>
 							<FeedIcon/>
 							<Typography sx={{fontSize: 16, p: 1}}>
@@ -121,7 +122,7 @@ function Resume() {
 										Expected Graduation: December 2023
 									</ListItem>
 									<ListItem>
-										GPA: 3.65/4.00
+										GPA: 3.63/4.00
 									</ListItem>
 								</List>
 							</Grid>
@@ -634,7 +635,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
-					<VizSensor
+					{/* <VizSensor
 						partialVisibility
 						onChange={() => {
 							setShowBox10(true);
@@ -668,7 +669,7 @@ function Resume() {
 						</Hidden>
 					</CustomBox>
 					</Grow>
-					</VizSensor>
+					</VizSensor> */}
 
 				</Box>
 
