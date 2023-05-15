@@ -7,6 +7,7 @@ import { Box, Button, Grid, Grow, Hidden, Typography,
 import { flexbox } from '@mui/system';
 import './App.css';
 
+import heart from './public/heart.jpg';
 import grayWebsite from './public/grayWebsite.jpg';
 import pythonGame from './public/pythonMenu.jpg';
 import car from './public/car.jpg';
@@ -74,6 +75,60 @@ function Portfolio() {
 					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
 						Solo Projects
 					</Typography>
+
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowProject1(true);
+					}} >
+					<Grow in={showProject1}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Unity Heart Visualization Tool (May 2023)
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700'>
+								<img src={heart} alt="An anatomically correct human heart with white arrows running through to simulate blood flow. The parts are labeled with their appropriate names."></img>
+							</Box>
+
+							<Box item m='auto' >
+								<List sx={{fontSize: 20, maxWidth: 600}}>
+									<ListItem>
+										Heart visualization including labels for different parts of the human heart
+									</ListItem>
+									<ListItem>
+										Allows user to move through labels, start and stop the animation, rotate around subject, and zoom in and out.
+									</ListItem>
+									<ListItem>
+										Made following&nbsp;
+										<Link href="https://www.linkedin.com/learning-login/share?account=57691257&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Funity-medical-visualization-01-preparation-and-design%3Ftrk%3Dshare_ent_url%26shareId%3DJtE468q9TuqwSxeL8axRzQ%253D%253D"
+										target="_blank" rel="noopener">
+											LinkedIn Learning tutorial by Alan Thorn
+										</Link>
+									</ListItem>
+									<ListItem>
+										Unity, C#
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<Link href="/heart">
+							<CustomButton variant="outlined">
+								Game Page
+							</CustomButton>
+						</Link>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
 
 					<VizSensor
 						partialVisibility
