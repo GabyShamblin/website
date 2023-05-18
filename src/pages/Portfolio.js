@@ -7,6 +7,9 @@ import { Box, Button, Grid, Grow, Hidden, Typography,
 import { flexbox } from '@mui/system';
 import './App.css';
 
+import heart from './public/heart.jpg';
+import heartGameWin from './public/HeartWin64.zip';
+import heartGameMac from './public/HeartMac.zip';
 import grayWebsite from './public/grayWebsite.jpg';
 import pythonGame from './public/pythonMenu.jpg';
 import car from './public/car.jpg';
@@ -83,7 +86,78 @@ function Portfolio() {
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Virtual Reality Engineering - January-April 2023
+							Unity Heart Visualization Tool (May 2023)
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700'>
+								<img src={heart} alt="An anatomically correct human heart with white arrows running through to simulate blood flow. The parts are labeled with their appropriate names."></img>
+							</Box>
+
+							<Box item m='auto' >
+								<List sx={{fontSize: 20, maxWidth: 600}}>
+									<ListItem>
+										Heart visualization including labels for different parts of the human heart
+									</ListItem>
+									<ListItem>
+										Allows user to move through labels, start and stop the animation, rotate around subject, and zoom in and out.
+									</ListItem>
+									<ListItem>
+										Made following&nbsp;
+										<Link href="https://www.linkedin.com/learning-login/share?account=57691257&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Funity-medical-visualization-01-preparation-and-design%3Ftrk%3Dshare_ent_url%26shareId%3DJtE468q9TuqwSxeL8axRzQ%253D%253D"
+										target="_blank" rel="noopener">
+											LinkedIn Learning tutorial by Alan Thorn
+										</Link>
+									</ListItem>
+									<ListItem>
+										Unity, C#
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<Grid container spacing={1} justifyContent={'center'}>
+							{/* <Link href="/heart">
+								<CustomButton variant="outlined">
+									Game Page
+								</CustomButton>
+							</Link> */}
+							<Grid item>
+								<a href={heartGameWin} download target='_blank' rel="noreferrer">
+									<CustomButton variant="outlined">
+									Download .exe
+									</CustomButton>
+								</a>
+							</Grid>
+							<Grid item>
+								<a href={heartGameMac} download target='_blank' rel="noreferrer">
+									<CustomButton variant="outlined">
+									Download .app
+									</CustomButton>
+								</a>
+							</Grid>
+						</Grid>
+
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowProject1(true);
+					}} >
+					<Grow in={showProject1}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography sx={{fontSize: 20}}>
+							Virtual Reality Engineering (January - April 2023)
 						</Typography>
 
 						<Grid container sx={{
@@ -131,7 +205,7 @@ function Portfolio() {
 					<Grow in={showProject2}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							emilygrayauthor.com - December 2021-Present
+							emilygrayauthor.com (December 2021 - Present)
 						</Typography>
 
 						<Grid container sx={{
@@ -176,7 +250,7 @@ function Portfolio() {
 					<Grow in={showProject3}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Python Jeopardy Game - June 2021
+							Python Jeopardy Game (June 2021)
 						</Typography>
 
 						<Grid container sx={{
@@ -254,7 +328,7 @@ function Portfolio() {
 							p: 1}}>
 
 							<Box item width='400' m='auto'>
-								<img src={car} alt="A website with a black background. In the top left corner there is a 'reset nodes' button, in the middle text saying 'Schedule Builder', and in the top right corner a 'logout' button. There is a large white box below with a graph of nodes that contain class names. A smaller white box is on the right with elective boxes 1-6, a 'Math/Science' number box, 'Season' and 'Year' boxes, and a yellow submit button."></img>
+								<img src={car} alt="A small 3-wheeled, 2-seater car. It is black with yellow paint with the UCF and pegasus logo on the front and the words 'Future City Initiative' on the right side. It has a large glass windshield and a glass roof."></img>
 							</Box>
 
 							<Box item m='auto'>
@@ -292,7 +366,7 @@ function Portfolio() {
 					<Grow in={showProject4}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Top of the Schedule - February-April 2022
+							Top of the Schedule (February - April 2022)
 						</Typography>
 
 						<Grid container sx={{
@@ -348,7 +422,7 @@ function Portfolio() {
 					<Grow in={showProject5}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Knight's Contact Manager - February 2022
+							Knight's Contact Manager (February 2022)
 						</Typography>
 
 						<Grid container sx={{
@@ -398,7 +472,7 @@ function Portfolio() {
 					<Grow in={showProject6}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
 						<Typography sx={{fontSize: 20}}>
-							Liar's Dice Game - November 2021
+							Liar's Dice Game (November 2021)
 						</Typography>
 
 						<Grid container sx={{
