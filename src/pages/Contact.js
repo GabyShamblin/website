@@ -112,9 +112,9 @@ function Contact() {
 								</CustomIconButton>
 							</Link>
 						</Grid>
-
+						
 						<Grid item>
-							<Link href="https://www.youtube.com/@gabys2482/" 
+							<Link href="https://www.youtube.com/channel/UCzyOgtGvN-X7MkaP_amMYNg" 
 							target="_blank" rel="noopener">
 								<CustomIconButton aria-label='YouTube'>
 									<YouTubeIcon fontSize='large'/>
