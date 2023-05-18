@@ -8,6 +8,8 @@ import { flexbox } from '@mui/system';
 import './App.css';
 
 import heart from './public/heart.jpg';
+import heartGameWin from './public/HeartWin64.zip';
+import heartGameMac from './public/HeartMac.zip';
 import grayWebsite from './public/grayWebsite.jpg';
 import pythonGame from './public/pythonMenu.jpg';
 import car from './public/car.jpg';
@@ -121,11 +123,28 @@ function Portfolio() {
 							</Box>
 						</Grid>
 
-						<Link href="/heart">
-							<CustomButton variant="outlined">
-								Game Page
-							</CustomButton>
-						</Link>
+						<Grid container spacing={1} justifyContent={'center'}>
+							{/* <Link href="/heart">
+								<CustomButton variant="outlined">
+									Game Page
+								</CustomButton>
+							</Link> */}
+							<Grid item>
+								<a href={heartGameWin} download target='_blank' rel="noreferrer">
+									<CustomButton variant="outlined">
+									Download .exe
+									</CustomButton>
+								</a>
+							</Grid>
+							<Grid item>
+								<a href={heartGameMac} download target='_blank' rel="noreferrer">
+									<CustomButton variant="outlined">
+									Download .app
+									</CustomButton>
+								</a>
+							</Grid>
+						</Grid>
+
 					</CustomBox>
 					</Grow>
 					</VizSensor>
