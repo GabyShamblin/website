@@ -132,14 +132,14 @@ function Portfolio() {
 							<Grid item>
 								<a href={heartGameWin} download target='_blank' rel="noreferrer">
 									<CustomButton variant="outlined">
-									Download .exe
+									Windows Build
 									</CustomButton>
 								</a>
 							</Grid>
 							<Grid item>
 								<a href={heartGameMac} download target='_blank' rel="noreferrer">
 									<CustomButton variant="outlined">
-									Download .app
+									Mac Build
 									</CustomButton>
 								</a>
 							</Grid>

@@ -11,6 +11,7 @@ import FeedIcon from '@mui/icons-material/Feed';
 import resume from './public/Gabriela Shamblin Resume.pdf';
 
 import angular from './public/logos/angular.png';
+import aspnet from './public/logos/aspnet.png';
 import c from './public/logos/c.png';
 import cpp from './public/logos/c++.png';
 import csharp from './public/logos/csharp.png';
@@ -272,6 +273,10 @@ function Resume() {
 								<Typography>Angular</Typography>
 							</Grid>
 							<Grid item>
+								<img id='logo' src={aspnet} alt="ASP.NET programming language logo"/>
+								<Typography>ASP.NET</Typography>
+							</Grid>
+							<Grid item>
 								<img id='logo' src={c} alt="C programming language logo"/>
 								<Typography>C</Typography>
 							</Grid>
@@ -452,7 +457,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>
-										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
+										Use Angular, TypeScript, ASP.NET, SQL, and Azure DevOps to repair website code and optimize functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -468,7 +473,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}} >
 									<ListItem>
-										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+										Use Angular, TypeScript, ASP.NET, SQL, and Azure DevOps to repair website code and optimize website functionality
 									</ListItem>
 								</List>
 							</Box>
@@ -498,7 +503,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, ml: 2}}>
 									<ListItem>
-										Assist in teaching introductory programming topics in Python to a class of about 230 students.
+										Assist in teaching introductory programming topics in Python to classes  of about 230 students.
 									</ListItem>
 									<ListItem>
 										Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
@@ -520,7 +525,7 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}}>
 									<ListItem>
-										Assist in teaching introductory programming topics in Python to a class of about 230 students.
+										Assist in teaching introductory programming topics in Python to classes of about 230 students.
 									</ListItem>
 									<ListItem>
 										Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.
