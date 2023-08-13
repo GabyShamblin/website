@@ -130,14 +130,14 @@ function Portfolio() {
 								</CustomButton>
 							</Link> */}
 							<Grid item>
-								<a href={heartGameWin} download target='_blank' rel="noreferrer">
+								<a href={heartGameWin} download target='_blank' rel="noopener noreferrer">
 									<CustomButton variant="outlined">
 									Windows Build
 									</CustomButton>
 								</a>
 							</Grid>
 							<Grid item>
-								<a href={heartGameMac} download target='_blank' rel="noreferrer">
+								<a href={heartGameMac} download target='_blank' rel="noopener noreferrer">
 									<CustomButton variant="outlined">
 									Mac Build
 									</CustomButton>
@@ -405,7 +405,7 @@ function Portfolio() {
 								View site
 							</CustomButton>
 						</Link> */}
-						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noreferrer">
+						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noopener noreferrer">
 							<CustomButton variant="outlined">
 							View presentation
 							</CustomButton>
@@ -455,7 +455,7 @@ function Portfolio() {
 							</Box>
 						</Grid>
 
-						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noreferrer">
+						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noopener noreferrer">
 							<CustomButton variant="outlined">
 								View presentation
 							</CustomButton>

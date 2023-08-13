@@ -72,7 +72,7 @@ const MenuText = styled(Typography)(() => ({
 
 function App() {
 	const [path, setPath] = React.useState('');
-	if (path != window.location.pathname) {
+	if (path !== window.location.pathname) {
 		setPath(window.location.pathname);
 	}
 	
@@ -90,7 +90,7 @@ function App() {
 						<Grid container item justifyContent={{xs:'center', sm:'center', md:'flex-start'}} xs={12} sm={12} md={6} sx={{textAlign: 'center'}}>
 
 							<Grid item sx={{p:0.5, px:1, mr:0.2,
-								backgroundColor: path == '/' ? '#1e1e1e' : '#26262f'}}>
+								backgroundColor: path === '/' ? '#1e1e1e' : '#26262f'}}>
 								<Link to="/" 
 									onClick={() => setPath('/')} 
 									style={{textDecoration: 'none'}}
@@ -109,7 +109,7 @@ function App() {
 							</Grid>
 
 							<Grid item sx={{p:0.5, px:1, mr:0.2,
-								backgroundColor: path == '/portfolio' ? '#1e1e1e' : '#26262f'}}>
+								backgroundColor: path === '/portfolio' ? '#1e1e1e' : '#26262f'}}>
 								<Link to="/portfolio" 
 									onClick={() => setPath('/portfolio')} 
 									style={{textDecoration: 'none'}}
@@ -128,7 +128,7 @@ function App() {
 							</Grid>
 
 							<Grid item sx={{p:0.5, px:1, mr:0.2,
-								backgroundColor: path == '/resume' ? '#1e1e1e' : '#26262f'}}>
+								backgroundColor: path === '/resume' ? '#1e1e1e' : '#26262f'}}>
 								<Link to="/resume" 
 									onClick={() => setPath('/resume')} 
 									style={{textDecoration: 'none'}}
@@ -147,7 +147,7 @@ function App() {
 							</Grid>
 
 							<Grid item sx={{p:0.5, px:1, mr:0.2,
-								backgroundColor: path == '/contact' ? '#1e1e1e' : '#26262f'}}>
+								backgroundColor: path === '/contact' ? '#1e1e1e' : '#26262f'}}>
 								<Link to="/contact" 
 									onClick={() => setPath('/contact')} 
 									style={{textDecoration: 'none'}}

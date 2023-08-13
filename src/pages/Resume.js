@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Button, Grid, Grow, Hidden, Typography, 
 	List, ListItem } from '@mui/material';
-import SkillSlider from './SkillSlider';
+// import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
 
 import FeedIcon from '@mui/icons-material/Feed';
@@ -24,6 +24,8 @@ import python from './public/logos/python.png';
 import react from './public/logos/react.png';
 import typescript from './public/logos/typescript.png';
 import unity from './public/logos/unity.png';
+
+import aws from './public/logos/aws.png';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1100,
@@ -59,7 +61,7 @@ function Resume() {
 	const [showBox7, setShowBox7] = useState(false);
 	const [showBox8, setShowBox8] = useState(false);
 	const [showBox9, setShowBox9] = useState(false);
-	const [showBox10, setShowBox10] = useState(false);
+	// const [showBox10, setShowBox10] = useState(false);
 
   return (
 		<React.Fragment>
@@ -81,7 +83,7 @@ function Resume() {
 						</Typography>
 					</Hidden>
 
-					<a href={resume} download target='_blank' rel="noreferrer">
+					<a href={resume} download target='_blank' rel="noopener noreferrer">
 						<CustomButton aria-label='github' size='large'>
 							<FeedIcon/>
 							<Typography sx={{fontSize: 16, p: 1}}>
@@ -378,6 +380,35 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowBox4(true);
+					}} >
+					<Grow in={showBox4}>
+					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
+
+						{/* <SkillSlider 
+							name="Angular" 
+							color="rgba(221, 0, 49)"
+							textWhite={true}
+							length="40%"
+							showBox={showBox4}
+						/> */}
+
+						<Grid container spacing={1.5} justifyContent='center'>
+							<Grid item>
+								<a href="https://www.credly.com/badges/c7d70e24-8de8-4d28-83c7-c630f578d737/public_url">
+									<img id='cert' src={aws} alt="Amazon Web Services Certified Cloud Practitioner"/>
+									<Typography>AWS Certified Cloud Practitioner</Typography>
+								</a>
+							</Grid>
+						</Grid>
+
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
 				</Box>
 
 				{/* Experience */}
@@ -407,13 +438,19 @@ function Resume() {
 									JP Morgan & Chase, Tampa, FL
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
-									Expected Start: June 2023
+									June 2023 - August 2023
 								</Typography>
-								{/* <List dense sx={{fontSize: 20, ml: 2}} >
+								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>
-										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize functionality
+										Created a user interface for an internal application used by 30,000 users with React.js and Springboot.
 									</ListItem>
-								</List> */}
+									<ListItem>
+										Communicated with shareholders about project specifications.
+									</ListItem>
+									<ListItem>
+										Tested code using Jest and ADA compliance.
+									</ListItem>
+								</List>
 							</Box>
 						</Hidden>
 
@@ -423,13 +460,19 @@ function Resume() {
 									JP Morgan & Chase, Tampa, FL
 								</Typography>
 								<Typography sx={{fontSize: 20}}>
-									Expected Start: June 2023
+									June - August 2023
 								</Typography>
-								{/* <List dense sx={{fontSize: 20}} >
-									<ListItem>
-										Use Angular, TypeScript, C#, SQL, and Azure DevOps to repair website code and optimize website functionality
+								<List dense sx={{fontSize: 20}} >
+								<ListItem>
+										Created a user interface for an internal application used by 30,000 users with React.js and Springboot.
 									</ListItem>
-								</List> */}
+									<ListItem>
+										Communicated with shareholders about project specifications.
+									</ListItem>
+									<ListItem>
+										Tested code using Jest and ADA compliance.
+									</ListItem>
+								</List>
 							</Box>
 						</Hidden>
 					</CustomBox>
