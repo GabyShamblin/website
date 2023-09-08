@@ -84,12 +84,12 @@ function Contact() {
 					p: 1}}>
 
 					<Hidden smDown>
-						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Contact Me! */
 						</Typography>
 					</Hidden>
 					<Hidden smUp>
-						<Typography sx={{fontSize: 26, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 26, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Contact Me! */
 						</Typography>
 					</Hidden>

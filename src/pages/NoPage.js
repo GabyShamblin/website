@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Box, Typography} from '@mui/material';
 import { flexbox } from '@mui/system';
 
+import SearchIcon from '@mui/icons-material/Search';
+
 const NoPage = () => {
   return (
 		<div className="App">
@@ -9,12 +11,10 @@ const NoPage = () => {
 				display: flexbox,
 				justifyContent: 'center',
 				px: 2, py: 1}}>
-				<Typography sx={{fontSize: 30, p: 10, pb: 2}}>
-					404 page not found
+				<Typography variant='h2' sx={{fontSize: 30, p: 10, pb: 2}}>
+					Nothing to see here
 				</Typography>
-				<Typography sx={{fontSize: 30}}>
-					:(
-				</Typography>
+				<SearchIcon sx={{fontSize: 70}}/>
 			</Box>
 		</div>
 	);

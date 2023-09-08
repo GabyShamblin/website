@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Box, Grid, Hidden, Typography } from '@mui/material';
+import { Box, Grid, Hidden, Typography, List, ListItem } from '@mui/material';
 import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import './App.css';
@@ -32,12 +32,12 @@ function Home() {
 				>
 
 					<Hidden smDown>
-						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Student and Programmer */
 						</Typography>
 					</Hidden>
 					<Hidden smUp>
-						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Student and Programmer */
 						</Typography>
 					</Hidden>
@@ -54,15 +54,15 @@ function Home() {
 							<CustomBox id="project1" sx={{
 								m: 'auto', p: 2}}>
 
-								<Typography sx={{fontSize: 25}}>
+								<Typography variant='h3' sx={{fontSize: 20}}>
 									About
 								</Typography>
 
-								<Box>
-									<Typography sx={{fontSize: 20}}>
-										I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and work part-time maintaining websites. I expect to graduate with my Bachelors in Fall 2023 and begin my Masters in Computer Science soon after.
-									</Typography>
-								</Box>
+								<List dense sx={{fontSize: 18}}>
+									<ListItem>
+										I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and with a focus in mixed reality. I am on track to graduate with my Bachelor's in December 2023 and begin my Master's in Computer Science soon after.
+									</ListItem>
+								</List>
 							</CustomBox>
 						</Grid>
 

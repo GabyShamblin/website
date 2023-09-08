@@ -58,26 +58,31 @@ function Portfolio() {
   return (
 		<React.Fragment>
 			<div className="App">
+
+				<Hidden smDown>
+					<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Portfolio */
+					</Typography>
+				</Hidden>
+				<Hidden smUp>
+					<Typography variant='h1' sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						/* Portfolio */
+					</Typography>
+				</Hidden>
+
+
+				{/* Solo Projects */}
+
 				<Box sx={{
 					display: flexbox,
 					justifyContent: 'center',
 					px: 2, py: 1}}>
 
-					<Hidden smDown>
-						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-							/* Portfolio */
-						</Typography>
-					</Hidden>
-					<Hidden smUp>
-						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-							/* Portfolio */
-						</Typography>
-					</Hidden>
-
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
 						Solo Projects
 					</Typography>
 
+					{/* Heart */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -85,7 +90,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Unity Heart Visualization Tool (May 2023)
 						</Typography>
 
@@ -149,6 +154,7 @@ function Portfolio() {
 					</Grow>
 					</VizSensor>
 
+					{/* VR Playlist */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -156,7 +162,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject1}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Virtual Reality Engineering (January - April 2023)
 						</Typography>
 
@@ -190,13 +196,14 @@ function Portfolio() {
 						<Link href="https://youtube.com/playlist?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR"
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
-								View playlist
+								Playlist
 							</CustomButton>
 						</Link>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 
+					{/* emilygrayauthor.com */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -204,7 +211,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject2}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							emilygrayauthor.com (December 2021 - Present)
 						</Typography>
 
@@ -235,13 +242,14 @@ function Portfolio() {
 						<Link href="https://emilygrayauthor.com/"
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
-								View site
+								Website
 							</CustomButton>
 						</Link>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 
+					{/* Jeopardy */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -249,7 +257,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject3}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Python Jeopardy Game (June 2021)
 						</Typography>
 
@@ -289,13 +297,14 @@ function Portfolio() {
 						<Link href="https://github.com/GabyShamblin/Examples/tree/master/Python%20Jeopardy%20Game" 
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
-								View GitHub page
+								Github Page
 							</CustomButton>
 						</Link>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 				</Box>
+
 
 				{/* Group Projects */}
 
@@ -304,10 +313,11 @@ function Portfolio() {
 					justifyContent: 'center',
 					px: 2, py: 1}}>
 
-					<Typography sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Group Projects
 					</Typography>
 
+					{/* SenseRator */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -315,7 +325,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject4}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							SenseRator (February 2023 - Present)
 						</Typography>
 
@@ -358,6 +368,7 @@ function Portfolio() {
 					</Grow>
 					</VizSensor>
 
+					{/* Topo Schedule */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -365,7 +376,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject4}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Top of the Schedule (February - April 2022)
 						</Typography>
 
@@ -407,13 +418,14 @@ function Portfolio() {
 						</Link> */}
 						<a href={TOTSPresentation} download="TOTS Presentation.pdf" target='_blank' rel="noopener noreferrer">
 							<CustomButton variant="outlined">
-							View presentation
+								Presentation
 							</CustomButton>
 						</a>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 
+					{/* Knight's Contact Manager */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -421,7 +433,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject5}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Knight's Contact Manager (February 2022)
 						</Typography>
 
@@ -457,13 +469,14 @@ function Portfolio() {
 
 						<a href={ContactPresentation} download="Contact Presentation.pdf" target='_blank' rel="noopener noreferrer">
 							<CustomButton variant="outlined">
-								View presentation
+								Presentation
 							</CustomButton>
 						</a>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
 
+					{/* Liar's Dice */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -471,7 +484,7 @@ function Portfolio() {
 					}} >
 					<Grow in={showProject6}>
 					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
-						<Typography sx={{fontSize: 20}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Liar's Dice Game (November 2021)
 						</Typography>
 
@@ -511,7 +524,7 @@ function Portfolio() {
 						<Link href="https://devpost.com/software/liar-s-dice-8qen14?ref_content=my-projects-tab&ref_feature=my_projects" 
 						target="_blank" rel="noopener">
 							<CustomButton variant="outlined">
-								View hackathon page
+								Hackathon Page
 							</CustomButton>
 						</Link>
 					</CustomBox>

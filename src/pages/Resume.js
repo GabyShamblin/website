@@ -73,12 +73,12 @@ function Resume() {
 					p:1, fontSize: 20}}>
 
 					<Hidden smDown>
-						<Typography sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Resume */
 						</Typography>
 					</Hidden>
 					<Hidden smUp>
-						<Typography sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 							/* Resume */
 						</Typography>
 					</Hidden>
@@ -99,10 +99,11 @@ function Resume() {
 					justifyContent: 'center',
 					p:1, fontSize: 20}}>
 
-					<Typography variant='h5' sx={{letterSpacing: 5, p: 2, pt: 5}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
 						Education
 					</Typography>
 
+					{/* School */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -111,7 +112,7 @@ function Resume() {
 					<Grow in={showBox1}>
 					<CustomBox id="project1" sx={{m: 'auto', mb: 1, p: 1}}>
 
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							University of Central Florida, Orlando, FL
 						</Typography>
 
@@ -148,6 +149,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Relevant Coursework */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -155,7 +157,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox2}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Relevant Coursework
 						</Typography>
 
@@ -177,6 +179,9 @@ function Resume() {
 									<ListItem>
 										Matrix & Linear Algebra
 									</ListItem>
+									<ListItem>
+										Realistic Realtime Rendering
+									</ListItem>
 								</List>
 							</Grid>
 							<Grid item>
@@ -194,6 +199,9 @@ function Resume() {
 										Virtual Reality Engineering
 									</ListItem>
 									<ListItem>
+										Augmented Reality Engineering
+									</ListItem>
+									<ListItem>
 										Senior Design
 									</ListItem>
 								</List>
@@ -203,6 +211,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Honors */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -210,7 +219,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox3}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Honors
 						</Typography>
 
@@ -249,10 +258,11 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Skills
 					</Typography>
 
+					{/* Languages */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -332,6 +342,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Other */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -380,6 +391,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Certifications */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -417,10 +429,11 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Experience
 					</Typography>
 
+					{/* JPMorgan Chase */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -428,7 +441,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox6}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Software Engineering Intern
 						</Typography>
 
@@ -448,7 +461,7 @@ function Resume() {
 										Communicated with shareholders about project specifications.
 									</ListItem>
 									<ListItem>
-										Tested code using Jest and ADA compliance.
+										Tested code using Jest and ensured ADA compliance.
 									</ListItem>
 								</List>
 							</Box>
@@ -479,6 +492,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Epic North */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -486,7 +500,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox6}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Full Stack Intern
 						</Typography>
 
@@ -500,7 +514,10 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20, ml: 2}} >
 									<ListItem>
-										Use Angular, TypeScript, ASP.NET, SQL, and Azure DevOps to repair website code and optimize functionality
+										Communicated with client to repair website code and optimize website functionality.
+									</ListItem>
+									<ListItem>
+										Utilized Angular, TypeScript, ASP.NET, SQL, and Azure DevOps.
 									</ListItem>
 								</List>
 							</Box>
@@ -516,7 +533,10 @@ function Resume() {
 								</Typography>
 								<List dense sx={{fontSize: 20}} >
 									<ListItem>
-										Use Angular, TypeScript, ASP.NET, SQL, and Azure DevOps to repair website code and optimize website functionality
+										Communicated with client to repair website code and optimize website functionality.
+									</ListItem>
+									<ListItem>
+										Utilized Angular, TypeScript, ASP.NET, SQL, and Azure DevOps.
 									</ListItem>
 								</List>
 							</Box>
@@ -525,6 +545,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* Python TA */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -532,7 +553,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox7}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Teaching Assistant
 						</Typography>
 
@@ -583,6 +604,7 @@ function Resume() {
 					</Grow>
 					</VizSensor>
 
+					{/* CS CI TA */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -590,7 +612,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox8}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Teaching Assistant
 						</Typography>
 
@@ -643,10 +665,11 @@ function Resume() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Typography variant='h5' sx={{letterSpacing: 5, p: 2}}>
+					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
 						Activities
 					</Typography>
 
+					{/* XRT Lab */}
 					<VizSensor
 						partialVisibility
 						onChange={() => {
@@ -654,7 +677,7 @@ function Resume() {
 					}} >
 					<Grow in={showBox9}>
 					<CustomBox sx={{m: 'auto', mb: 1, p: 1}}>
-						<Typography variant='h5'>
+						<Typography variant='h3' sx={{fontSize: 20}}>
 							Extended Reality & Training Lab Volunteer
 						</Typography>
 
@@ -664,7 +687,7 @@ function Resume() {
 									January 2022 - Present
 								</Typography>
 								<Typography sx={{fontSize: 20, ml: 3, mr: 8}}>
-									Currently a volunteer in a research lab here at UCF. I worked on a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
+									I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
 								</Typography>
 							</Box>
 						</Hidden>
@@ -675,7 +698,7 @@ function Resume() {
 									January 2022 - Present
 								</Typography>
 								<Typography sx={{fontSize: 20, ml: 1, textAlign: 'left'}}>
-									Through the EXCEL program, I have the opportunity to participate in research. The project I'm currently working on is a VR grocery store game that will be put on the Steam VR library and will be used to collect data from players.
+									I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
 								</Typography>
 							</Box>
 						</Hidden>
