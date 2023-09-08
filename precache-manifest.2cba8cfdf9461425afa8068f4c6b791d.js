@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "1ea2c122836f3194efa1",
-    "url": "/static/css/main.c4a3ad49.chunk.css"
+    "revision": "7b98cb7bfb8164be1617",
+    "url": "/static/css/main.60b304b7.chunk.css"
   },
   {
-    "revision": "1ea2c122836f3194efa1",
-    "url": "/static/js/main.c6f0231a.chunk.js"
+    "revision": "7b98cb7bfb8164be1617",
+    "url": "/static/js/main.de1f125b.chunk.js"
   },
   {
-    "revision": "789282d2067380eb35fb",
-    "url": "/static/js/runtime~main.7129d32c.js"
+    "revision": "c95b572b209a7a83a5e0",
+    "url": "/static/js/runtime~main.ed764656.js"
   },
   {
-    "revision": "ad2fc3b2cc7e7e6c29ea",
-    "url": "/static/js/2.773cbb93.chunk.js"
+    "revision": "38ecd063bd44a0c834c4",
+    "url": "/static/js/2.b0ffcacd.chunk.js"
   },
   {
-    "revision": "f9e19a711db440979433",
-    "url": "/static/js/3.7a269a20.chunk.js"
+    "revision": "94ce7e7f424a5aeacf96",
+    "url": "/static/js/3.fc9acb99.chunk.js"
   },
   {
     "revision": "40a4d708232924a7e3104718e93faa0d",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/static/media/diceGame.4b98c577.jpg"
   },
   {
-    "revision": "9f272a1f4f5716e237807be2e3f74fc4",
-    "url": "/static/media/Gabriela Shamblin Resume.9f272a1f.pdf"
+    "revision": "cd09ad4bd0c474550d922faef43eaa62",
+    "url": "/static/media/Gabriela Shamblin Resume.cd09ad4b.pdf"
   },
   {
     "revision": "2fb0a23ae38ff99569c176bd96191629",
@@ -128,7 +128,11 @@ self.__precacheManifest = [
     "url": "/static/media/unity.6cc2a5be.png"
   },
   {
-    "revision": "1d94d1de2444b540daff262e25f776aa",
+    "revision": "203bc9337ab2dafb5c2ca3a2c39ebf64",
+    "url": "/static/media/aws.203bc933.png"
+  },
+  {
+    "revision": "cdeb96e74afab25e73ed1e21a2f9664b",
     "url": "/index.html"
   }
 ];
