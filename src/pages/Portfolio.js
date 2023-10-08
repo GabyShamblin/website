@@ -82,6 +82,55 @@ function Portfolio() {
 						Solo Projects
 					</Typography>
 
+					{/* AR Playlist */}
+					<VizSensor
+						partialVisibility
+						onChange={() => {
+							setShowProject1(true);
+					}} >
+					<Grow in={showProject1}>
+					<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+						<Typography variant='h3' sx={{fontSize: 20}}>
+							Augmented Reality Engineering (August 2023 - Present)
+						</Typography>
+
+						<Grid container sx={{
+							display: flexbox, 
+							flexDirection: 'row',
+							alignContent: 'center',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+							p: 1}}>
+
+							<Box item width='700'>
+								<iframe id='video' src="https://www.youtube.com/embed/videoseries?si=1AAebMOP9ndXdGL_&amp;list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</Box>
+
+							<Box item m='auto' >
+								<List sx={{fontSize: 20, maxWidth: 600}} >
+									<ListItem>
+										Unity projects on different topics created for CAP 6110: Augmented Reality Engineering
+									</ListItem>
+									<ListItem>
+										Topics include tracking, visual coherence, situated visualization, interaction, navigation, and collaboration
+									</ListItem>
+									<ListItem>
+										Unity, C#, Vuforia
+									</ListItem>
+								</List>
+							</Box>
+						</Grid>
+
+						<Link href="https://youtube.com/playlist?list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX&si=1AAebMOP9ndXdGL_"
+						target="_blank" rel="noopener">
+							<CustomButton variant="outlined">
+								Playlist
+							</CustomButton>
+						</Link>
+					</CustomBox>
+					</Grow>
+					</VizSensor>
+
 					{/* Heart */}
 					<VizSensor
 						partialVisibility
@@ -187,7 +236,7 @@ function Portfolio() {
 										Topics include virtual environments, traveling, interactions, physics, animations, and user interfaces
 									</ListItem>
 									<ListItem>
-										Unity, C#
+										Unity, C#, SteamVR
 									</ListItem>
 								</List>
 							</Box>
