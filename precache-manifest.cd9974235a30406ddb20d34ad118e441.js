@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "7b98cb7bfb8164be1617",
+    "revision": "8807a481daf0bb73eedc",
     "url": "/static/css/main.60b304b7.chunk.css"
   },
   {
-    "revision": "7b98cb7bfb8164be1617",
-    "url": "/static/js/main.de1f125b.chunk.js"
+    "revision": "8807a481daf0bb73eedc",
+    "url": "/static/js/main.e6d21795.chunk.js"
   },
   {
     "revision": "c95b572b209a7a83a5e0",
     "url": "/static/js/runtime~main.ed764656.js"
   },
   {
-    "revision": "38ecd063bd44a0c834c4",
-    "url": "/static/js/2.b0ffcacd.chunk.js"
+    "revision": "2f2c3145c3015d134e12",
+    "url": "/static/js/2.9fd83700.chunk.js"
   },
   {
     "revision": "94ce7e7f424a5aeacf96",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/static/media/diceGame.4b98c577.jpg"
   },
   {
-    "revision": "cd09ad4bd0c474550d922faef43eaa62",
-    "url": "/static/media/Gabriela Shamblin Resume.cd09ad4b.pdf"
+    "revision": "e20fdac1b06a8da8d98998885af3b1dc",
+    "url": "/static/media/Gabriela Shamblin Resume.e20fdac1.pdf"
   },
   {
     "revision": "2fb0a23ae38ff99569c176bd96191629",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/static/media/aws.203bc933.png"
   },
   {
-    "revision": "cdeb96e74afab25e73ed1e21a2f9664b",
+    "revision": "c7fb377d1d7904531ca0268f42855dcd",
     "url": "/index.html"
   }
 ];
