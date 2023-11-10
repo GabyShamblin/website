@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import VizSensor from 'react-visibility-sensor';
 import { Box, Button, Grid, Grow, Hidden, Typography, 
-	List, ListItem } from '@mui/material';
+	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
 
@@ -36,7 +36,7 @@ const CustomBox = styled(Box)(() => ({
 	borderRadius: 8,
 }));
 
-const CustomButton = styled(Button)(() => ({
+const ResumeButton = styled(Button)(() => ({
 	minWidth: 250,
   backgroundColor: "#a8659d", 
 	color: "#000000", 
@@ -44,6 +44,20 @@ const CustomButton = styled(Button)(() => ({
 	'&:hover': {
 		backgroundColor: "rgba(194, 194, 194)", 
 		borderColor: "#000000", 
+	}
+}));
+
+const CustomButton = styled(Button)(() => ({
+	minWidth: 150,
+	backgroundColor: "#3067a7", 
+	color: 'white',
+	borderColor: "#000000", 
+	borderRadius: 50,
+	fontSize: 18,
+	'&:hover': {
+		backgroundColor: "rgba(194, 194, 194)", 
+		borderColor: "#000000", 
+		color: 'black',
 	}
 }));
 
@@ -84,12 +98,12 @@ function Resume() {
 					</Hidden>
 
 					<a href={resume} download target='_blank' rel="noopener noreferrer">
-						<CustomButton aria-label='github' size='large'>
+						<ResumeButton aria-label='github' size='large'>
 							<FeedIcon/>
 							<Typography sx={{fontSize: 16, p: 1}}>
 								PDF Version
 							</Typography>
-						</CustomButton>
+						</ResumeButton>
 					</a>
 				</Box>
 
@@ -410,10 +424,10 @@ function Resume() {
 
 						<Grid container spacing={1.5} justifyContent='center'>
 							<Grid item>
-								<a href="https://www.credly.com/badges/c7d70e24-8de8-4d28-83c7-c630f578d737/public_url">
+								<Link href="https://www.credly.com/badges/c7d70e24-8de8-4d28-83c7-c630f578d737/public_url" target="_blank" rel="noopener" style={{color:"black", textDecoration:"none"}}>
 									<img id='cert' src={aws} alt="Amazon Web Services Certified Cloud Practitioner"/>
 									<Typography>AWS Certified Cloud Practitioner</Typography>
-								</a>
+								</Link>
 							</Grid>
 						</Grid>
 
@@ -686,9 +700,11 @@ function Resume() {
 								<Typography sx={{fontSize: 20}}>
 									January 2022 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, ml: 3, mr: 8}}>
-									I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
-								</Typography>
+								<List dense sx={{fontSize: 20, ml: 2}} >
+									<ListItem>
+										I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
+									</ListItem>
+								</List>
 							</Box>
 						</Hidden>
 
@@ -697,11 +713,20 @@ function Resume() {
 								<Typography sx={{fontSize: 20}}>
 									January 2022 - Present
 								</Typography>
-								<Typography sx={{fontSize: 20, ml: 1, textAlign: 'left'}}>
-									I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
-								</Typography>
+								<List dense sx={{fontSize: 20}} >
+									<ListItem>
+										I am working on a VR grocery store environment will be used to collect data from players and study their interactions with the virtual space.
+									</ListItem>
+								</List>
 							</Box>
 						</Hidden>
+
+						<Link href="https://xrtlab.github.io/xrtlab-site/"
+						target="_blank" rel="noopener">
+							<CustomButton variant="outlined">
+								Website
+							</CustomButton>
+						</Link>
 					</CustomBox>
 					</Grow>
 					</VizSensor>
