@@ -83,16 +83,20 @@ function Contact() {
 					justifyContent: 'center',
 					p: 1}}>
 
-					<Hidden smDown>
-						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
+					<div className='wrapper'>
+						<div className='typing-contact'>
 							/* Contact Me! */
+						</div>
+					</div>
+
+					{/* <Hidden smDown>
+						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
 						</Typography>
 					</Hidden>
 					<Hidden smUp>
 						<Typography variant='h1' sx={{fontSize: 26, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-							/* Contact Me! */
 						</Typography>
-					</Hidden>
+					</Hidden> */}
 
 					<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
 						<Grid item>
@@ -171,7 +175,7 @@ function Contact() {
 						</Stack>
 
 						<CustomButton 
-							aria-label='github' 
+							aria-label='Send message' 
 							size='large'
 							type='submit'
 							onClick={onSubmit}
