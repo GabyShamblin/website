@@ -6,6 +6,7 @@ import { Box, Button, Grid, Grow, Hidden, Typography,
 	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
+import './typing.css';
 
 import FeedIcon from '@mui/icons-material/Feed';
 import resume from './public/Gabriela Shamblin Resume.pdf';
@@ -26,8 +27,6 @@ import typescript from './public/logos/typescript.png';
 import unity from './public/logos/unity.png';
 
 import aws from './public/logos/aws.png';
-
-import './styles.css';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1100,

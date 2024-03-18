@@ -6,6 +6,7 @@ import { Box, Button, Grid, Grow, Hidden, Typography,
 	Link, List, ListItem } from '@mui/material';
 import { flexbox } from '@mui/system';
 import './App.css';
+import './typing.css';
 
 import heart from './public/heart.jpg';
 import heartGameWin from './public/HeartWin64.zip';

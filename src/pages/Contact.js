@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Button, Grid, Grow, IconButton, Hidden, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
+import './typing.css';
 
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -171,7 +172,7 @@ function Contact() {
 								value={toSend.message}
 								variant="standard"
 								onChange={handleChange}/>
-								<div class="g-recaptcha" data-sitekey="your_site_key"></div>
+								<div className="g-recaptcha" data-sitekey="your_site_key"></div>
 						</Stack>
 
 						<CustomButton 

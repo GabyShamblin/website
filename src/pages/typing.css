@@ -1,0 +1,67 @@
+.wrapper {
+  height: 15vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+
+.typing-home {
+  width: 26ch;
+  animation: typing 2s steps(26), blink .5s step-end 10 alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid;
+  font-family: monospace;
+  font-size: 40px !important;
+	font-weight: 500;
+	color: #1efc0f;
+}
+
+.typing-portfolio {
+  width: 15ch;
+  animation: typing 2s steps(15), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid;
+  font-family: monospace;
+  font-size: 50px !important;
+	font-weight: 500;
+	color: #1efc0f;
+}
+
+.typing-resume {
+  width: 12ch;
+  animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid;
+  font-family: monospace;
+  font-size: 50px !important;
+	font-weight: 500;
+	color: #1efc0f;
+}
+
+.typing-contact {
+  width: 17ch;
+  animation: typing 2s steps(17), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid;
+  font-family: monospace;
+  font-size: 50px !important;
+	font-weight: 500;
+	color: #1efc0f;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
