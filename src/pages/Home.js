@@ -12,6 +12,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import CircleIcon from '@mui/icons-material/Circle';
 
 // Project thumbnails are 3:2 ratio
 import logo from './public/logo_blue.png';
@@ -21,14 +22,26 @@ import ar from './public/ar-thumb.png';
 import car from './public/senserator-thumb.jpg';
 
 const MenuText = styled(Typography)(() => ({
-  minWidth: 100,
-	fontSize: 24,
+  width: 150,
+	fontSize: 20,
 	color: "#a3aab4",
+	textAlign: 'left',
 	transition: '0.2s',
 	'&:hover': {
 		color: "#ffffff",
-	}
-	// border: '1px solid #ffffff',
+		'> div': {
+			backgroundColor: '#ffffff',
+			width: '100%',
+		},
+	},
+	// border: '1px dashed #ffffff',
+}));
+
+const MenuLine = styled('div')(({chars = 0}) => ({
+	height: '2px',
+	width: `${chars}ch`,
+	backgroundColor: '#a3aab4',
+	transition: '0.2s',
 }));
 
 const CustomIconButton = styled(IconButton)(() => ({
@@ -72,6 +85,13 @@ const SkillChip = styled(Chip)(() => ({
 	border: '2px solid #1efc0f',
 }));
 
+const TimelineCircle = styled(CircleIcon)(() => ({
+	position: 'absolute',
+	color: '#025770',
+	top: 0,
+	right: '-31px',
+}));
+
 
 
 function Home() {
@@ -110,8 +130,9 @@ function Home() {
 									alt="A white/hispanic woman in a white button up shirt and suit jacket sitting in front of a dark background"/>
 							</Grid>
 
+							{/* Left align text and add lines with extend animation */}
 							{/* Menu Buttons */}
-							<Grid container item justifyContent='center' direction='column'>
+							<Grid container item justifyContent='center' alignContent='center' direction='column'>
 
 								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
 									<HashLink smooth to="/#about" 
@@ -119,6 +140,7 @@ function Home() {
 									>
 										<MenuText>
 												<strong>About</strong>
+												<MenuLine chars={5}/>
 										</MenuText>
 									</HashLink>
 								</Grid>
@@ -129,6 +151,7 @@ function Home() {
 									>
 										<MenuText>
 												<strong>Experience</strong>
+												<MenuLine chars={10}/>
 										</MenuText>
 									</HashLink>
 								</Grid>
@@ -139,6 +162,7 @@ function Home() {
 									>
 										<MenuText>
 												<strong>Projects</strong>
+												<MenuLine chars={7}/>
 										</MenuText>
 									</HashLink>
 								</Grid>
@@ -146,7 +170,7 @@ function Home() {
 							</Grid>
 
 							{/* Contact Icons */}
-							<Grid container item justifyContent='center' mt={5}>
+							<Grid container item justifyContent='center' mt={10}>
 								{/* Github Icon */}
 								<Grid item>
 									<Link href="https://github.com/GabyShamblin" 
@@ -306,9 +330,12 @@ function Experience () {
 			<CustomBox sx={{m: 'auto'}}>
 				<Grid container>
 					<Grid item xs={2}>
-						<ListDate>
-							April 2024 - Present
-						</ListDate>
+						<div className='rel'>
+							<ListDate>
+								April 2024 - Present
+							</ListDate>
+							<TimelineCircle/>
+						</div>
 					</Grid>
 					<ListGrid item xs pl={2} ml={2} pb={4}>
 						<div>
@@ -336,9 +363,12 @@ function Experience () {
 			<CustomBox sx={{m: 'auto'}}>
 				<Grid container>
 					<Grid item xs={2}>
-						<ListDate>
+						<div className='rel'>
+							<ListDate>
 							June 2023 - August 2023
-						</ListDate>
+							</ListDate>
+							<TimelineCircle/>
+						</div>
 					</Grid>
 					<ListGrid item xs pl={2} ml={2} pb={4}>
 						<div>
@@ -366,9 +396,12 @@ function Experience () {
 			<CustomBox sx={{m: 'auto'}}>
 				<Grid container>
 					<Grid item xs={2}>
-						<ListDate>
-							June 2023 - August 2023
-						</ListDate>
+						<div className='rel'>
+							<ListDate>
+								June 2022 - April 2023
+							</ListDate>
+							<TimelineCircle/>
+						</div>
 					</Grid>
 					<ListGrid item xs pl={2} ml={2} pb={2}>
 						<div>

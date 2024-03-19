@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Hidden, Typography } from '@mui/material';
 import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
 import { Outlet, Link } from "react-router-dom";
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const MenuText = styled(Typography)(() => ({
   minWidth: 100,
@@ -55,6 +57,10 @@ function App() {
 	if (path !== window.location.pathname) {
 		setPath(window.location.pathname);
 	}
+
+	let notHome = /\w(?!#)/.test(path);
+	// if (notHome) console.log("This page is not home or has a #");
+	// else console.log("Yes this is home");
 	
   return (
 		<ThemeProvider theme={theme}>
@@ -62,98 +68,27 @@ function App() {
 				<div className="App-header">
 					<Box alignItems='flex-end' sx={{
 						display: 'flex', 
-						justifyContent: 'center',
+						justifyContent: 'left',
 						minHeight: 50,
 						minWidth: '95%',
 						x: 0}}>
 
-						{/* <Grid container justifyContent='space-between' direction={{xs:'column-reverse', sm:'column-reverse', md:'row'}}>
-							<Grid container item justifyContent={{xs:'center', sm:'center', md:'flex-start'}} xs={12} sm={12} md={6} sx={{textAlign: 'center'}}>
+						{ notHome &&
+							<Link to="/" onClick={() => setPath('/')} style={{textDecoration: 'none'}}>
+								<MenuText>
+									<div className='banner-align'>
+										<ArrowBackIosIcon/> Back
+									</div>
+								</MenuText>
+							</Link>
+						}
 
-								<Grid item sx={{p:0.5, px:1, mr:0.2,
-									backgroundColor: path === '/' ? '#1e1e1e' : '#26262f'}}>
-									<Link to="/" 
-										onClick={() => setPath('/')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Home</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Home</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2,
-									backgroundColor: path === '/portfolio' ? '#1e1e1e' : '#26262f'}}>
-									<Link to="/portfolio" 
-										onClick={() => setPath('/portfolio')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Portfolio</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Portfolio</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2,
-									backgroundColor: path === '/resume' ? '#1e1e1e' : '#26262f'}}>
-									<Link to="/resume" 
-										onClick={() => setPath('/resume')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Resume</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Resume</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2,
-									backgroundColor: path === '/contact' ? '#1e1e1e' : '#26262f'}}>
-									<Link to="/contact" 
-										onClick={() => setPath('/contact')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Contact</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Contact</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid>
-							</Grid>
-
-							<Grid item sx={{textAlign: 'center'}}>
-								{/* <Typography sx={{fontSize: 30, letterSpacing: 5}}>
+							{/* <Grid item sx={{textAlign: 'center'}}>
+								<Typography sx={{fontSize: 30, letterSpacing: 5}}>
 									Gabriela Shamblin
-								</Typography> */}
-								{/* <img src={logo} alt='Gabriela Shamblin'/> */}
-							{/* </Grid> */}
-						{/* </Grid> */}
+								</Typography>
+								<img src={logo} alt='Gabriela Shamblin'/>
+							</Grid> */}
 					</Box>
 
 					<Outlet />

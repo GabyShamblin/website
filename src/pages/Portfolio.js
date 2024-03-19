@@ -70,19 +70,9 @@ function Portfolio() {
 
 				<div className='wrapper'>
 					<div className='typing-portfolio'>
-						/* Portfolio */
+						/* Projects */
 					</div>
 				</div>
-
-				{/* <Hidden smDown>
-					<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-
-					</Typography>
-				</Hidden>
-				<Hidden smUp>
-					<Typography variant='h1' sx={{fontSize: 30, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-					</Typography>
-				</Hidden> */}
 
 				{/* RRR Project */}
 				<VizSensor
