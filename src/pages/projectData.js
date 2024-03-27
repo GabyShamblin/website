@@ -26,10 +26,10 @@ const room = {
 	title: 'VR Escape Room', 
 	dates: 'Jan. 2024 - Present',
 	media: '', 
-	description: ['A group project with 5 people for CAP 6117: Mixed Reality Project.', 'Includes 4 different puzzles for the user to solve.'], 
+	description: ['A group project with 5 people for CAP 6117: Mixed Reality Project.', 'Includes 4 different puzzles for the user to solve.', 'Worked on environment and puzzle integration.'], 
 	skills: ['Unity', 'C#', 'XR Interaction Toolkit', 'Blender'], 
-	linkLables: ['Playlist'],
-	links: ['https://www.youtube.com/playlist?list=PLLAatflC7TYJv_3qfoBEn0L07dqsGpFvv']
+	linkLables: ['Playlist', 'Github'],
+	links: ['https://www.youtube.com/playlist?list=PLLAatflC7TYJv_3qfoBEn0L07dqsGpFvv', 'https://github.com/GabyShamblin/Escape-Room']
 };
 
 const rrr = {
@@ -38,8 +38,8 @@ const rrr = {
 	media: './public/thumbnails/rain-project.png', 
 	description: ['A project created for CAP 5727: Realistic Realtime Rendering.', 'Designed to mimic a real-world thunderstorm using Unreal Engine 5\'s Blueprints, Niagara particle system , and Lumen.'], 
 	skills: ['Unreal Engine 5'], 
-	linkLables: ['Video'],
-	links: ['https://youtu.be/mS35nARSo88?si=TscXleuAKQbuq2yM']
+	linkLables: ['Video', 'Github'],
+	links: ['https://youtu.be/mS35nARSo88?si=TscXleuAKQbuq2yM', 'https://github.com/GabyShamblin/Realtime-Rendering']
 };
 
 const ar = {
@@ -128,6 +128,10 @@ const jeopardy = {
 	media: './public/thumbnails/', 
 	description: ['Includes file to change questions and incorrect answer options are randomized.', 'Keeps track of answered questions and tallys score.', 'Contains multiple game screens for start menu, game menu, questions, and end menu.'], 
 	skills: ['Python', 'PyGame'], 
-	linkLables: ['GitHub'],
+	linkLables: ['Github'],
 	links: ['https://github.com/GabyShamblin/Examples/tree/master/Python%20Jeopardy%20Game']
 };
+
+
+
+export { projects, moon, room, rrr, ar, senserator, heart, vr, topo, contact, emily, dice, jeopardy };

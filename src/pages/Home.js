@@ -62,14 +62,14 @@ const CustomBox = styled(Box)(({link = false}) => ({
 	transition: '0.2s',
 	'&:hover': {
 		color: "#ffffff",
-		backgroundColor: link ? 'rgba(3, 152, 175, 0.1)' : 'rgba(3, 152, 175, 0)'
+		backgroundColor: link ? 'rgba(3, 152, 175, 0.15)' : 'rgba(3, 152, 175, 0)'
 	}
 	// border: '2px dashed red'
 }));
 
 const ListGrid = styled(Grid)(({project = false}) => ({
 	textAlign: 'left', 
-	borderLeft: project ? '5px solid rgba(3, 152, 175, 0)' : '5px solid rgba(3, 152, 175, 0.5)',
+	borderLeft: project ? '5px solid rgba(3, 152, 175, 0)' : '5px solid rgba(2, 232, 232, 0.5)',
 }));
 
 const ListDate = styled('div')(() => ({
@@ -87,7 +87,7 @@ const SkillChip = styled(Chip)(() => ({
 
 const TimelineCircle = styled(CircleIcon)(() => ({
 	position: 'absolute',
-	color: '#025770',
+	color: '#027f8c',
 	top: 0,
 	right: '-31px',
 }));
@@ -113,7 +113,7 @@ function Home() {
 				>
 					<div className='wrapper'>
 						<div>
-							<img src={logo} id='logo'/>
+							<img src={logo} id='logo' alt='Gabriela Shamblin'/>
 						</div>
 						<div className='typing-home'>
 							/* Student & Programmer */
@@ -127,7 +127,7 @@ function Home() {
 								<img 
 									id="me"
 									src={me} 
-									alt="A white/hispanic woman in a white button up shirt and suit jacket sitting in front of a dark background"/>
+									alt="A picture of me :)"/>
 							</Grid>
 
 							{/* Left align text and add lines with extend animation */}
