@@ -17,9 +17,9 @@ import CircleIcon from '@mui/icons-material/Circle';
 // Project thumbnails are 3:2 ratio
 import logo from './public/logo_blue.png';
 import me from './public/picture_cropped.png';
-import rain from './public/rain-project.png';
-import ar from './public/ar-thumb.png';
-import car from './public/senserator-thumb.jpg';
+import rain from './public/thumbnails/rain-project.png';
+import ar from './public/thumbnails/ar-thumb.png';
+import car from './public/thumbnails/senserator-thumb.jpg';
 
 const MenuText = styled(Typography)(() => ({
   width: 150,

@@ -6,7 +6,7 @@ import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import './App.css';
 
-import heart from './public/heart.jpg';
+import heart from './public/thumbnails/heart.jpg';
 
 function Heart() {
 	useEffect(() => {

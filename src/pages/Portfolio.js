@@ -8,16 +8,16 @@ import { flexbox } from '@mui/system';
 import './App.css';
 import './typing.css';
 
-import heart from './public/heart.jpg';
+import heart from './public/thumbnails/heart.jpg';
 import heartGameWin from './public/HeartWin64.zip';
 import heartGameMac from './public/HeartMac.zip';
-import grayWebsite from './public/grayWebsite.jpg';
-import pythonGame from './public/pythonMenu.jpg';
-import scheduler from './public/scheduler.jpg';
+import grayWebsite from './public/thumbnails/grayWebsite.jpg';
+import pythonGame from './public/thumbnails/pythonMenu.jpg';
+import scheduler from './public/thumbnails/scheduler.jpg';
 import TOTSPresentation from './public/Group 1 TOTS Presentation.pdf';
-import contact from './public/contactManager.jpg';
+import contact from './public/thumbnails/contactManager.jpg';
 import ContactPresentation from './public/Small Project.pdf';
-import diceGame from './public/diceGame.jpg';
+import diceGame from './public/thumbnails/diceGame.jpg';
 
 const CustomBox = styled(Box)(() => ({
   maxWidth: 1000,
@@ -640,36 +640,66 @@ function Portfolio() {
 				</Grow>
 				</VizSensor>
 
-				{/* Solo Projects */}
-
-				{/* <Box sx={{
-					display: flexbox,
-					justifyContent: 'center',
-					px: 2, py: 1}}> */}
-
-					{/* <Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2, pt: 5}}>
-						Solo Projects
-					</Typography> */}
-
-				{/* </Box> */}
-
-
-				{/* Group Projects */}
-
-				{/* <Box sx={{
-					display: flexbox,
-					justifyContent: 'center',
-					px: 2, py: 1}}>
-
-					<Typography variant='h2' sx={{fontSize: 24, letterSpacing: 5, p: 2}}>
-						Group Projects
-					</Typography>
-
-				</Box> */}
-
 			</div>
 		</React.Fragment>
   );
+}
+
+function ProjectBox() {
+	return (
+		<CustomBox sx={{m: 'auto', mb: 5, p: 1}}>
+			<Header variant='h3'>
+				Realistic Realtime Rendering (August - December 2023)
+			</Header>
+
+			<Grid container sx={{
+				display: flexbox, 
+				flexDirection: 'row',
+				alignContent: 'center',
+				justifyContent: 'center',
+				flexWrap: 'wrap',
+				textAlign: 'center',
+				p: 1}}>
+
+				<Box item width='700'>
+					<iframe id='video' src="https://www.youtube.com/embed/mS35nARSo88?si=Bo2cC8pXsvb7917V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</Box>
+
+				<Box item m='auto' >
+					<List sx={{fontSize: 20, maxWidth: 800}} >
+						<ListItem>
+							A project created for CAP 5727: Realistic Realtime Rendering
+						</ListItem>
+						<ListItem>
+							Designed to mimic a real-world thunderstorm using Unreal Engine 5's Blueprints, Niagara particle system, and Lumen
+						</ListItem>
+						<ListItem>
+							Unreal Engine 5
+						</ListItem>
+					</List>
+				</Box>
+			</Grid>
+
+			<Grid container spacing={1} justifyContent={'center'}>
+				<Grid item>
+					<Link href="https://youtu.be/mS35nARSo88?si=TscXleuAKQbuq2yM"
+					target="_blank" rel="noopener">
+						<CustomButton variant="outlined">
+							Video
+						</CustomButton>
+					</Link>
+				</Grid>
+				<Grid item>
+					<Link href="https://github.com/GabyShamblin/Realtime-Rendering"
+					target="_blank" rel="noopener">
+						<CustomButton variant="outlined">
+							Github
+						</CustomButton>
+					</Link>
+				</Grid>
+			</Grid>
+		</CustomBox>
+	);
 }
 
 export default Portfolio;
