@@ -5,7 +5,7 @@ import { Box, Button, Chip, Grid,	Link, List, ListItem } from '@mui/material';
 import './App.css';
 import './typing.css';
 
-let projects = require('./projectData.json');
+import projects from './projectData.js';
 
 const CustomBox = styled(Box)(({link = false}) => ({
   maxWidth: 1200, 
@@ -82,8 +82,8 @@ function Portfolio() {
   );
 }
 
-function ProjectBox(project) {
-	project = project.project;
+function ProjectBox(props) {
+	const project = props.project;
 	console.log(project.media);
 
 	if (project.media == "") {
@@ -99,7 +99,7 @@ function ProjectBox(project) {
 					</Grid>	
 					<ListGrid item xs project={true} pl={2} ml={2}>
 						<div>
-							{project.title}
+							{project.title} | {project.dates}
 						</div>
 						<List dense sx={{color: '#bcbcbc'}}>
 							{project.description.map(desc => (

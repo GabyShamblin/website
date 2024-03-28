@@ -222,6 +222,9 @@ function Home() {
 							<Grid item id='projects'>
 								<Projects/>
 							</Grid>
+							<Grid item id='contact'>
+								<Contact/>
+							</Grid>
 						</Grid>
 					</Grid>
 
@@ -520,6 +523,59 @@ function Projects () {
 			<Link href="/portfolio" underline='none'>
 				<div className='link-text'>
 					See all my projects
+				</div>
+			</Link>
+		</React.Fragment>
+	);
+}
+
+function Contact () {
+	return (
+		<React.Fragment>
+			{/* Contact Icons */}
+			<Grid container item justifyContent='center'>
+				{/* Github Icon */}
+				<Grid item>
+					<Link href="https://github.com/GabyShamblin" 
+					target="_blank" rel="noopener">
+						<CustomIconButton aria-label='Github'>
+							<GitHubIcon sx={{fontSize: 30}}/>
+						</CustomIconButton>
+					</Link>
+				</Grid>
+				{/* LinkedIn Icon */}
+				<Grid item>
+					<Link href="https://www.linkedin.com/in/gabriela-shamblin-7416611b7/" 
+					target="_blank" rel="noopener">
+						<CustomIconButton aria-label='LinkedIn'>
+							<LinkedInIcon sx={{fontSize: 30}}/>
+						</CustomIconButton>
+					</Link>
+				</Grid>
+				{/* Youtube Icon */}
+				<Grid item>
+					<Link href="https://www.youtube.com/channel/UCzyOgtGvN-X7MkaP_amMYNg" 
+					target="_blank" rel="noopener">
+						<CustomIconButton aria-label='YouTube'>
+							<YouTubeIcon sx={{fontSize: 30}}/>
+						</CustomIconButton>
+					</Link>
+				</Grid>
+				{/* Email Icon */}
+				<Grid item>
+					<Link href="mailto:gabyshamblin@gmail.com" 
+					target="_blank" rel="noopener">
+						<CustomIconButton aria-label='Email'>
+							<EmailIcon sx={{fontSize: 30}}/>
+						</CustomIconButton>
+					</Link>
+				</Grid>
+
+			</Grid>
+
+			<Link href="/contact" underline='none'>
+				<div className='link-text'>
+					Contact me!
 				</div>
 			</Link>
 		</React.Fragment>

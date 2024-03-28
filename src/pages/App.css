@@ -57,6 +57,10 @@
   #video {
     width: 100% !important;
   }
+
+  #logo {
+    height: 35px !important;
+  }
 }
 
 img {
