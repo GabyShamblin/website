@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
-import VizSensor from 'react-visibility-sensor';
 import { Box, Button, Chip, Grid, Grow, Hidden, Typography, 
 	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
@@ -41,14 +40,14 @@ const MenuLine = styled('div')(({chars = 0}) => ({
 	transition: '0.2s',
 }));
 
-const ResumeButton = styled(Button)(() => ({
-	minWidth: 250,
-  backgroundColor: "#a8659d", 
-	color: "#000000", 
+const CustomButton = styled(Button)(() => ({
+	minWidth: 200,
+	backgroundColor: "rgba(2, 232, 232, 0.2)", 
+	color: '#02e8e8', 
+	border: '2px solid #02e8e8',
 	borderRadius: 50,
 	'&:hover': {
-		backgroundColor: "rgba(194, 194, 194)", 
-		borderColor: "#000000", 
+		backgroundColor: "rgba(2, 232, 232, 0)",
 	}
 }));
 
@@ -116,11 +115,21 @@ function Resume() {
 				</div>
 			</div>
 
-			<a href={resume} download target='_blank' rel="noopener noreferrer">
-				<MenuText>
+				{/* <MenuText>
 					<strong>PDF Version</strong>
 					<MenuLine chars={11}/>
-				</MenuText>
+				</MenuText> */}
+
+			<a href={resume} download target='_blank' rel="noopener noreferrer">
+			<CustomButton 
+				aria-label='Send message' 
+				size='large'
+			>
+				<FeedIcon/>
+				<Typography sx={{fontSize: 16, p: 1}}>
+					PDF Version
+				</Typography>
+			</CustomButton>
 			</a>
 
 			{/* Education */}

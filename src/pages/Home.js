@@ -44,6 +44,30 @@ const MenuLine = styled('div')(({chars = 0}) => ({
 	transition: '0.2s',
 }));
 
+const CenterMenuText = styled(Typography)(() => ({
+  width: 150,
+	margin: 'auto',
+	color: "#a3aab4",
+	textAlign: 'center',
+	transition: '0.2s',
+	'&:hover': {
+		color: "#ffffff",
+		'> div': {
+			backgroundColor: '#ffffff',
+			width: '100%',
+		},
+	},
+	// border: '1px dashed #ffffff',
+}));
+
+const CenterMenuLine = styled('div')(({chars = 0}) => ({
+	height: '2px',
+	margin: 'auto',
+	width: `${chars}ch`,
+	backgroundColor: '#a3aab4',
+	transition: '0.2s',
+}));
+
 const CustomIconButton = styled(IconButton)(() => ({
 	color: "#a3aab4", 
 	borderRadius: 50,
@@ -167,45 +191,15 @@ function Home() {
 									</HashLink>
 								</Grid>
 
-							</Grid>
-
-							{/* Contact Icons */}
-							<Grid container item justifyContent='center' mt={10}>
-								{/* Github Icon */}
-								<Grid item>
-									<Link href="https://github.com/GabyShamblin" 
-									target="_blank" rel="noopener">
-										<CustomIconButton aria-label='Github'>
-											<GitHubIcon sx={{fontSize: 30}}/>
-										</CustomIconButton>
-									</Link>
-								</Grid>
-								{/* LinkedIn Icon */}
-								<Grid item>
-									<Link href="https://www.linkedin.com/in/gabriela-shamblin-7416611b7/" 
-									target="_blank" rel="noopener">
-										<CustomIconButton aria-label='LinkedIn'>
-											<LinkedInIcon sx={{fontSize: 30}}/>
-										</CustomIconButton>
-									</Link>
-								</Grid>
-								{/* Youtube Icon */}
-								<Grid item>
-									<Link href="https://www.youtube.com/channel/UCzyOgtGvN-X7MkaP_amMYNg" 
-									target="_blank" rel="noopener">
-										<CustomIconButton aria-label='YouTube'>
-											<YouTubeIcon sx={{fontSize: 30}}/>
-										</CustomIconButton>
-									</Link>
-								</Grid>
-								{/* Email Icon */}
-								<Grid item>
-									<Link href="mailto:gabyshamblin@gmail.com" 
-									target="_blank" rel="noopener">
-										<CustomIconButton aria-label='Email'>
-											<EmailIcon sx={{fontSize: 30}}/>
-										</CustomIconButton>
-									</Link>
+								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+									<HashLink smooth to="/#contact"  
+										style={{textDecoration: 'none'}}
+									>
+										<MenuText>
+												<strong>Contact</strong>
+												<MenuLine chars={7}/>
+										</MenuText>
+									</HashLink>
 								</Grid>
 
 							</Grid>
@@ -230,81 +224,6 @@ function Home() {
 
 					<div className='spacer'></div>
 
-					<Grid container item justifyContent={{xs:'columnn'}} direction={{xs:'column'}} sx={{textAlign: 'center'}}>
-
-								{/* <Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<Link to="/" 
-										onClick={() => setPath('/')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Home</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Home</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid> */}
-
-								{/* <Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<Link to="/portfolio" 
-										onClick={() => setPath('/portfolio')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Portfolio</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Portfolio</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid> */}
-
-								{/* <Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<Link to="/resume" 
-										onClick={() => setPath('/resume')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Resume</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Resume</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid> */}
-
-								{/* <Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<Link to="/contact" 
-										onClick={() => setPath('/contact')} 
-										style={{textDecoration: 'none'}}
-									>
-										<Hidden smDown>
-											<MenuText>
-													<strong>Contact</strong>
-											</MenuText>
-										</Hidden>
-										<Hidden smUp>
-											<MenuText sx={{fontSize: 18, minWidth: 70}}>
-													<strong>Contact</strong>
-											</MenuText>
-										</Hidden>
-									</Link>
-								</Grid> */}
-							</Grid>
-				
 				</Box>
 			</div>
 		</React.Fragment>
@@ -424,9 +343,10 @@ function Experience () {
 			</CustomBox>
 
 			<Link href="/resume" underline='none'>
-				<div className='link-text'>
+				<CenterMenuText>
 					See my resume
-				</div>
+					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
+				</CenterMenuText>
 			</Link>
 		</React.Fragment>
 	);
@@ -521,9 +441,10 @@ function Projects () {
 			</Link>
 
 			<Link href="/portfolio" underline='none'>
-				<div className='link-text'>
-					See all my projects
-				</div>
+				<CenterMenuText>
+					See my portfolio
+					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
+				</CenterMenuText>
 			</Link>
 		</React.Fragment>
 	);
@@ -574,9 +495,10 @@ function Contact () {
 			</Grid>
 
 			<Link href="/contact" underline='none'>
-				<div className='link-text'>
+				<CenterMenuText>
 					Contact me!
-				</div>
+					<CenterMenuLine chars={10} sx={{margin: 'auto'}}/>
+				</CenterMenuText>
 			</Link>
 		</React.Fragment>
 	);
