@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Heart from "./pages/Heart";
-import SenseRator from "./pages/SenseRator";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
@@ -22,7 +21,6 @@ root.render(
 				<Route path="resume" element={<Resume />} />
 				<Route path="contact" element={<Contact />} />
 				<Route path="heart" element={<Heart />} />
-				<Route path="senserator" element={<SenseRator />} />
 				<Route path="*" element={<NoPage />} />
 			</Route>
 		</Routes>

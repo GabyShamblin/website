@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import VizSensor from 'react-visibility-sensor';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Grid, Grow, IconButton, Hidden, Typography, 
+import { Box, Button, Grid, IconButton, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
+import './typing.css';
 
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -13,35 +13,78 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import emailjs from '@emailjs/browser';
 
-const CustomBox = styled(Box)(() => ({
-  maxWidth: 800,
-	backgroundColor: "#73bed9", 
-	color: 'black',
-	m: 'auto', mb: 1,
-	fontSize: 20,
-	borderRadius: 8,
+const CustomBox = styled(Box)(({link = false}) => ({
+  maxWidth: 1200, 
+	color: 'white',
+	m: 'auto',
+	p: 1,
+	fontSize: '18px',
+	borderRadius: 10,
+	transition: '0.2s',
+	'&:hover': {
+		color: "#ffffff",
+		backgroundColor: link ? 'rgba(3, 152, 175, 0.15)' : 'rgba(3, 152, 175, 0)'
+	}
+	// border: '2px dashed red'
 }));
 
 const CustomButton = styled(Button)(() => ({
-  minWidth: 150,
-	backgroundColor: "#3067a7", 
-	color: 'white',
-	borderColor: "#000000", 
+	minWidth: 100,
+	backgroundColor: "rgba(2, 232, 232, 0.2)", 
+	color: '#02e8e8', 
+	border: '2px solid #02e8e8',
 	borderRadius: 50,
-	fontSize: 18,
 	'&:hover': {
-		backgroundColor: "rgba(194, 194, 194)", 
-		borderColor: "#000000", 
-		color: 'black',
+		backgroundColor: "rgba(2, 232, 232, 0)",
 	}
 }));
 
 const CustomIconButton = styled(IconButton)(() => ({
-	color: "#a3aab4", 
+	color: "#bcbcbc", 
 	borderRadius: 50,
 	'&:hover': {
 		color: "white", 
 	}
+}));
+
+const CustomTextField = styled(TextField)(() => ({
+	input: {
+		color: 'white'
+	},
+	"& .MuiInput-root": {
+		color: "#000",
+		fontFamily: "Arial",
+		fontWeight: "bold",
+		// Bottom border
+		"&:before": {
+			borderColor: "#bcbcbc",
+			borderWidth: "2px",
+		},
+		// Border on focus
+		"&:after": {
+			borderColor: "white",
+			borderWidth: "3px",
+		},
+		":hover:not(.Mui-focused)": {
+			"&:before": {
+				borderColor: "#fff",
+				borderWidth: "2px",
+			},
+		},
+	},
+	// Label
+	"& .MuiInputLabel-standard": {
+		color: "#bcbcbc",
+		fontWeight: "bold",
+		"&.Mui-focused": {
+			color: "white",
+		},
+		":hover:not(.Mui-focused)": {
+			"&:before": {
+				color: "#fff",
+			},
+		},
+	},
 }));
 
 function Contact() {
@@ -49,7 +92,6 @@ function Contact() {
 		document.title = 'Contact';
 	});
 
-	const [showBox1, setShowBox1] = useState(false);
 	const [toSend, setToSend] = useState({
 		name: '',
 		email: '',
@@ -78,114 +120,97 @@ function Contact() {
 		
 		<React.Fragment>
 			<div className="App">
-				<Box sx={{
-					display: flexbox,
-					justifyContent: 'center',
-					p: 1}}>
 
-					<Hidden smDown>
-						<Typography variant='h1' sx={{fontSize: 40, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-							/* Contact Me! */
-						</Typography>
-					</Hidden>
-					<Hidden smUp>
-						<Typography variant='h1' sx={{fontSize: 26, letterSpacing: 5, p: 5, color: '#4a7837'}}>
-							/* Contact Me! */
-						</Typography>
-					</Hidden>
+				<div className='wrapper'>
+					<div className='typing-contact'>
+						/* Contact Me! */
+					</div>
+				</div>
 
-					<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
-						<Grid item>
-							<Link href="https://github.com/GabyShamblin" 
-							target="_blank" rel="noopener">
-								<CustomIconButton aria-label='Github'>
-									<GitHubIcon fontSize='large'/>
-								</CustomIconButton>
-							</Link>
-						</Grid>
-
-						<Grid item>
-							<Link href="https://www.linkedin.com/in/gabriela-shamblin-7416611b7/" 
-							target="_blank" rel="noopener">
-								<CustomIconButton aria-label='LinkedIn'>
-									<LinkedInIcon fontSize='large'/>
-								</CustomIconButton>
-							</Link>
-						</Grid>
-						
-						<Grid item>
-							<Link href="https://www.youtube.com/channel/UCzyOgtGvN-X7MkaP_amMYNg" 
-							target="_blank" rel="noopener">
-								<CustomIconButton aria-label='YouTube'>
-									<YouTubeIcon fontSize='large'/>
-								</CustomIconButton>
-							</Link>
-						</Grid>
-
-						<Grid item>
-							<Link href="mailto:gabyshamblin@gmail.com" 
-							target="_blank" rel="noopener">
-								<CustomIconButton aria-label='Email'>
-									<EmailIcon fontSize='large'/>
-								</CustomIconButton>
-							</Link>
-						</Grid>
+				<Grid container spacing={2} direction="row" justifyContent="center" sx={{pb: 5}}>
+					<Grid item>
+						<Link href="https://github.com/GabyShamblin" 
+						target="_blank" rel="noopener">
+							<CustomIconButton aria-label='Github'>
+								<GitHubIcon fontSize='large'/>
+							</CustomIconButton>
+						</Link>
 					</Grid>
 
-					<VizSensor
-						partialVisibility
-						onChange={() => {
-							setShowBox1(true);
-					}} >
-					<Grow in={showBox1}>
-					<CustomBox component='form' sx={{display: flexbox, justifyContent: 'center', m:'auto', p:1}}>
-						<Stack spacing={2} sx={{pb: 2, maxWidth: '500px', m: 'auto'}}>
-							<TextField 
-								required
-								id="name" 
-								name="name"
-								label="Name"
-								value={toSend.name}
-								variant="standard"
-								onChange={handleChange}
-								sx={{input: {color: 'white'}}}/>
-							<TextField 
-								required
-								id="email" 
-								name="email"
-								label="Email Address"
-								value={toSend.email}
-								variant="standard"
-								onChange={handleChange}/>
-							<TextField 
-								required
-								multiline
-								rows={5}
-								id="message" 
-								name="message"
-								label="Message"
-								value={toSend.message}
-								variant="standard"
-								onChange={handleChange}/>
-								<div class="g-recaptcha" data-sitekey="your_site_key"></div>
-						</Stack>
+					<Grid item>
+						<Link href="https://www.linkedin.com/in/gabriela-shamblin-7416611b7/" 
+						target="_blank" rel="noopener">
+							<CustomIconButton aria-label='LinkedIn'>
+								<LinkedInIcon fontSize='large'/>
+							</CustomIconButton>
+						</Link>
+					</Grid>
+					
+					<Grid item>
+						<Link href="https://www.youtube.com/channel/UCzyOgtGvN-X7MkaP_amMYNg" 
+						target="_blank" rel="noopener">
+							<CustomIconButton aria-label='YouTube'>
+								<YouTubeIcon fontSize='large'/>
+							</CustomIconButton>
+						</Link>
+					</Grid>
 
-						<CustomButton 
-							aria-label='github' 
-							size='large'
-							type='submit'
-							onClick={onSubmit}
-						>
-							<EmailIcon/>
-							<Typography sx={{fontSize: 16, p: 1}}>
-								Send a message
-							</Typography>
-						</CustomButton>
-					</CustomBox>
-					</Grow>
-					</VizSensor>
+					<Grid item>
+						<Link href="mailto:gabyshamblin@gmail.com" 
+						target="_blank" rel="noopener">
+							<CustomIconButton aria-label='Email'>
+								<EmailIcon fontSize='large'/>
+							</CustomIconButton>
+						</Link>
+					</Grid>
+				</Grid>
 
-				</Box>
+				<CustomBox component='form' sx={{display: flexbox, justifyContent: 'center', m:'auto', p:1}}>
+					<Stack spacing={2} sx={{pb: 2, maxWidth: '500px', m: 'auto'}}>
+						<CustomTextField 
+							required
+							id="name" 
+							name="name"
+							label="Name"
+							value={toSend.name}
+							variant="standard"
+							onChange={handleChange}/>
+						<CustomTextField 
+							required
+							id="email" 
+							name="email"
+							label="Email Address"
+							value={toSend.email}
+							variant="standard"
+							onChange={handleChange}/>
+						<CustomTextField 
+							required
+							multiline
+							rows={5}
+							id="message" 
+							name="message"
+							label="Message"
+							value={toSend.message}
+							variant="standard"
+							onChange={handleChange}/>
+							<div className="g-recaptcha" data-sitekey="your_site_key"></div>
+					</Stack>
+
+					<CustomButton 
+						aria-label='Send message' 
+						size='large'
+						type='submit'
+						onClick={onSubmit}
+					>
+						<EmailIcon/>
+						<Typography sx={{fontSize: 16, p: 1}}>
+							Send a message
+						</Typography>
+					</CustomButton>
+				</CustomBox>
+
+				<div className='spacer'></div>
+
 			</div>
 		</React.Fragment>
   );
