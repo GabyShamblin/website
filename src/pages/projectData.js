@@ -1,4 +1,5 @@
 const projects = [
+	// Moon
 	{
 		title: "VR Moon Trip", 
 		dates: "Jan 2024 - Present",
@@ -8,9 +9,11 @@ const projects = [
 		], 
 		skills: ["Unity", "C#", "XR Interaction Toolkit"], 
 		links: [
-			{label: "Video", click: ""}
+			{label: "Coming soon", click: ""}
 		]
-	}, {
+	}, 
+	// Escape room
+	{
 		title: "VR Escape Room", 
 		dates: "Jan 2024 - Present",
 		media: "", 
@@ -24,45 +27,54 @@ const projects = [
 			{label: "Playlist", click: "https://www.youtube.com/playlist?list=PLLAatflC7TYJv_3qfoBEn0L07dqsGpFvv"},
 			{label: "Github", click: "https://github.com/GabyShamblin/Escape-Room"}
 		]
-	}, {
+	}, 
+	// Thunderstorm
+	{
 		title: "Thunderstorm Simulation", 
 		dates: "Aug - Dec 2023",
 		media: "rain-project.png", 
 		description: [
 			"A project created for CAP 5727: Realistic Realtime Rendering.", 
-			"Designed to mimic a real-world thunderstorm using Unreal Engine 5\"s Blueprints, Niagara particle system , and Lumen."
+			"Designed to mimic a real-world thunderstorm using Unreal Engine 5\'s Blueprints, Niagara particle system , and Lumen."
 		], 
 		skills: ["Unreal Engine 5"], 
 		links: [
 			{label: "Video", click: "https://youtu.be/mS35nARSo88?si=TscXleuAKQbuq2yM"},
 			{label: "Github", click: "https://github.com/GabyShamblin/Realtime-Rendering"}
 		]
-	}, {
+	}, 
+	// AR engineering
+	{
 		title: "Augmented Reality Engineering", 
 		dates: "Aug - Dec 2023",
 		media: "ar-thumb.png", 
 		description: [
-			"Unity projects on different topics created for CAP 6110: Augmented Reality Engineering.", 
+			"Six Unity projects on different topics created for CAP 6110: Augmented Reality Engineering.", 
 			"Topics include tracking, visual coherence, situated visualization, interaction, navigation, and collaboration."
 		], 
 		skills: ["Unity", "C#", "Vuforia"], 
 		links: [
 			{label: "Video", click: "https://youtube.com/playlist?list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX&si=1AAebMOP9ndXdGL_"}
 		]
-	}, {
+	}, 
+	// Senserator
+	{
 		title: "SenseRator", 
 		dates: "Feb - Dec 2023",
 		media: "senserator-thumb.jpg", 
 		description: [
-			"A group of 5 people for Senior Design.", 
+			"A group of 5 people for COP 4934/4935: Senior Design.", 
 			"Uses lidar and a camera to capture the environment.", 
-			"Performs object detection and semantic segmentation on camera data and displays output to the user on a custom interface."
+			"Performs object detection and semantic segmentation on camera data and displays output to the user on a custom interface.",
+			"Worked on user interface."
 		], 
 		skills: ["Python", "PySimpleGUI", "Open3D"], 
 		links: [
 			{label: "Video", click: "https://youtu.be/rFd1qQmFYQ0?si=wPxdY7MrYtnJDtDm"}
 		]
-	}, {
+	}, 
+	// Heart
+	{
 		title: "Heart Visualization Tool", 
 		dates: "May 2023",
 		media: "heart.jpg", 
@@ -73,48 +85,59 @@ const projects = [
 		], 
 		skills: ["Unity", "C#"], 
 		links: [
-			{label: "Try it for Windows", click: "./public/HeartWin64.zip"},
-			{label: "Try it for Mac", click: "./public/HeartMac.zip"},
+			{label: "Try it for Windows", file: "./public/HeartWin64.zip"},
+			{label: "Try it for Mac", file: "./public/HeartMac.zip"},
 			{label: "Tutorial", click: "https://www.linkedin.com/learning-login/share?account=57691257&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Funity-medical-visualization-01-preparation-and-design%3Ftrk%3Dshare_ent_url%26shareId%3DH7coBLC%252BRO%252BbCMm3BaxMFA%253D%253D"}
 		]
-	}, {
+	}, 
+	// VR engineering
+	{
 		title: "Virtual Reality Engineering", 
 		dates: "Jan - Apr 2023",
 		media: "vr-thumb.png", 
 		description: [
-			"Unity projects on different topics created for CAP 5115: Virtual Reality Engineering.", 
+			"Six Unity projects on different topics created for CAP 5115: Virtual Reality Engineering.", 
 			"Topics include virtual environments, traveling, interactions, pyhsics, animations, and user interactions."
 		], 
 		skills: ["Unity", "C#", "SteamVR"], 
 		links: [
 			{label: "Playlist", click: "https://youtube.com/playlist?list=PLLAatflC7TYJVc8Mac2dU3t1P8UZq8pqR"}
 		]
-	}, {
+	}, 
+	// Topo schedule
+	{
 		title: "Top of the Schedule", 
 		dates: "Feb - Apr 2022",
 		media: "scheduler.jpg", 
 		description: [
 			"A group prject with 7 people for COP 4311.", 
 			"Allows users to create a college career schedule for the UCF Computer Science undergraduate program.", 
-			"Uses an algorithm based on the importance of classes to create the schedule."
+			"Uses an algorithm based on the importance of classes to create the schedule.",
+			"Worked on database, algorithm, and class flowchart."
 		], 
 		skills: ["React", "MaterialUI", "JavaScript", "ExpressJS", "Mongoose", "MongoDB"], 
 		links: [
-			{label: "Presentation", click: "./public/Group 1 TOTS Presentation.pdf"}
+			{label: "Presentation", file: "./public/Group 1 TOTS Presentation.pdf"}
 		]
-	}, {
+	}, 
+	// Contact manager
+	{
 		title: "Knight's Contact Manager", 
 		dates: "Feb 2022",
 		media: "contactManager.jpg", 
 		description: [
 			"A group project with 4 people for COP 4311.", 
-			"Users can login or register an account.", "Allows logged in user to create, search, update, and delete contacts."
+			"Users can login or register an account.", 
+			"Allows logged in user to create, search, update, and delete contacts.",
+			"Worked on design and frontend."
 		], 
-		skills: ["HTML", "CSS", "Bootstrap", "PHP", "SQL"], 
+		skills: ["HTML", "CSS", "Bootstrap"], 
 		links: [
-			{label: "Presentation", click: "./public/Gabriela Shamblin resume/pdf"}
+			{label: "Presentation", file: "./public/Small Project.pdf"}
 		]
-	}, {
+	}, 
+	// Gray website
+	{
 		title: "emilygrayauthor.com", 
 		dates: "Dec 2021 - Present",
 		media: "grayWebsite.jpg", 
@@ -125,7 +148,9 @@ const projects = [
 		links: [
 			{label: "Website", click: "https://emilygrayauthor.com/"}
 		]
-	}, {
+	}, 
+	// Liar's dice
+	{
 		title: "Liar's Dice Game", 
 		dates: "Nov 2021",
 		media: "diceGame.jpg", 
@@ -138,7 +163,9 @@ const projects = [
 		links: [
 			{label: "Hackathon Page", click: "https://devpost.com/software/liar-s-dice-8qen14?ref_content=my-projects-tab&ref_feature=my_projects"}
 		]
-	}, {
+	}, 
+	// Jeopardy
+	{
 		title: "Python Jeopardy Game", 
 		dates: "Jun 2021",
 		media: "pythonMenu.jpg", 

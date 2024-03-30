@@ -5,6 +5,7 @@
     Green: #1efc0f
     Blue: rgba(2, 232, 232, 0.5)
 */
+/* Project thumbnails are 3:2 ratio */
 
 @media (max-width: 700px) {
   .App {
@@ -60,7 +61,7 @@
   }
 
   #logo {
-    height: 35px !important;
+    height: 40px !important;
   }
 }
 
@@ -87,4 +88,5 @@ img {
 
 #cert {
   height: 140px;
+  width: auto;
 }

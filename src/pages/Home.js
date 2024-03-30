@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { Box, Chip, Grid, Hidden, IconButton, Typography, Link, List, ListItem } from '@mui/material';
-import { flexbox } from '@mui/system';
+import { Box, Chip, Grid, IconButton, Typography, Link, List, ListItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import './App.css';
 import './typing.css';
@@ -14,12 +13,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CircleIcon from '@mui/icons-material/Circle';
 
-// Project thumbnails are 3:2 ratio
+import { experience } from './resumeData.js';
+import projects from './projectData.js';
+
 import logo from './public/logo_blue.png';
 import me from './public/picture_cropped.png';
-import rain from './public/thumbnails/rain-project.png';
-import ar from './public/thumbnails/ar-thumb.png';
-import car from './public/thumbnails/senserator-thumb.jpg';
+
+
 
 const MenuText = styled(Typography)(() => ({
   width: 150,
@@ -87,12 +87,13 @@ const CustomBox = styled(Box)(({link = false}) => ({
 	'&:hover': {
 		color: "#ffffff",
 		backgroundColor: link ? 'rgba(3, 152, 175, 0.15)' : 'rgba(3, 152, 175, 0)'
-	}
+	},
 	// border: '2px dashed red'
 }));
 
 const ListGrid = styled(Grid)(({project = false}) => ({
 	textAlign: 'left', 
+	flexShrink: 1,
 	borderLeft: project ? '5px solid rgba(3, 152, 175, 0)' : '5px solid rgba(2, 232, 232, 0.5)',
 }));
 
@@ -128,219 +129,127 @@ function Home() {
 	}
 
   return (
-		<React.Fragment>
-			<div className="App">
-				<Box sx={{
-					display: flexbox,
-					justifyContent: 'center',
-					px: 2, py: 1}}
-				>
-					<div className='wrapper'>
-						<div>
-							<img src={logo} id='logo' alt='Gabriela Shamblin'/>
-						</div>
-						<div className='typing-home'>
-							/* Student & Programmer */
-						</div>
-					</div>
+		<div className="App">
+			{/* <div className='wrapper'>
+				<div>
+					<img src={logo} id='logo' alt='Gabriela Shamblin'/>
+				</div>
+				<div className='typing-home'>
+					/* Student & Programmer
+				</div>
+			</div> */}
 
-					<Grid container spacing={1}>
-						<Grid container item xs={12} sm={3} spacing={1} justifyContent='flex-start' alignItems='center' direction='column'>
-							{/* Picture */}
-							<Grid item>
-								<img 
-									id="me"
-									src={me} 
-									alt="A picture of me :)"/>
-							</Grid>
+			<div className='wrapper'>
+				<div className='typing-name'>
+					/* Gabriela Shamblin */
+				</div>
+				<div className='subtitle'>
+					Student & Programmer
+				</div>
+			</div>
 
-							{/* Left align text and add lines with extend animation */}
-							{/* Menu Buttons */}
-							<Grid container item justifyContent='center' alignContent='center' direction='column'>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<HashLink smooth to="/#about" 
-										style={{textDecoration: 'none'}}
-									>
-										<MenuText>
-												<strong>About</strong>
-												<MenuLine chars={5}/>
-										</MenuText>
-									</HashLink>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<HashLink smooth to="/#experience" 
-										style={{textDecoration: 'none'}}
-									>
-										<MenuText>
-												<strong>Experience</strong>
-												<MenuLine chars={10}/>
-										</MenuText>
-									</HashLink>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<HashLink smooth to="/#projects"  
-										style={{textDecoration: 'none'}}
-									>
-										<MenuText>
-												<strong>Projects</strong>
-												<MenuLine chars={7}/>
-										</MenuText>
-									</HashLink>
-								</Grid>
-
-								<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-									<HashLink smooth to="/#contact"  
-										style={{textDecoration: 'none'}}
-									>
-										<MenuText>
-												<strong>Contact</strong>
-												<MenuLine chars={7}/>
-										</MenuText>
-									</HashLink>
-								</Grid>
-
-							</Grid>
-						</Grid>
-
-						{/* Content Column */}
-						<Grid container item xs spacing={10} direction='column'>
-							<Grid item id='about'>
-								<About/>
-							</Grid>
-							<Grid item id='experience'>
-								<Experience/>
-							</Grid>
-							<Grid item id='projects'>
-								<Projects/>
-							</Grid>
-							<Grid item id='contact'>
-								<Contact/>
-							</Grid>
-						</Grid>
+			<Grid container spacing={1}>
+				<Grid container item xs={12} sm={3} spacing={1} justifyContent='flex-start' alignItems='center' direction='column'>
+					{/* Picture */}
+					<Grid item>
+						<img id="me" src={me} alt="A picture of me :)"/>
 					</Grid>
 
-					<div className='spacer'></div>
+					{/* Left align text and add lines with extend animation */}
+					{/* Menu Buttons */}
+					<Grid container item justifyContent='center' alignContent='center' direction={{xs:'row', sm:'column'}}>
 
-				</Box>
-			</div>
-		</React.Fragment>
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<HashLink smooth to="/#about" 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>About</strong>
+										<MenuLine chars={5}/>
+								</MenuText>
+							</HashLink>
+						</Grid>
+
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<HashLink smooth to="/#experience" 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Experience</strong>
+										<MenuLine chars={10}/>
+								</MenuText>
+							</HashLink>
+						</Grid>
+
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<HashLink smooth to="/#projects"  
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Projects</strong>
+										<MenuLine chars={7}/>
+								</MenuText>
+							</HashLink>
+						</Grid>
+
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<HashLink smooth to="/#contact"  
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Contact</strong>
+										<MenuLine chars={7}/>
+								</MenuText>
+							</HashLink>
+						</Grid>
+
+					</Grid>
+				</Grid>
+
+				{/* Content Column */}
+				<Grid item xs spacing={10} direction='column'>
+					<section id='about'>
+						<About/>
+					</section>
+					<section id='experience'>
+						<Experience/>
+					</section>
+					<section id='projects'>
+						<Projects/>
+					</section>
+					<section id='contact'>
+						<Contact/>
+					</section>
+				</Grid>
+			</Grid>
+
+			<div className='spacer'></div>
+
+		</div>
   );
 }
 
 function About () {
 	return (
-		<React.Fragment>
-			<CustomBox sx={{m: 'auto'}}>
-
-				<List dense>
-					<ListItem>
-						I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and with a focus in mixed reality. I recently graduated with my Bachelor's in December 2023 and am currently working towards my Master's in Computer Science.
-					</ListItem>
-				</List>
-			</CustomBox>
-		</React.Fragment>
+		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
+			<List dense>
+				<ListItem>
+					I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and with a focus in mixed reality. I recently graduated with my Bachelor's in December 2023 and am currently working towards my Master's in Computer Science.
+				</ListItem>
+			</List>
+		</CustomBox>
 	);
 }
 
 function Experience () {
+	const list = [];
+	for (let i = 0; i < 3; i++) {
+		list.push(<ExperienceBox job={experience[i]}/>);
+	}
+
 	return (
-		<React.Fragment>
-			{/* Job 1 */}
-			<CustomBox sx={{m: 'auto'}}>
-				<Grid container>
-					<Grid item xs={2}>
-						<div className='rel'>
-							<ListDate>
-								April 2024 - Present
-							</ListDate>
-							<TimelineCircle/>
-						</div>
-					</Grid>
-					<ListGrid item xs pl={2} ml={2} pb={4}>
-						<div>
-							Virtual Reality Developer | John Hopkins University
-						</div>
-						<List dense sx={{color: '#bcbcbc'}}>
-							<ListItem>
-								REPLACE
-							</ListItem>
-							<ListItem>
-								REPLACE
-							</ListItem>
-							<ListItem>
-								REPLACE
-							</ListItem>
-							<ListItem>
-								<SkillChip label='Amazing'/><SkillChip label='Wow'/><SkillChip label='Good job'/>
-							</ListItem>
-						</List>
-					</ListGrid>
-				</Grid>
-			</CustomBox>
-
-			{/* Job 2 */}
-			<CustomBox sx={{m: 'auto'}}>
-				<Grid container>
-					<Grid item xs={2}>
-						<div className='rel'>
-							<ListDate>
-							June 2023 - August 2023
-							</ListDate>
-							<TimelineCircle/>
-						</div>
-					</Grid>
-					<ListGrid item xs pl={2} ml={2} pb={4}>
-						<div>
-							Software Engineering Intern | JP Morgan & Chase
-						</div>
-						<List dense sx={{color: '#bcbcbc'}}>
-							<ListItem>
-								Created a user interface for an internal application used by 30,000 users with React.js and Springboot.
-							</ListItem>
-							<ListItem>
-								Communicated with shareholders about project specifications.
-							</ListItem>
-							<ListItem>
-								Tested code using Jest and ensured ADA compliance.
-							</ListItem>
-							<ListItem>
-								<SkillChip label='React.js'/><SkillChip label='Springboot'/><SkillChip label='Jest'/>
-							</ListItem>
-						</List>
-					</ListGrid>
-				</Grid>
-			</CustomBox>
-
-			{/* Job 3 */}
-			<CustomBox sx={{m: 'auto'}}>
-				<Grid container>
-					<Grid item xs={2}>
-						<div className='rel'>
-							<ListDate>
-								June 2022 - April 2023
-							</ListDate>
-							<TimelineCircle/>
-						</div>
-					</Grid>
-					<ListGrid item xs pl={2} ml={2} pb={2}>
-						<div>
-							Full Stack Intern | Epic North LLC
-						</div>
-						<List dense sx={{color: '#bcbcbc'}}>
-							<ListItem>
-								Communicated with client to repair website code and optimize website functionality.
-							</ListItem>
-							<ListItem>
-								<SkillChip label='Angular'/><SkillChip label='TypeScript'/><SkillChip label='ASP.NET'/>
-								<SkillChip label='SQL'/><SkillChip label='Azure DevOps'/>
-							</ListItem>
-						</List>
-					</ListGrid>
-				</Grid>
-			</CustomBox>
+		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
+			{list}
 
 			<Link href="/resume" underline='none'>
 				<CenterMenuText>
@@ -348,97 +257,59 @@ function Experience () {
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
 			</Link>
-		</React.Fragment>
+		</CustomBox>
+	);
+}
+
+function ExperienceBox (props) {
+	const job = props.job;
+
+	return (
+		<CustomBox sx={{m: 'auto'}}>
+			<Grid container>
+				<Grid item xs={2}>
+					<div className='rel'>
+						<ListDate>
+							{job.dates}
+						</ListDate>
+						<TimelineCircle/>
+					</div>
+				</Grid>
+				<ListGrid item xs pl={2} ml={2} pb={4}>
+					<div>
+						{job.title} | {job.company}
+					</div>
+					<List dense sx={{color: '#bcbcbc'}}>
+						{job.description.map(desc => (
+							<ListItem>
+								{desc}
+							</ListItem>
+						))}
+						<ListItem>
+							<Grid container>
+								{job.skills.map(skill => (
+									<Grid item>
+										<SkillChip label={skill}/>
+									</Grid>
+								))}
+							</Grid>
+						</ListItem>
+					</List>
+				</ListGrid>
+			</Grid>
+		</CustomBox>
 	);
 }
 
 function Projects () {
+	const list = [];
+	for (let i = 2; i < 5; i++) {
+		list.push(<ProjectsBox project={projects[i]}/>);
+	}
+
 	return (
-		<React.Fragment>
-			{/* Project 1 */}
-			<Link href='https://youtu.be/mS35nARSo88?si=TscXleuAKQbuq2yM' target="_blank" rel="noopener" underline='none'>
-				<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left'}}>
-					<Grid container>
-						<Grid item xs={2}>
-							<img src={rain} id='thumbnail'/>
-						</Grid>	
-						<ListGrid item xs project={true} pl={2} ml={2}>
-							<div>
-								Thunderstorm Simulation
-							</div>
-							<List dense sx={{color: '#bcbcbc'}}>
-								<ListItem>
-									A project created for CAP 5727: Realistic Realtime Rendering
-								</ListItem>
-								<ListItem>
-									Designed to mimic a real-world thunderstorm using Unreal Engine 5's Blueprints, Niagara particle system, and Lumen
-								</ListItem>
-								<ListItem>
-									<SkillChip label='Unreal Engine 5'/>
-								</ListItem>
-							</List>
-						</ListGrid>	
-					</Grid>
-				</CustomBox>
-			</Link>
-
-			{/* Project 2 */}
-			<Link href="https://youtube.com/playlist?list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX&si=1AAebMOP9ndXdGL_"
-					target="_blank" rel="noopener" underline='none'>
-				<CustomBox link={true} p={2} sx={{m: 'auto'}}>
-					<Grid container>
-						<Grid item xs={2}>
-							<img src={ar} id='thumbnail'/>
-						</Grid>
-						<ListGrid item xs project={true} pl={2} ml={2}>
-							<div>
-								Augmented Reality Engineering
-							</div>
-							<List dense sx={{color: '#bcbcbc'}}>
-								<ListItem>
-									Unity projects on different topics created for CAP 6110: Augmented Reality Engineering
-								</ListItem>
-								<ListItem>
-									Topics include tracking, visual coherence, situated visualization, interaction, navigation, and collaboration
-								</ListItem>
-								<ListItem>
-									<SkillChip label='Unity'/><SkillChip label='C#'/><SkillChip label='Vuforia'/>
-								</ListItem>
-							</List>
-						</ListGrid>
-					</Grid>
-				</CustomBox>
-			</Link>
-
-			{/* Project 3 */}
-			<Link href='https://youtu.be/rFd1qQmFYQ0?si=wPxdY7MrYtnJDtDm' target="_blank" rel="noopener" underline='none'>
-				<CustomBox link={true} p={2} sx={{m: 'auto'}}>
-					<Grid container>
-						<Grid item xs={2}>
-							<img src={car} id='thumbnail'/>
-						</Grid>
-						<ListGrid item xs project={true} pl={2} ml={2}>
-							<div>
-								SenseRator
-							</div>
-							<List dense sx={{color: '#bcbcbc'}}>
-								<ListItem>
-									A group project of 5 people for Senior Design.
-								</ListItem>
-								<ListItem>
-									Uses a lidar and a camera to capture the environment.
-								</ListItem>
-								<ListItem>
-									Performs object detection and semantic segmentation on camera data and displays output to user.
-								</ListItem>
-								<ListItem>
-									<SkillChip label='Python'/><SkillChip label='PySimpleGUI'/><SkillChip label='Open3D'/>
-								</ListItem>
-							</List>
-						</ListGrid>
-					</Grid>
-				</CustomBox>
-			</Link>
+		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
+			{list}
 
 			<Link href="/portfolio" underline='none'>
 				<CenterMenuText>
@@ -446,13 +317,54 @@ function Projects () {
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
 			</Link>
-		</React.Fragment>
+		</CustomBox>
+	);
+}
+
+function ProjectsBox (props) {
+	const project = props.project;
+
+	if (project.media == "") {
+		project.media = "placeholder.png";
+	}
+
+	return (
+		<CustomBox sx={{m: 'auto'}}>
+			<Link href={project.links[0].click} target="_blank" rel="noopener" underline='none'>
+				<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left'}}>
+					<Grid container>
+						<Grid item xs={12} sm={2} justifyContent='center'>
+							<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project picture' class='center'/>
+						</Grid>	
+						<ListGrid item xs project={true} pl={2} ml={2}>
+							<div>
+								{project.title}
+							</div>
+							<List dense sx={{color: '#bcbcbc'}}>
+								{project.description.map(desc => (
+									<ListItem>{desc}</ListItem>
+								))}
+								<ListItem>
+									<Grid container>
+										{project.skills.map(skill => (
+											<Grid item>
+												<SkillChip label={skill}/>
+											</Grid>
+										))}
+									</Grid>
+								</ListItem>
+							</List>
+						</ListGrid>	
+					</Grid>
+				</CustomBox>
+			</Link>
+		</CustomBox>
 	);
 }
 
 function Contact () {
 	return (
-		<React.Fragment>
+		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{/* Contact Icons */}
 			<Grid container item justifyContent='center'>
 				{/* Github Icon */}
@@ -500,8 +412,10 @@ function Contact () {
 					<CenterMenuLine chars={10} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
 			</Link>
-		</React.Fragment>
+		</CustomBox>
 	);
 }
+
+
 
 export default Home;

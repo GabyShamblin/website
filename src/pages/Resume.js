@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Chip, Grid, Grow, Hidden, Typography, 
+import { Box, Button, Chip, Grid, Typography, 
 	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
 import { flexbox } from '@mui/system';
@@ -14,31 +14,6 @@ import FeedIcon from '@mui/icons-material/Feed';
 import resume from './public/Gabriela Shamblin Resume.pdf';
 
 
-
-const MenuText = styled(Typography)(() => ({
-  width: 150,
-	margin: 'auto',
-	fontSize: 20,
-	color: "#a3aab4",
-	textAlign: 'center',
-	transition: '0.2s',
-	'&:hover': {
-		color: "#ffffff",
-		'> div': {
-			backgroundColor: '#ffffff',
-			width: '100%',
-		},
-	},
-	// border: '1px dashed #ffffff',
-}));
-
-const MenuLine = styled('div')(({chars = 0}) => ({
-	height: '2px',
-	width: `${chars}ch`,
-	margin: 'auto',
-	backgroundColor: '#a3aab4',
-	transition: '0.2s',
-}));
 
 const CustomButton = styled(Button)(() => ({
 	minWidth: 200,
@@ -62,7 +37,7 @@ const CustomBox = styled(Box)(({link = false}) => ({
 	'&:hover': {
 		color: "#ffffff",
 		backgroundColor: link ? 'rgba(3, 152, 175, 0.15)' : 'rgba(3, 152, 175, 0)'
-	}
+	},
 	// border: '2px dashed red'
 }));
 
@@ -92,14 +67,14 @@ const TimelineCircle = styled(CircleIcon)(() => ({
 }));
 
 const LogoCircle = styled('div')(() => ({
-	display: 'flex',
+	display: 'inline-flex',
 	justifyContent: 'center',
 	alignItems: 'center',
 	backgroundColor: 'white',
-	height: '75px',
-  width: '75px',
 	borderRadius: 50
 }));
+
+
 
 function Resume() {
 	useEffect(() => {
@@ -165,21 +140,17 @@ function Resume() {
 					Skills
 				</Typography>
 
+				{/* Tech Skills */}
 				<Grid container spacing={1.5} justifyContent='center'>
 					{skills.map(skill => (
 						<Logo skill={skill}/>
 					))}
 				</Grid>
 
+				{/* Certifications */}
 				<CustomBox sx={{display:'flex', m: 'auto', mb: 1, p: 1, justifyContent:'center'}}>
-
 					<Grid container spacing={1.5} justifyContent='center'>
-						<Grid item>
-							<Link href={certs[0].link} target="_blank" rel="noopener" style={{textDecoration:"none"}}>
-								<img id='cert' src={require(`./public/logos/aws.png`)} alt={certs[0].name}/>
-								<Typography>{certs[0].name}</Typography>
-							</Link>
-						</Grid>
+						<Cert cert={certs[0]}/>
 					</Grid>
 
 				</CustomBox>
@@ -217,9 +188,13 @@ function TimelineJob(props) {
 							</ListItem>
 						))}
 						<ListItem>
-							{job.skills.map(skill => (
-								<SkillChip label={skill}/>
-							))}
+							<Grid container>
+								{job.skills.map(skill => (
+									<Grid item>
+										<SkillChip label={skill}/>
+									</Grid>
+								))}
+							</Grid>
 						</ListItem>
 					</List>
 				</ListGrid>
@@ -260,7 +235,7 @@ function TimelineDegree(props) {
 function Logo(props) {
 	const skill = props.skill;
 
-	if (skill.media == "") {
+	if (skill.media === "") {
 		skill.media = "placeholder.png";
 	}
 
@@ -276,5 +251,20 @@ function Logo(props) {
 		</Grid>
 	)
 }
+
+function Cert(props) {
+	const cert = props.cert;
+
+	return (
+		<Grid item sx={{textAlign: 'center'}}>
+			<Link href={cert.link} target="_blank" rel="noopener" style={{textDecoration:"none", color: 'white',}}>
+				<img id='cert' src={require(`./public/logos/aws.png`)} alt={cert.name}/>
+				<Typography>{cert.name}</Typography>
+			</Link>
+		</Grid>
+	);
+}
+
+
 
 export default Resume;

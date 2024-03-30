@@ -1,16 +1,19 @@
 const experience = [
+	// John Hopkins
+	// {
+	// 	title: "Virtual Reality Developer", 
+	// 	company: "John Hopkins University",
+	// 	location: "",
+	// 	dates: "Apr 2024 - Present",
+	// 	description: [
+	// 		"Something",
+	// 		"Placeholder",
+	// 		"Replace"
+	// 	], 
+	// 	skills: ["Amazing", "Wow", "Good job"],
+	// }, 
+	// JP Morgan
 	{
-		title: "Virtual Reality Developer", 
-		company: "John Hopkins University",
-		location: "",
-		dates: "Apr 2024 - Present",
-		description: [
-			"Something",
-			"Placeholder",
-			"Replace"
-		], 
-		skills: ["Amazing", "Wow", "Good job"],
-	}, {
 		title: "Software Engineering Intern", 
 		company: "JP Morgan & Chase",
 		location: "Tampa, FL",
@@ -21,7 +24,9 @@ const experience = [
 			"Tested code using Jest and ensured ADA compliance."
 		], 
 		skills: ["React.js", "Springboot", "Jest"],
-	}, {
+	}, 
+	// Trevor
+	{
 		title: "Full Stack Intern", 
 		company: "Epic North LLC",
 		location: "Remote",
@@ -30,7 +35,9 @@ const experience = [
 			"Communicated with client to repair website code and optimize website functionality."
 		], 
 		skills: ["Angular", "TypeScript", "ASP.NET", "SQL", "Azure DevOps"],
-	}, {
+	}, 
+	// TA
+	{
 		title: "Teaching Assistant", 
 		company: "University of Central Florida",
 		location: "Orlando, FL",
@@ -41,7 +48,9 @@ const experience = [
 			"Hold two labs weekly and office hours to offer students extra support."
 		], 
 		skills: ["Python"],
-	}, {
+	}, 
+	// TA
+	{
 		title: "Teaching Assistant", 
 		company: "UCF Computer Science Summer Institute",
 		location: "Orlando, FL",

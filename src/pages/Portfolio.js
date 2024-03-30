@@ -84,9 +84,8 @@ function Portfolio() {
 
 function ProjectBox(props) {
 	const project = props.project;
-	console.log(project.media);
 
-	if (project.media == "") {
+	if (project.media === "") {
 		project.media = "placeholder.png";
 	}
 
@@ -94,8 +93,8 @@ function ProjectBox(props) {
 		<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left'}}>
 			<Grid container>
 				<Grid item container xs>
-					<Grid item xs={2}>
-						<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project picture'/>
+					<Grid item xs={12} sm={2}>
+						<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project picture' class='center'/>
 					</Grid>	
 					<ListGrid item xs project={true} pl={2} ml={2}>
 						<div>
@@ -106,21 +105,33 @@ function ProjectBox(props) {
 								<ListItem>{desc}</ListItem>
 							))}
 							<ListItem>
-								{project.skills.map(skill => (
-									<SkillChip label={skill}/>
-								))}
+								<Grid container>
+									{project.skills.map(skill => (
+										<Grid item>
+											<SkillChip label={skill}/>
+										</Grid>
+									))}
+								</Grid>
 							</ListItem>
 						</List>
 					</ListGrid>	
 				</Grid>
-				<Grid item container xs={2} alignItems='center'>
+				<Grid item container sm={12} md={2} alignItems='center' justifyContent='center'>
 					{project.links.map(link => (
 						<Grid item sx={{marginLeft: '5px'}}>
+							{link.file ? 
+							<a href={link.file} download target='_blank' rel="noopener noreferrer">
+								<CustomButton>
+									{link.label}
+								</CustomButton>
+							</a>
+							:
 							<Link href={link.click} target="_blank" rel="noopener">
 								<CustomButton>
 									{link.label}
 								</CustomButton>
 							</Link>
+							}
 						</Grid>
 					))}
 				</Grid>
