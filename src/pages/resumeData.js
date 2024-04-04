@@ -3,14 +3,11 @@ const experience = [
 	// {
 	// 	title: "Virtual Reality Developer", 
 	// 	company: "John Hopkins University",
-	// 	location: "",
+	// 	location: "Remote",
 	// 	dates: "Apr 2024 - Present",
 	// 	description: [
-	// 		"Something",
-	// 		"Placeholder",
-	// 		"Replace"
 	// 	], 
-	// 	skills: ["Amazing", "Wow", "Good job"],
+	// 	skills: ["Unity"],
 	// }, 
 	// JP Morgan
 	{

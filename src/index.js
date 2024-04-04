@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import Heart from "./pages/Heart";
-import Resume from "./pages/Resume";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import Home from "./pages/Home.js";
+import Portfolio from "./pages/Portfolio.js";
+import Heart from "./pages/Heart.js";
+import Resume from "./pages/Resume.js";
+import Contact from "./pages/Contact.js";
+import NoPage from "./pages/NoPage.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
