@@ -1,8 +1,8 @@
 const experience = [
-	// John Hopkins
+	// Johns Hopkins
 	// {
 	// 	title: "Virtual Reality Developer", 
-	// 	company: "John Hopkins University",
+	// 	company: "Johns Hopkins University",
 	// 	location: "Remote",
 	// 	dates: "Apr 2024 - Present",
 	// 	description: [

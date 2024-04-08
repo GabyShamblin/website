@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid, Typography, 
 	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
-import { flexbox } from '@mui/system';
 import './typing.css';
 
 import { experience, education, skills, certs } from './resumeData.js';

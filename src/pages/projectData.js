@@ -35,7 +35,7 @@ const projects = [
 		media: "rain-project.png", 
 		description: [
 			"A project created for CAP 5727: Realistic Realtime Rendering.", 
-			"Designed to mimic a real-world thunderstorm using Unreal Engine 5\'s Blueprints, Niagara particle system , and Lumen."
+			"Designed to mimic a real-world thunderstorm using Unreal Engine 5's Blueprints, Niagara particle system , and Lumen."
 		], 
 		skills: ["Unreal Engine 5"], 
 		links: [

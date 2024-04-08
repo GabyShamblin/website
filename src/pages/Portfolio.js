@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid,	Link, List, ListItem } from '@mui/material';
 import './App.css';
@@ -45,14 +45,6 @@ const SkillChip = styled(Chip)(() => ({
 	border: '2px solid #1efc0f',
 }));
 
-const ProjectLink = styled(Link)(() => ({
-	color: '#02e8e8', 
-	transition: '0.2s',
-	'&:hover': {
-		color: "#ffffff"
-	}
-}));
-
 
 
 function Portfolio() {
@@ -94,7 +86,7 @@ function ProjectBox(props) {
 			<Grid container>
 				<Grid item container xs>
 					<Grid item xs={12} sm={2}>
-						<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project picture' class='center'/>
+						<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project' className='center'/>
 					</Grid>	
 					<ListGrid item xs project={true} pl={2} ml={2}>
 						<div>

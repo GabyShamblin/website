@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Box, Chip, Grid, IconButton, Typography, Link, List, ListItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Link as RouteLink } from "react-router-dom";
 import './App.css';
 import './typing.css';
 import './styles.css';
@@ -152,7 +153,7 @@ function Home() {
 				<Grid container item xs={12} sm={3} spacing={1} justifyContent='flex-start' alignItems='center' direction='column'>
 					{/* Picture */}
 					<Grid item>
-						<img id="me" src={me} alt="A picture of me :)"/>
+						<img id="me" src={me} alt="Me"/>
 					</Grid>
 
 					{/* Left align text and add lines with extend animation */}
@@ -207,7 +208,7 @@ function Home() {
 				</Grid>
 
 				{/* Content Column */}
-				<Grid item xs spacing={10} direction='column'>
+				<Grid item xs spacing={10}>
 					<section id='about'>
 						<About/>
 					</section>
@@ -251,12 +252,12 @@ function Experience () {
 		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{list}
 
-			<Link href="/resume" underline='none'>
+			<RouteLink reloadDocument to="/resume" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					See my resume
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</Link>
+			</RouteLink>
 		</CustomBox>
 	);
 }
@@ -280,8 +281,8 @@ function ExperienceBox (props) {
 						{job.title} | {job.company}
 					</div>
 					<List dense sx={{color: '#bcbcbc'}}>
-						{job.description.map(desc => (
-							<ListItem>
+						{job.description.map((desc, index) => (
+							<ListItem key={index}>
 								{desc}
 							</ListItem>
 						))}
@@ -311,12 +312,12 @@ function Projects () {
 		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{list}
 
-			<Link href="/portfolio" underline='none'>
+			<RouteLink reloadDocument to="/portfolio" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					See my portfolio
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</Link>
+			</RouteLink>
 		</CustomBox>
 	);
 }
@@ -324,7 +325,7 @@ function Projects () {
 function ProjectsBox (props) {
 	const project = props.project;
 
-	if (project.media == "") {
+	if (project.media === "") {
 		project.media = "placeholder.png";
 	}
 
@@ -334,15 +335,15 @@ function ProjectsBox (props) {
 				<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left'}}>
 					<Grid container>
 						<Grid item xs={12} sm={2} justifyContent='center'>
-							<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project picture' class='center'/>
+							<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project' className='center'/>
 						</Grid>	
 						<ListGrid item xs project={true} pl={2} ml={2}>
 							<div>
 								{project.title}
 							</div>
 							<List dense sx={{color: '#bcbcbc'}}>
-								{project.description.map(desc => (
-									<ListItem>{desc}</ListItem>
+								{project.description.map((desc, index) => (
+									<ListItem key={index}>{desc}</ListItem>
 								))}
 								<ListItem>
 									<Grid container>
@@ -406,12 +407,12 @@ function Contact () {
 
 			</Grid>
 
-			<Link href="/contact" underline='none'>
+			<RouteLink reloadDocument to="/contact" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					Contact me!
 					<CenterMenuLine chars={10} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</Link>
+			</RouteLink>
 		</CustomBox>
 	);
 }
