@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { useEffect } from 'react';
+import { Link as RouteLink } from "react-router-dom";
 import { styled } from '@mui/material/styles';
-import { Box, Button, Chip, Grid,	Link, List, ListItem } from '@mui/material';
+import { Box, Button, Chip, Grid,	Link, List, ListItem, Typography } from '@mui/material';
 import './App.css';
 import './typing.css';
 
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import projects from './projectData.js';
 
 const CustomBox = styled(Box)(({link = false}) => ({
@@ -45,6 +47,19 @@ const SkillChip = styled(Chip)(() => ({
 	border: '2px solid #1efc0f',
 }));
 
+const MenuText = styled(Typography)(() => ({
+	position: 'absolute',
+	top: 15,
+	left: 50,
+  maxWidth: 100,
+	fontSize: 24,
+	color: "#a3aab4",
+	transition: '0.2s',
+	'&:hover': {
+		color: "#ffffff",
+	},
+}));
+
 
 
 function Portfolio() {
@@ -57,6 +72,14 @@ function Portfolio() {
   return (
 		<React.Fragment>
 			<div className="App">
+
+				<RouteLink to="/" style={{textDecoration: 'none'}}>
+					<MenuText>
+						<div className='banner-align'>
+							<ArrowBackIosIcon/> Back
+						</div>
+					</MenuText>
+				</RouteLink>
 
 				<div className='wrapper'>
 					<div className='typing-portfolio'>
@@ -82,10 +105,10 @@ function ProjectBox(props) {
 	}
 
 	return (
-		<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left'}}>
+		<CustomBox link={true} p={2} sx={{m: 'auto', textAlign: 'left', mb: 1}}>
 			<Grid container>
 				<Grid item container xs>
-					<Grid item xs={12} sm={2}>
+					<Grid item xs={12} sm={2} sx={{m: 1}}>
 						<img src={require(`./public/thumbnails/${project.media}`)} id='thumbnail' alt='Project' className='center'/>
 					</Grid>	
 					<ListGrid item xs project={true} pl={2} ml={2}>

@@ -14,7 +14,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CircleIcon from '@mui/icons-material/Circle';
 
-import { experience } from './resumeData.js';
+import { experience, education } from './resumeData.js';
 import projects from './projectData.js';
 
 import logo from './public/logo_blue.png';
@@ -212,6 +212,9 @@ function Home() {
 					<section id='about'>
 						<About/>
 					</section>
+					<section id='education'>
+						<Education/>
+					</section>
 					<section id='experience'>
 						<Experience/>
 					</section>
@@ -238,6 +241,48 @@ function About () {
 					I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and with a focus in mixed reality. I recently graduated with my Bachelor's in December 2023 and am currently working towards my Master's in Computer Science.
 				</ListItem>
 			</List>
+		</CustomBox>
+	);
+}
+
+function Education () {
+	const list = [];
+	for (let i = 0; i < education.length; i++) {
+		list.push(<EducationBox edu={education[i]}/>);
+	}
+
+	return (
+		<CustomBox px={2} py={1} sx={{m: 'auto'}}>
+			{list}
+		</CustomBox>
+	);
+}
+
+function EducationBox (props) {
+	const school = props.edu;
+
+	return (
+		<CustomBox sx={{m: 'auto'}}>
+			<Grid container>
+				<Grid item xs={2}>
+					<div className='rel'>
+						<ListDate>
+							{school.graduation}
+						</ListDate>
+						<TimelineCircle/>
+					</div>
+				</Grid>
+				<ListGrid item xs pl={2} ml={2} pb={1}>
+					<div>
+						{school.degree} | {school.school}
+					</div>
+					<List dense sx={{color: '#bcbcbc'}}>
+						<ListItem>
+							GPA: {school.gpa}
+						</ListItem>
+					</List>
+				</ListGrid>
+			</Grid>
 		</CustomBox>
 	);
 }

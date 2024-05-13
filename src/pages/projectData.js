@@ -2,12 +2,14 @@ const projects = [
 	// Moon
 	{
 		title: "VR Moon Trip", 
-		dates: "Jan 2024 - Present",
-		media: "", 
+		dates: "Jan - Apr 2024",
+		media: "advvr-thumb.png", 
 		description: [
-			"A Unity project for CAP 6119: Advanced VR."
+			"A Unity project for CAP 6119: Advanced VR.",
+			"Includes a scripted sequence meant mimic the ride Mission: Space.",
+			"Walks player through the controls, takeoff, landing, and environmental interactions."
 		], 
-		skills: ["Unity", "C#", "XR Interaction Toolkit"], 
+		skills: ["Unity", "C#", "XR Interaction Toolkit", "Blender"], 
 		links: [
 			{label: "Coming soon", click: ""}
 		]
@@ -15,11 +17,11 @@ const projects = [
 	// Escape room
 	{
 		title: "VR Escape Room", 
-		dates: "Jan 2024 - Present",
-		media: "", 
+		dates: "Jan - Apr 2024",
+		media: "mr-thumb.png", 
 		description: [
 			"A group project with 5 people for CAP 6117: Mixed Reality Project.", 
-			"Includes 4 different puzzles for the user to solve.", 
+			"Includes 4 different puzzles for the user to solve (estimated 30 minutes playtime).", 
 			"Worked on environment and puzzle integration."
 		], 
 		skills: ["Unity", "C#", "XR Interaction Toolkit", "Blender"],

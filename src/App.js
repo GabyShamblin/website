@@ -35,7 +35,7 @@ function App() {
 					minWidth: '95%',
 					x: 0}}>
 
-					{ notHome &&
+					{/* { notHome &&
 						<Link to="/" onClick={() => setPath('/')} style={{textDecoration: 'none'}}>
 							<MenuText>
 								<div className='banner-align'>
@@ -43,7 +43,7 @@ function App() {
 								</div>
 							</MenuText>
 						</Link>
-					}
+					} */}
 				</Box>
 
 				<Outlet />

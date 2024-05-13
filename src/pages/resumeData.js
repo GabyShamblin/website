@@ -1,14 +1,16 @@
 const experience = [
 	// Johns Hopkins
-	// {
-	// 	title: "Virtual Reality Developer", 
-	// 	company: "Johns Hopkins University",
-	// 	location: "Remote",
-	// 	dates: "Apr 2024 - Present",
-	// 	description: [
-	// 	], 
-	// 	skills: ["Unity"],
-	// }, 
+	{
+		title: "Virtual Reality Developer", 
+		company: "Johns Hopkins University",
+		location: "Remote",
+		dates: "Apr 2024 - Present",
+		description: [
+			"Creating a virtual reality simulation for the da Vinci surgical system using Unity.",
+			"Imports data from the JIGSAWS dataset to create a dynamic learning experience."
+		], 
+		skills: ["Unity"],
+	}, 
 	// JP Morgan
 	{
 		title: "Software Engineering Intern", 
@@ -66,7 +68,7 @@ const education = [
 		location: "Orlando, FL",
 		graduation: "Expected: Dec 2024",
 		degree: "Master of Science, Computer Science",
-		gpa: "3.58/4.00"
+		gpa: "4.00/4.00"
 	}, {
 		school: "University of Central Florida", 
 		location: "Orlando, FL",
