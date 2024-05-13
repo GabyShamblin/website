@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Button, Grid, IconButton, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
-import './typing.css';
+import './css/typing.css';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EmailIcon from '@mui/icons-material/Email';

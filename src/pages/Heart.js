@@ -4,7 +4,6 @@ import { Unity, useUnityContext } from 'react-unity-webgl';
 import { Box, Grid, Hidden, Typography } from '@mui/material';
 import { flexbox } from '@mui/system';
 import { styled } from '@mui/material/styles';
-import './App.css';
 
 import heart from './public/thumbnails/heart.jpg';
 

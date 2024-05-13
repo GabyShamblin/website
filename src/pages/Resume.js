@@ -5,9 +5,9 @@ import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid, Typography, 
 	Link, List, ListItem } from '@mui/material';
 // import SkillSlider from './SkillSlider';
-import './typing.css';
+import './css/typing.css';
 
-import { experience, education, skills, certs } from './resumeData.js';
+import { experience, education, skills, certs } from './data/resumeData.js';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import CircleIcon from '@mui/icons-material/Circle';

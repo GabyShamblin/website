@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { Link as RouteLink } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid,	Link, List, ListItem, Typography } from '@mui/material';
-import './App.css';
-import './typing.css';
+import './css/App.css';
+import './css/typing.css';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import projects from './projectData.js';
+import projects from './data/projectData.js';
 
 const CustomBox = styled(Box)(({link = false}) => ({
   maxWidth: 1200, 

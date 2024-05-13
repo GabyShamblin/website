@@ -4,9 +4,9 @@ import { HashLink } from 'react-router-hash-link';
 import { Box, Chip, Grid, IconButton, Typography, Link, List, ListItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link as RouteLink } from "react-router-dom";
-import './App.css';
-import './typing.css';
-import './styles.css';
+import './css/App.css';
+import './css/typing.css';
+import './css/styles.css';
 
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -14,8 +14,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CircleIcon from '@mui/icons-material/Circle';
 
-import { experience, education } from './resumeData.js';
-import projects from './projectData.js';
+import { experience, education } from './data/resumeData.js';
+import projects from './data/projectData.js';
 
 import logo from './public/logo_blue.png';
 import me from './public/picture_cropped.png';
