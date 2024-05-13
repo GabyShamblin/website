@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "4b4b47af534b83e1ec68",
-    "url": "/static/css/main.3e045653.chunk.css"
+    "revision": "184ecc78a2bb90889e3d",
+    "url": "/static/css/main.e5095ff8.chunk.css"
   },
   {
-    "revision": "4b4b47af534b83e1ec68",
-    "url": "/static/js/main.240f3a65.chunk.js"
+    "revision": "184ecc78a2bb90889e3d",
+    "url": "/static/js/main.aff22d66.chunk.js"
   },
   {
-    "revision": "80293080590ec12f0fd8",
-    "url": "/static/js/runtime~main.972d3339.js"
+    "revision": "97ed41bfcb81e2b880e6",
+    "url": "/static/js/runtime~main.8571cb64.js"
   },
   {
-    "revision": "b1ad349c3c16dd17f847",
-    "url": "/static/js/2.69e84e23.chunk.js"
+    "revision": "fbab1870ba6969f51d51",
+    "url": "/static/js/2.e345a1fe.chunk.js"
   },
   {
-    "revision": "6ee1720db45d15023de1",
-    "url": "/static/js/3.d18e38de.chunk.js"
+    "revision": "06fe3022a1628fd653b0",
+    "url": "/static/js/3.18c511e9.chunk.js"
   },
   {
     "revision": "364ec09ce3092577e8de89274e724e27",
@@ -28,12 +28,20 @@ self.__precacheManifest = [
     "url": "/static/media/picture_cropped.37cf4111.png"
   },
   {
-    "revision": "e20fdac1b06a8da8d98998885af3b1dc",
-    "url": "/static/media/Gabriela Shamblin Resume.e20fdac1.pdf"
+    "revision": "0b90a712a279d4b365037fdc66bd30ce",
+    "url": "/static/media/Gabriela Shamblin Resume.0b90a712.pdf"
   },
   {
     "revision": "629a97d928f9e10666e976ff52bd2437",
     "url": "/static/media/logo_blue.629a97d9.png"
+  },
+  {
+    "revision": "0a1a195222044f4cd9aba9eac9d2f969",
+    "url": "/static/media/Screenshot 2024-05-12 230610.png:Zone.0a1a1952.Identifier"
+  },
+  {
+    "revision": "d91d2ff76e0ecfa29ba154c52aea4ab4",
+    "url": "/static/media/advvr-thumb.d91d2ff7.png"
   },
   {
     "revision": "4bd8429ba611949ddb30d2ccdab51d40",
@@ -54,6 +62,10 @@ self.__precacheManifest = [
   {
     "revision": "dd0dd505b88ccf5d5d945c17ef1a025e",
     "url": "/static/media/grayWebsite.dd0dd505.jpg"
+  },
+  {
+    "revision": "3337297c049c363bcbf3e19823e08677",
+    "url": "/static/media/mr-thumb.3337297c.png"
   },
   {
     "revision": "e34430db997e2354e25baa6f03a865db",
@@ -92,7 +104,7 @@ self.__precacheManifest = [
     "url": "/static/media/aws.203bc933.png"
   },
   {
-    "revision": "d991de3121517fadb955c56a57210281",
+    "revision": "5add7e28de08e51ff3f28281f4122952",
     "url": "/index.html"
   }
 ];
