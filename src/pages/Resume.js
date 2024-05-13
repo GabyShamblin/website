@@ -97,13 +97,13 @@ function Resume() {
   return (
 		<div className="App">
 
-			<RouteLink to="/" style={{textDecoration: 'none'}}>
+			{/* <RouteLink to="/" style={{textDecoration: 'none'}}>
 				<MenuText>
 					<div className='banner-align'>
 						<ArrowBackIosIcon/> Back
 					</div>
 				</MenuText>
-			</RouteLink>
+			</RouteLink> */}
 
 			<div className='wrapper'>
 				<div className='typing-resume'>

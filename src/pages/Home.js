@@ -13,6 +13,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CircleIcon from '@mui/icons-material/Circle';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 import { experience, education } from './data/resumeData.js';
 import projects from './data/projectData.js';
@@ -172,6 +173,17 @@ function Home() {
 						</Grid>
 
 						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<HashLink smooth to="/#education" 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+										<strong>Education</strong>
+										<MenuLine chars={10}/>
+								</MenuText>
+							</HashLink>
+						</Grid>
+
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
 							<HashLink smooth to="/#experience" 
 								style={{textDecoration: 'none'}}
 							>
@@ -193,7 +205,7 @@ function Home() {
 							</HashLink>
 						</Grid>
 
-						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+						{/* <Grid item sx={{p:0.5, px:1, mr:0.2}}>
 							<HashLink smooth to="/#contact"  
 								style={{textDecoration: 'none'}}
 							>
@@ -202,7 +214,7 @@ function Home() {
 										<MenuLine chars={7}/>
 								</MenuText>
 							</HashLink>
-						</Grid>
+						</Grid> */}
 
 					</Grid>
 				</Grid>
@@ -297,12 +309,12 @@ function Experience () {
 		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{list}
 
-			<RouteLink reloadDocument to="/resume" style={{textDecoration: 'none'}}>
+			{/* <RouteLink reloadDocument to="/resume" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					See my resume
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</RouteLink>
+			</RouteLink> */}
 		</CustomBox>
 	);
 }
@@ -357,12 +369,12 @@ function Projects () {
 		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{list}
 
-			<RouteLink reloadDocument to="/portfolio" style={{textDecoration: 'none'}}>
+			{/* <RouteLink reloadDocument to="/portfolio" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					See my portfolio
 					<CenterMenuLine chars={13} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</RouteLink>
+			</RouteLink> */}
 		</CustomBox>
 	);
 }
@@ -452,12 +464,12 @@ function Contact () {
 
 			</Grid>
 
-			<RouteLink reloadDocument to="/contact" style={{textDecoration: 'none'}}>
+			{/* <RouteLink reloadDocument to="/contact" style={{textDecoration: 'none'}}>
 				<CenterMenuText>
 					Contact me!
 					<CenterMenuLine chars={10} sx={{margin: 'auto'}}/>
 				</CenterMenuText>
-			</RouteLink>
+			</RouteLink> */}
 		</CustomBox>
 	);
 }
