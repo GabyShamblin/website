@@ -6,6 +6,10 @@
 	color: #ffffff;
 }
 
+.half-spacer {
+	height: 50px;
+}
+
 .spacer {
 	height: 100px;
 }

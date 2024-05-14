@@ -7,7 +7,7 @@ import { HashLink } from 'react-router-hash-link';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const MenuText = styled(Typography)(() => ({
-  minWidth: 100,
+	fontFamily: 'monospace',
 	fontSize: 24,
 	color: "#a3aab4",
 	transition: '0.2s',
@@ -22,10 +22,10 @@ const UpArrow = styled(Typography)(() => ({
 	right: 35,
   maxWidth: 100,
 	rotate: '90deg',
-	color: "#a3aab4",
+	color: 'rgba(30, 252, 15, 0.5)',
 	transition: '0.2s',
 	'&:hover': {
-		color: "#ffffff",
+		color: 'rgba(30, 252, 15, 1)',
 	},
 	// border: '2px solid #1efc0f',
 }));
@@ -48,7 +48,8 @@ function App() {
 			<div className="App-header">
 				<Box alignItems='flex-end' sx={{
 					display: 'flex', 
-					justifyContent: 'left',
+					justifyContent: 'center',
+					textAlign: 'center',
 					minHeight: 50,
 					minWidth: '95%',
 					x: 0}}>
@@ -62,83 +63,54 @@ function App() {
 							</MenuText>
 						</Link>
 					} */}
-					<Grid container justifyContent='space-between' direction={{xs:'column-reverse', sm:'column-reverse', md:'row'}}>
-						<Grid container item justifyContent={{xs:'center', sm:'center', md:'flex-start'}} xs={12} sm={12} md={6} sx={{textAlign: 'center'}}>
+					<Grid container justifyContent='center' direction={{xs:'column-reverse', sm:'column-reverse', md:'row'}}>
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<Link to="/" 
+								onClick={() => setPath('/')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+									<strong>Home</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
-							<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-								<Link to="/" 
-									onClick={() => setPath('/')} 
-									style={{textDecoration: 'none'}}
-								>
-									<Hidden smDown>
-										<MenuText>
-												<strong>Home</strong>
-										</MenuText>
-									</Hidden>
-									<Hidden smUp>
-										<MenuText sx={{fontSize: 18, minWidth: 70}}>
-												<strong>Home</strong>
-										</MenuText>
-									</Hidden>
-								</Link>
-							</Grid>
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<Link to="/resume" 
+								onClick={() => setPath('/resume')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+									<strong>Resume</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
-							<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-								<Link to="/portfolio" 
-									onClick={() => setPath('/portfolio')} 
-									style={{textDecoration: 'none'}}
-								>
-									<Hidden smDown>
-										<MenuText>
-												<strong>Portfolio</strong>
-										</MenuText>
-									</Hidden>
-									<Hidden smUp>
-										<MenuText sx={{fontSize: 18, minWidth: 70}}>
-												<strong>Portfolio</strong>
-										</MenuText>
-									</Hidden>
-								</Link>
-							</Grid>
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<Link to="/portfolio" 
+								onClick={() => setPath('/portfolio')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+									<strong>Projects</strong>
+								</MenuText>
+							</Link>
+						</Grid>
 
-							<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-								<Link to="/resume" 
-									onClick={() => setPath('/resume')} 
-									style={{textDecoration: 'none'}}
-								>
-									<Hidden smDown>
-										<MenuText>
-												<strong>Resume</strong>
-										</MenuText>
-									</Hidden>
-									<Hidden smUp>
-										<MenuText sx={{fontSize: 18, minWidth: 70}}>
-												<strong>Resume</strong>
-										</MenuText>
-									</Hidden>
-								</Link>
-							</Grid>
-
-							<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-								<Link to="/contact" 
-									onClick={() => setPath('/contact')} 
-									style={{textDecoration: 'none'}}
-								>
-									<Hidden smDown>
-										<MenuText>
-												<strong>Contact</strong>
-										</MenuText>
-									</Hidden>
-									<Hidden smUp>
-										<MenuText sx={{fontSize: 18, minWidth: 70}}>
-												<strong>Contact</strong>
-										</MenuText>
-									</Hidden>
-								</Link>
-							</Grid>
+						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
+							<Link to="/contact" 
+								onClick={() => setPath('/contact')} 
+								style={{textDecoration: 'none'}}
+							>
+								<MenuText>
+									<strong>Contact</strong>
+								</MenuText>
+							</Link>
 						</Grid>
 					</Grid>
 				</Box>
+
+				<div className='half-spacer'></div>
 
 				<HashLink smooth to={path + '#'} style={{textDecoration: 'none'}}>
 					<UpArrow>

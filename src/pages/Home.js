@@ -264,7 +264,7 @@ function Education () {
 	}
 
 	return (
-		<CustomBox px={2} py={1} sx={{m: 'auto'}}>
+		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			{list}
 		</CustomBox>
 	);
