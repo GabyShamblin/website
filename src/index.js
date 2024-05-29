@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
+import Projects from "./pages/Projects";
 import Heart from "./pages/Heart";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
@@ -17,7 +17,8 @@ root.render(
 		<Routes>
 			<Route path="/" element={<App />} >
 				<Route index element={<Home />} />
-				<Route path="portfolio" element={<Portfolio />} />
+				<Route path="home" element={<Home />} />
+				<Route path="projects" element={<Projects />} />
 				<Route path="resume" element={<Resume />} />
 				<Route path="contact" element={<Contact />} />
 				<Route path="heart" element={<Heart />} />

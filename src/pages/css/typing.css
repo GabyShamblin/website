@@ -30,7 +30,7 @@
 	color: #1efc0f;
 }
 
-.typing-portfolio {
+.typing-projects {
   width: 14ch;
   animation: typing 2s steps(14), blink .5s step-end 20 alternate;
   white-space: nowrap;

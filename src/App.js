@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Box, Grid, Hidden, Typography } from '@mui/material';
+import { AppBar, Box, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Outlet, Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
@@ -30,7 +31,7 @@ const UpArrow = styled(Typography)(() => ({
 	// border: '2px solid #1efc0f',
 }));
 
-
+const pages = ['home', 'resume', 'projects', 'contact'];
 
 function App() {
 	const [path, setPath] = React.useState('');
@@ -38,11 +39,25 @@ function App() {
 		console.log("Path: " + path);
 		setPath(window.location.pathname);
 	}
-
-	let notHome = /\w(?!#)/.test(path);
-	if (notHome) console.log("This page is not home or has a #");
-	else console.log("Yes this is home");
+	// let notHome = /\w(?!#)/.test(path);
 	
+	const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+	function toTitleCase(str) {
+		return str.replace(
+			/\w\S*/g,
+			function(txt) {
+				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+			}
+		);
+	}
+
   return (
 		<React.Fragment>
 			<div className="App-header">
@@ -63,51 +78,73 @@ function App() {
 							</MenuText>
 						</Link>
 					} */}
-					<Grid container justifyContent='center' direction={{xs:'column-reverse', sm:'column-reverse', md:'row'}}>
-						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-							<Link to="/" 
-								onClick={() => setPath('/')} 
-								style={{textDecoration: 'none'}}
-							>
-								<MenuText>
-									<strong>Home</strong>
-								</MenuText>
-							</Link>
-						</Grid>
+					<AppBar position="static" style={{ boxShadow: 'none' }} sx={{ backgroundColor: 'transparent' }}>
+						<Container maxWidth="xl">
+							<Toolbar disableGutters>
 
-						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-							<Link to="/resume" 
-								onClick={() => setPath('/resume')} 
-								style={{textDecoration: 'none'}}
-							>
-								<MenuText>
-									<strong>Resume</strong>
-								</MenuText>
-							</Link>
-						</Grid>
+								{/* Collapsed Menu */}
+								<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+									<IconButton
+										size="large"
+										aria-label="navigation menu"
+										aria-controls="menu-appbar"
+										aria-haspopup="true"
+										onClick={handleOpenNavMenu}
+										color="inherit"
+									>
+										<MenuIcon />
+									</IconButton>
+									<Menu
+										id="menu-appbar"
+										anchorEl={anchorElNav}
+										anchorOrigin={{
+											vertical: 'bottom',
+											horizontal: 'left',
+										}}
+										keepMounted
+										transformOrigin={{
+											vertical: 'top',
+											horizontal: 'left',
+										}}
+										open={Boolean(anchorElNav)}
+										onClose={handleCloseNavMenu}
+										sx={{
+											display: { xs: 'block', md: 'none' },
+										}}
+									>
+										{pages.map((page) => (
+											<MenuItem sx={{p:0.5, px:1, mr:0.2}}>
+												<Link to={"/" + (page==='home' ? '' : page)} 
+													onClick={() => setPath('/' + (page==='home' ? '' : page))} 
+													style={{textDecoration: 'none'}}
+												>
+													<MenuText>
+														<strong>{toTitleCase(page)}</strong>
+													</MenuText>
+												</Link>
+											</MenuItem>
+										))}
+									</Menu>
+								</Box>
 
-						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-							<Link to="/portfolio" 
-								onClick={() => setPath('/portfolio')} 
-								style={{textDecoration: 'none'}}
-							>
-								<MenuText>
-									<strong>Projects</strong>
-								</MenuText>
-							</Link>
-						</Grid>
-
-						<Grid item sx={{p:0.5, px:1, mr:0.2}}>
-							<Link to="/contact" 
-								onClick={() => setPath('/contact')} 
-								style={{textDecoration: 'none'}}
-							>
-								<MenuText>
-									<strong>Contact</strong>
-								</MenuText>
-							</Link>
-						</Grid>
-					</Grid>
+								{/* Normal Menu */}
+								<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+									{pages.map((page) => (
+										<Box sx={{p:0.5, px:1, mr:0.2}}>
+											<Link to={"/" + (page==='home' ? '' : page)} 
+												onClick={() => setPath('/' + (page==='home' ? '' : page))} 
+												style={{textDecoration: 'none'}}
+											>
+												<MenuText>
+													<strong>{toTitleCase(page)}</strong>
+												</MenuText>
+											</Link>
+										</Box>
+									))}
+								</Box>
+							</Toolbar>
+						</Container>
+					</AppBar>
 				</Box>
 
 				<div className='half-spacer'></div>

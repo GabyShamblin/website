@@ -9,18 +9,19 @@ const experience = [
 			"Creating a virtual reality simulation for the da Vinci surgical system using Unity.",
 			"Imports data from the JIGSAWS dataset to create a dynamic learning experience."
 		], 
-		skills: ["Unity"],
+		skills: ["Unity", "C#", "Meta XR SDK"],
 	}, 
 	// JP Morgan
 	{
 		title: "Software Engineering Intern", 
-		company: "JP Morgan & Chase",
+		company: "JP Morgan Chase & Co.",
 		location: "Tampa, FL",
 		dates: "Jun 2023 - Aug 2023",
 		description: [
 			"Created a user interface for an internal application used by 30,000 users with React.js and Springboot.",
 			"Communicated with shareholders about project specifications.",
-			"Tested code using Jest and ensured ADA compliance."
+			"Tested code using Jest and ensured ADA compliance.",
+			"Worked alongside six other people using Agile and Kanban development strategies."
 		], 
 		skills: ["React.js", "Springboot", "Jest"],
 	}, 
@@ -31,7 +32,9 @@ const experience = [
 		location: "Remote",
 		dates: "Jun 2022 - Apr 2023",
 		description: [
-			"Communicated with client to repair website code and optimize website functionality."
+			"Communicated with client to repair website code and optimize website functionality.",
+			"Worked on front-end using Angular and TypeScript, API using ASP.NET, and back-end using SQL.",
+			"Utilized Azure DevOps for version control."
 		], 
 		skills: ["Angular", "TypeScript", "ASP.NET", "SQL", "Azure DevOps"],
 	}, 
@@ -82,7 +85,7 @@ const courses = [
 	"Virtual Reality Engineering",
 	"Augmented Reality Engineering",
 	"Mixed Reality Engineering",
-	"Realistic Real-time Rendering",
+	"Realistic Real-Time Rendering",
 	"Advanced Veritual Reality",
 	"Artificial Intelligence",
 	"Machine Learning"

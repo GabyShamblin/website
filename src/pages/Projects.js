@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Link as RouteLink } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid,	Link, List, ListItem, Typography } from '@mui/material';
 import './css/App.css';
 import './css/typing.css';
 
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import projects from './data/projectData.js';
 
 const CustomBox = styled(Box)(({link = false}) => ({
@@ -62,9 +60,9 @@ const MenuText = styled(Typography)(() => ({
 
 
 
-function Portfolio() {
+function Projects() {
 	useEffect(() => {
-		document.title = 'Portfolio';
+		document.title = 'Projects';
 	});
 
 	console.log(projects);
@@ -73,16 +71,8 @@ function Portfolio() {
 		<React.Fragment>
 			<div className="App">
 
-				{/* <RouteLink to="/" style={{textDecoration: 'none'}}>
-					<MenuText>
-						<div className='banner-align'>
-							<ArrowBackIosIcon/> Back
-						</div>
-					</MenuText>
-				</RouteLink> */}
-
 				<div className='wrapper'>
-					<div className='typing-portfolio'>
+					<div className='typing-projects'>
 						/* Projects */
 					</div>
 				</div>
@@ -155,4 +145,4 @@ function ProjectBox(props) {
 	);
 }
 
-export default Portfolio;
+export default Projects;

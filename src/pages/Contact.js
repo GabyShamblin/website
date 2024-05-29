@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Link as RouteLink } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { Box, Button, Grid, IconButton, Typography, 
 	Stack, TextField, Link } from '@mui/material';
 import { flexbox } from '@mui/system';
 import './css/typing.css';
 
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -137,14 +135,6 @@ function Contact() {
 		
 		<React.Fragment>
 			<div className="App">
-
-				{/* <RouteLink to="/" style={{textDecoration: 'none'}}>
-					<MenuText>
-						<div className='banner-align'>
-							<ArrowBackIosIcon/> Back
-						</div>
-					</MenuText>
-				</RouteLink> */}
 
 				<div className='wrapper'>
 					<div className='typing-contact'>

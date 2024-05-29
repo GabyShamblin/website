@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Box, Chip, Grid, IconButton, Typography, Link, List, ListItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link as RouteLink } from "react-router-dom";
 import './css/App.css';
 import './css/typing.css';
 import './css/styles.css';
@@ -13,7 +12,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CircleIcon from '@mui/icons-material/Circle';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 import { experience, education } from './data/resumeData.js';
 import projects from './data/projectData.js';
@@ -24,7 +22,7 @@ import me from './public/picture_cropped.png';
 
 
 const MenuText = styled(Typography)(() => ({
-  width: 150,
+  width: 125,
 	fontSize: 20,
 	color: "#a3aab4",
 	textAlign: 'left',
@@ -220,7 +218,7 @@ function Home() {
 				</Grid>
 
 				{/* Content Column */}
-				<Grid item xs spacing={10}>
+				<Grid item xs>
 					<section id='about'>
 						<About/>
 					</section>
@@ -233,11 +231,11 @@ function Home() {
 					<section id='projects'>
 						<Projects/>
 					</section>
-					<section id='contact'>
-						<Contact/>
-					</section>
 				</Grid>
 			</Grid>
+			<section id='contact'>
+				<Contact/>
+			</section>
 
 			<div className='spacer'></div>
 
@@ -260,7 +258,7 @@ function About () {
 function Education () {
 	const list = [];
 	for (let i = 0; i < education.length; i++) {
-		list.push(<EducationBox edu={education[i]}/>);
+		list.push(<EducationBox edu={education[i]} key={i}/>);
 	}
 
 	return (
@@ -361,8 +359,8 @@ function ExperienceBox (props) {
 
 function Projects () {
 	const list = [];
-	for (let i = 2; i < 5; i++) {
-		list.push(<ProjectsBox project={projects[i]}/>);
+	for (let i = 0; i < 3; i++) {
+		list.push(<ProjectsBox project={projects[i]} key={i}/>);
 	}
 
 	return (

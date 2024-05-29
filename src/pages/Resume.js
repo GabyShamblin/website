@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Link as RouteLink } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { Box, Button, Chip, Grid, Typography, 
 	Link, List, ListItem } from '@mui/material';
@@ -9,7 +8,6 @@ import './css/typing.css';
 
 import { experience, education, skills, certs } from './data/resumeData.js';
 
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import CircleIcon from '@mui/icons-material/Circle';
 import FeedIcon from '@mui/icons-material/Feed';
 import resume from './public/Gabriela Shamblin Resume.pdf';
@@ -96,14 +94,6 @@ function Resume() {
 
   return (
 		<div className="App">
-
-			{/* <RouteLink to="/" style={{textDecoration: 'none'}}>
-				<MenuText>
-					<div className='banner-align'>
-						<ArrowBackIosIcon/> Back
-					</div>
-				</MenuText>
-			</RouteLink> */}
 
 			<div className='wrapper'>
 				<div className='typing-resume'>
