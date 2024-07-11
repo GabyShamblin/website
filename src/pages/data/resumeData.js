@@ -1,12 +1,12 @@
 const experience = [
 	// Johns Hopkins
 	{
-		title: "Virtual Reality Developer", 
+		title: "Programmer Analyst", 
 		company: "Johns Hopkins University",
 		location: "Remote",
 		dates: "Apr 2024 - Present",
 		description: [
-			"Creating a virtual reality simulation for the da Vinci surgical system using Unity.",
+			"Creating a virtual reality training simulation for the da Vinci surgical system using Unity, C\#, and the Meta XR SDK.",
 			"Imports data from the JIGSAWS dataset to create a dynamic learning experience."
 		], 
 		skills: ["Unity", "C#", "Meta XR SDK"],
@@ -43,7 +43,7 @@ const experience = [
 		title: "Teaching Assistant", 
 		company: "University of Central Florida",
 		location: "Orlando, FL",
-		dates: "Jul 2021 - May 2022",
+		dates: "Jul 2021 - Dec 2022",
 		description: [
 			"Assist in teaching introductory programming topics in Python to classes of about 230 students.",
 			"Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.",
@@ -51,7 +51,7 @@ const experience = [
 		], 
 		skills: ["Python"],
 	}, 
-	// TA
+	// Camp TA
 	{
 		title: "Teaching Assistant", 
 		company: "UCF Computer Science Summer Institute",

@@ -10,7 +10,7 @@ import { experience, education, skills, certs } from './data/resumeData.js';
 
 import CircleIcon from '@mui/icons-material/Circle';
 import FeedIcon from '@mui/icons-material/Feed';
-import resume from './public/Gabriela Shamblin Resume.pdf';
+import resume from './public/Gabriela Shamblin Resume Website.pdf';
 
 
 
