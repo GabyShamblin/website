@@ -11,7 +11,7 @@ const projects = [
 		], 
 		skills: ["Unity", "C#", "XR Interaction Toolkit", "Blender"], 
 		links: [
-			{label: "Coming soon", click: ""}
+			{label: "Video", click: "https://youtu.be/YrPfZW1eUFg"}
 		]
 	}, 
 	// Escape room

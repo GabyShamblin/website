@@ -94,6 +94,127 @@ const courses = [
 // Icons: https://devicon.dev/
 const skills = [
 	{
+		title: "Front-End",
+		section: [
+			{
+				name: "Angular",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+			}, {
+				name: "CSS",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+			}, {
+				name: "HTML",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+			}, {
+				name: "JavaScript",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+			}, {
+				name: "MaterialUI",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg"
+			}, {
+				name: "React",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+			}, {
+				name: "TypeScript",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
+			},
+		]
+	}, {
+		title: "Back-End",
+		section: [
+			{
+				name: "ASP.NET",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg"
+			}, {
+				name: "C",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+			}, {
+				name: "MongoDB",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+			}, {
+				name: "Python",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+			}, {
+				name: "SQL",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+			},
+		]
+	}, {
+		title: "Games/Virtual Reality",
+		section: [
+			{
+				name: "Blender",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg"
+			}, {
+				name: "C#",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+			}, {
+				name: "C++",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+			}, {
+				name: "Unity",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+				background: true
+			}, {
+				name: "Unreal",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg",
+				background: true
+			},
+		]
+	}, {
+		title: "Other",
+		section: [
+			{
+				name: "Git",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+			}, {
+				name: "Github",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+				background: true
+			}, {
+				name: "Haskell",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg"
+			},
+			{
+				name: "JSON",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
+				background: true
+			}, {
+				name: "Jupyter",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
+			},
+			{
+				name: "Markdown",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg",
+				background: true
+			},
+			{
+				name: "npm",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg"
+			}, {
+				name: "Numpy",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+			}, {
+				name: "Pandas",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+				background: true
+			},
+			{
+				name: "Visual Studio",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg"
+			}, {
+				name: "Visual Studio Code",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+			}, {
+				name: "Windows",
+				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
+			}
+		]
+	},
+];
+
+const oldSkills = [
+	{
 		name: "Angular",
 		media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
 	}, {

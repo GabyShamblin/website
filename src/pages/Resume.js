@@ -152,14 +152,14 @@ function Resume() {
 				</Typography>
 
 				{/* Tech Skills */}
-				<Grid container spacing={1.5} justifyContent='center'>
-					{skills.map(skill => (
-						<Logo skill={skill}/>
+				<Grid container spacing={1} direction="column" sx={{textAlign: 'center'}}>
+					{skills.map(field => (
+						<SkillSection field={field}/>
 					))}
 				</Grid>
 
 				{/* Certifications */}
-				<CustomBox sx={{display:'flex', m: 'auto', mb: 1, p: 1, justifyContent:'center'}}>
+				<CustomBox sx={{display:'flex', m: 'auto', mb: 1, p: 4, justifyContent:'center'}}>
 					<Grid container spacing={1.5} justifyContent='center'>
 						<Cert cert={certs[0]}/>
 					</Grid>
@@ -243,6 +243,21 @@ function TimelineDegree(props) {
 	);
 }
 
+function SkillSection(props) {
+	const field = props.field;
+
+	return (
+		<React.Fragment>
+			<Typography>{field.title}</Typography>
+			<Grid item container spacing={1.5} justifyContent='center' sx={{pb: 4}}>
+				{field.section.map(skill => (
+					<Logo skill={skill}/>
+				))}
+			</Grid>
+		</React.Fragment>
+	)
+}
+
 function Logo(props) {
 	const skill = props.skill;
 
@@ -251,7 +266,7 @@ function Logo(props) {
 	}
 
 	return (
-		<Grid item sx={{textAlign: 'center'}}>
+		<Grid item direction="row">
 			{skill.background ? (
 				<LogoCircle>
 					<img id='logo' src={skill.media} alt={skill.name}/>
