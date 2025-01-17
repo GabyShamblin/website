@@ -7,6 +7,7 @@ const experience = [
 		dates: "Apr 2024 - Present",
 		description: [
 			"Creating a virtual reality training simulation for the da Vinci surgical system using Unity, C\#, and the Meta XR SDK.",
+			"Directs users to perform surgical procedures and build critical motor skills",
 			"Imports data from the JIGSAWS dataset to create a dynamic learning experience."
 		], 
 		skills: ["Unity", "C#", "Meta XR SDK"],
@@ -69,9 +70,9 @@ const education = [
 	{
 		school: "University of Central Florida", 
 		location: "Orlando, FL",
-		graduation: "Expected: Dec 2024",
+		graduation: "Expected: May 2025",
 		degree: "Master of Science, Computer Science",
-		gpa: "4.00/4.00"
+		gpa: "3.50/4.00"
 	}, {
 		school: "University of Central Florida", 
 		location: "Orlando, FL",
@@ -86,9 +87,10 @@ const courses = [
 	"Augmented Reality Engineering",
 	"Mixed Reality Engineering",
 	"Realistic Real-Time Rendering",
-	"Advanced Veritual Reality",
+	"Advanced Virtual Reality",
 	"Artificial Intelligence",
-	"Machine Learning"
+	"Machine Learning",
+	"AR, VR, & MR in Healthcare"
 ]
 
 // Icons: https://devicon.dev/
@@ -174,21 +176,18 @@ const skills = [
 			}, {
 				name: "Haskell",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg"
-			},
-			{
+			}, {
 				name: "JSON",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
 				background: true
 			}, {
 				name: "Jupyter",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
-			},
-			{
+			}, {
 				name: "Markdown",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg",
 				background: true
-			},
-			{
+			}, {
 				name: "npm",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg"
 			}, {
@@ -198,8 +197,7 @@ const skills = [
 				name: "Pandas",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
 				background: true
-			},
-			{
+			}, {
 				name: "Visual Studio",
 				media: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg"
 			}, {

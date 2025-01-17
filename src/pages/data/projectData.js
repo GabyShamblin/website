@@ -1,4 +1,14 @@
 const projects = [
+	// {
+	// 	title: "Thesis",
+	// 	dates: "Jan 2024 - Present",
+	// 	media: "",
+	// 	description: [
+
+	// 	],
+	// 	skills: ["Unity", "C#", "SteamVR"],
+	// 	links: []
+	// },
 	// Moon
 	{
 		title: "VR Moon Trip", 

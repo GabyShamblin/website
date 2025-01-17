@@ -17,7 +17,7 @@ import { experience, education } from './data/resumeData.js';
 import projects from './data/projectData.js';
 
 import logo from './public/logo_blue.png';
-import me from './public/picture_cropped.png';
+import me from './public/picture_cruise.JPG';
 
 
 
