@@ -174,46 +174,6 @@ function Resume() {
   );
 }
 
-function TimelineJob(props) {
-	const job = props.job;
-
-	return (
-		<CustomBox sx={{m: 'auto'}}>
-			<Grid container>
-				<Grid item xs={2}>
-					<div className='rel'>
-						<ListDate>
-							{job.dates}
-						</ListDate>
-						<TimelineCircle/>
-					</div>
-				</Grid>
-				<ListGrid item xs pl={2} ml={2} pb={4}>
-					<div>
-						{job.title} | <i>{job.company}</i>
-					</div>
-					<List dense className='text-desc'>
-						{job.description.map(desc => (
-							<ListItem>
-								{desc}
-							</ListItem>
-						))}
-						<ListItem>
-							<Grid container>
-								{job.skills.map(skill => (
-									<Grid item>
-										<SkillChip label={skill}/>
-									</Grid>
-								))}
-							</Grid>
-						</ListItem>
-					</List>
-				</ListGrid>
-			</Grid>
-		</CustomBox>
-	);
-}
-
 function TimelineDegree(props) {
 	const degree = props.degree;
 
@@ -245,6 +205,46 @@ function TimelineDegree(props) {
 						) : (
 							<div/>
 						)}
+					</List>
+				</ListGrid>
+			</Grid>
+		</CustomBox>
+	);
+}
+
+function TimelineJob(props) {
+	const job = props.job;
+
+	return (
+		<CustomBox sx={{m: 'auto'}}>
+			<Grid container>
+				<Grid item xs={2}>
+					<div className='rel'>
+						<ListDate>
+							{job.dates}
+						</ListDate>
+						<TimelineCircle/>
+					</div>
+				</Grid>
+				<ListGrid item xs pl={2} ml={2} pb={4}>
+					<div>
+						{job.title} | <i>{job.company}</i>
+					</div>
+					<List className='text-desc'>
+						{job.description.map(desc => (
+							<ListItem>
+								{desc}
+							</ListItem>
+						))}
+						<ListItem>
+							<Grid container>
+								{job.skills.map(skill => (
+									<Grid item>
+										<SkillChip label={skill}/>
+									</Grid>
+								))}
+							</Grid>
+						</ListItem>
 					</List>
 				</ListGrid>
 			</Grid>

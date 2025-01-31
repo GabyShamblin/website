@@ -359,7 +359,7 @@ function ExperienceBox (props) {
 					<div>
 						{job.title} | <i>{job.company}</i>
 					</div>
-					<List dense className='text-desc'>
+					<List className='text-desc'>
 						{job.description.map((desc, index) => (
 							<ListItem key={index}>
 								{desc}
@@ -420,7 +420,7 @@ function ProjectsBox (props) {
 							<div>
 								{project.title}
 							</div>
-							<List dense className='text-desc'>
+							<List className='text-desc'>
 								{project.description.map((desc, index) => (
 									<ListItem key={index}>{desc}</ListItem>
 								))}

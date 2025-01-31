@@ -105,7 +105,7 @@ function ProjectBox(props) {
 						<div>
 							{project.title} | {project.dates}
 						</div>
-						<List dense className='text-desc'>
+						<List className='text-desc'>
 							{project.description.map(desc => (
 								<ListItem>{desc}</ListItem>
 							))}
