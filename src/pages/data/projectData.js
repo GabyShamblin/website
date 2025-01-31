@@ -1,14 +1,16 @@
 const projects = [
-	// {
-	// 	title: "Thesis",
-	// 	dates: "Jan 2024 - Present",
-	// 	media: "",
-	// 	description: [
-
-	// 	],
-	// 	skills: ["Unity", "C#", "SteamVR"],
-	// 	links: []
-	// },
+	{
+		title: "Thesis",
+		dates: "Jan 2024 - Present",
+		media: "",
+		description: [
+			"A research project that aims to find how different controller visualizations impact how users follow a given movement."
+		],
+		skills: ["Unity", "C#", "Meta XR SDK"],
+		links: [
+			{label: "Github", click: "https://github.com/GabyShamblin/Thesis-Project"}
+		]
+	},
 	// Moon
 	{
 		title: "VR Moon Trip", 
@@ -47,7 +49,7 @@ const projects = [
 		media: "rain-project.png", 
 		description: [
 			"A project created for CAP 5727: Realistic Realtime Rendering.", 
-			"Designed to mimic a real-world thunderstorm using Unreal Engine 5's Blueprints, Niagara particle system , and Lumen."
+			"Designed to mimic a real-world thunderstorm using Unreal Engine 5's Blueprints, Niagara particle system, and Lumen."
 		], 
 		skills: ["Unreal Engine 5"], 
 		links: [
@@ -66,7 +68,7 @@ const projects = [
 		], 
 		skills: ["Unity", "C#", "Vuforia"], 
 		links: [
-			{label: "Video", click: "https://youtube.com/playlist?list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX&si=1AAebMOP9ndXdGL_"}
+			{label: "Playlist", click: "https://youtube.com/playlist?list=PLLAatflC7TYIysXY9DPVkXql6H-apHFQX&si=1AAebMOP9ndXdGL_"}
 		]
 	}, 
 	// Senserator
@@ -122,10 +124,10 @@ const projects = [
 		dates: "Feb - Apr 2022",
 		media: "scheduler.jpg", 
 		description: [
-			"A group prject with 7 people for COP 4311.", 
+			"A group project with 7 people for COP 4311: Processes of Object-Oriented Software Development.", 
 			"Allows users to create a college career schedule for the UCF Computer Science undergraduate program.", 
 			"Uses an algorithm based on the importance of classes to create the schedule.",
-			"Worked on database, algorithm, and class flowchart."
+			"Worked on the database, algorithm, and class flowchart."
 		], 
 		skills: ["React", "MaterialUI", "JavaScript", "ExpressJS", "Mongoose", "MongoDB"], 
 		links: [
@@ -138,9 +140,9 @@ const projects = [
 		dates: "Feb 2022",
 		media: "contactManager.jpg", 
 		description: [
-			"A group project with 4 people for COP 4311.", 
+			"A group project with 4 people for COP 4311: Processes of Object-Oriented Software Development.", 
 			"Users can login or register an account.", 
-			"Allows logged in user to create, search, update, and delete contacts.",
+			"Allows a logged in user to create, search, update, and delete contacts.",
 			"Worked on design and frontend."
 		], 
 		skills: ["HTML", "CSS", "Bootstrap"], 
@@ -184,7 +186,8 @@ const projects = [
 		description: [
 			"Includes file to change questions and incorrect answer options are randomized.", 
 			"Keeps track of answered questions and tallys score.", 
-			"Contains multiple game screens for start menu, game menu, questions, and end menu."
+			"Contains multiple game screens for start menu, game menu, questions, and end menu.",
+			"Created as an example game for the students of the UCF Computer Science Summer Institute."
 		], 
 		skills: ["Python", "PyGame"], 
 		links: [

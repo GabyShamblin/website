@@ -6,9 +6,9 @@ const experience = [
 		location: "Remote",
 		dates: "Apr 2024 - Present",
 		description: [
-			"Creating a virtual reality training simulation for the da Vinci surgical system using Unity, C\#, and the Meta XR SDK.",
-			"Directs users to perform surgical procedures and build critical motor skills",
-			"Imports data from the JIGSAWS dataset to create a dynamic learning experience."
+			"Develop immersive virtual reality training simulations for the da Vinci surgical system ysing Unity, C\#, and the Meta XR SDK to enhance user motor skills and procedural accuracy.",
+			"Integrate advanced datasets, such as JIGSAWS, to create dynamic, interactive learning environments tailored to individual user needs, driving innovation in surgical education.",
+			"Collaborate cross-functionally to design and implement scalable solutions, ensuring seamless functionality and user engagement for a professional audience."
 		], 
 		skills: ["Unity", "C#", "Meta XR SDK"],
 	}, 
@@ -19,12 +19,11 @@ const experience = [
 		location: "Tampa, FL",
 		dates: "Jun 2023 - Aug 2023",
 		description: [
-			"Created a user interface for an internal application used by 30,000 users with React.js and Springboot.",
+			"Designed and deployed an ADA-compliant user interface for an internal application using React.js and Springboot, supporting 30,000 users and enhancing accessibility.",
 			"Communicated with shareholders about project specifications.",
-			"Tested code using Jest and ensured ADA compliance.",
 			"Worked alongside six other people using Agile and Kanban development strategies."
 		], 
-		skills: ["React.js", "Springboot", "Jest"],
+		skills: ["React.js", "Springboot", "Jest", "Agile", "Scrum", "Kanban"],
 	}, 
 	// Trevor
 	{
@@ -33,9 +32,7 @@ const experience = [
 		location: "Remote",
 		dates: "Jun 2022 - Apr 2023",
 		description: [
-			"Communicated with client to repair website code and optimize website functionality.",
-			"Worked on front-end using Angular and TypeScript, API using ASP.NET, and back-end using SQL.",
-			"Utilized Azure DevOps for version control."
+			"Optimized website functionality and repaired code by leveraging Angular, TypeScript, ASP.NET, and SQL, ensuring seamless client deliverables."
 		], 
 		skills: ["Angular", "TypeScript", "ASP.NET", "SQL", "Azure DevOps"],
 	}, 
@@ -46,9 +43,7 @@ const experience = [
 		location: "Orlando, FL",
 		dates: "Jul 2021 - Dec 2022",
 		description: [
-			"Assist in teaching introductory programming topics in Python to classes of about 230 students.",
-			"Grade assignments for approximately 80 students and provide appropriate feedback in a timely manner.",
-			"Hold two labs weekly and office hours to offer students extra support."
+			"Taught foundational Python programming concepts to classes of 230 students, provided timely feedback on assignments, and supported learning through labs and office hours."
 		], 
 		skills: ["Python"],
 	}, 
@@ -72,13 +67,14 @@ const education = [
 		location: "Orlando, FL",
 		graduation: "Expected: May 2025",
 		degree: "Master of Science, Computer Science",
-		gpa: "3.50/4.00"
+		concentration: "Mixed Reality Certificate",
+		gpa: "3.5/4.0"
 	}, {
 		school: "University of Central Florida", 
 		location: "Orlando, FL",
 		graduation: "Dec 2023",
 		degree: "Bachelor of Science, Computer Science",
-		gpa: "3.66/4.00"
+		gpa: "3.7/4.0"
 	}
 ];
 

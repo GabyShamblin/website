@@ -40,6 +40,10 @@
   font-weight: bolder;
 }
 
+.text-desc {
+  color: #d1d1d1;
+}
+
 .banner-align {
   display: flex;
   justify-content: center;

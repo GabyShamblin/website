@@ -1,9 +1,20 @@
+@media (max-width: 800px) {
+  .typing-name {
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 700px) {
+  .wrapper {
+    margin-bottom: 10% !important;
+  }
+}
+
 .wrapper {
   height: 15vh;
   /*This part is important for centering*/
   display: grid;
   place-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .typing-name {

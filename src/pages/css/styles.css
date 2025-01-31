@@ -1,5 +1,5 @@
 .link-text {
-	color: #bcbcbc;
+	color: #d1d1d1;
 	
 }
 .link-text:hover {
@@ -31,6 +31,12 @@
 }
 
 .subtitle {
-	color: #bcbcbc;
+	color: #d1d1d1;
 	font-size: 20px;
+	font-style: italic;
+}
+
+.nerf-p {
+	margin: 0px;
+	margin-bottom: 2%;
 }

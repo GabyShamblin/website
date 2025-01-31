@@ -10,7 +10,7 @@ import { experience, education, skills, certs } from './data/resumeData.js';
 
 import CircleIcon from '@mui/icons-material/Circle';
 import FeedIcon from '@mui/icons-material/Feed';
-import resume from './public/Gabriela Shamblin Resume Website.pdf';
+import resume from './public/Gabriela Shamblin Resume 2025.pdf';
 
 
 
@@ -46,7 +46,7 @@ const ListGrid = styled(Grid)(({project = false}) => ({
 }));
 
 const ListDate = styled('div')(() => ({
-	color: '#bcbcbc',
+	color: '#d1d1d1',
 	fontSize: '16px',
 	textAlign: 'right'
 }));
@@ -190,9 +190,9 @@ function TimelineJob(props) {
 				</Grid>
 				<ListGrid item xs pl={2} ml={2} pb={4}>
 					<div>
-						{job.title} | {job.company}
+						{job.title} | <i>{job.company}</i>
 					</div>
-					<List dense sx={{color: '#bcbcbc'}}>
+					<List dense className='text-desc'>
 						{job.description.map(desc => (
 							<ListItem>
 								{desc}
@@ -230,12 +230,21 @@ function TimelineDegree(props) {
 				</Grid>
 				<ListGrid item xs pl={2} ml={2} pb={4}>
 					<div>
-						{degree.degree} | {degree.school}
+						{degree.degree} | <i>{degree.school}</i>
 					</div>
-					<List dense sx={{color: '#bcbcbc'}}>
-						<ListItem>
-							{degree.gpa}
-						</ListItem>
+					<List dense className='text-desc'>
+						{degree.concentration ? (
+							<ListItem>
+								{degree.concentration}
+							</ListItem>
+						) : (<div/>)}
+						{degree.gpa ? (
+							<ListItem>
+								GPA: {degree.gpa}
+							</ListItem>
+						) : (
+							<div/>
+						)}
 					</List>
 				</ListGrid>
 			</Grid>

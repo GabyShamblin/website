@@ -40,7 +40,7 @@ const CustomButton = styled(Button)(() => ({
 }));
 
 const CustomIconButton = styled(IconButton)(() => ({
-	color: "#bcbcbc", 
+	color: "#d1d1d1", 
 	borderRadius: 50,
 	'&:hover': {
 		color: "white", 
@@ -57,7 +57,7 @@ const CustomTextField = styled(TextField)(() => ({
 		fontWeight: "bold",
 		// Bottom border
 		"&:before": {
-			borderColor: "#bcbcbc",
+			borderColor: "#d1d1d1",
 			borderWidth: "2px",
 		},
 		// Border on focus
@@ -74,7 +74,7 @@ const CustomTextField = styled(TextField)(() => ({
 	},
 	// Label
 	"& .MuiInputLabel-standard": {
-		color: "#bcbcbc",
+		color: "#d1d1d1",
 		fontWeight: "bold",
 		"&.Mui-focused": {
 			color: "white",

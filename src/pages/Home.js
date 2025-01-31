@@ -98,7 +98,7 @@ const ListGrid = styled(Grid)(({project = false}) => ({
 }));
 
 const ListDate = styled('div')(() => ({
-	color: '#bcbcbc',
+	color: '#d1d1d1',
 	fontSize: '16px',
 	textAlign: 'right'
 }));
@@ -144,7 +144,7 @@ function Home() {
 					/* Gabriela Shamblin */
 				</div>
 				<div className='subtitle'>
-					Student & Programmer
+					Delivering Immersive Experiences, Solutions, and Innovation Through Cutting-Edge Development in VR Technologies
 				</div>
 			</div>
 
@@ -248,7 +248,22 @@ function About () {
 		<CustomBox px={2} py={4} sx={{m: 'auto'}}>
 			<List dense>
 				<ListItem>
-					I began programming in 2018 as a curious high school student. Today I'm attending the University of Central Florida for Computer Science and with a focus in mixed reality. I recently graduated with my Bachelor's in December 2023 and am currently working towards my Master's in Computer Science.
+					<p className='nerf-p'>
+						<b>Aspiring Full Stack Developer</b> with a passion for building immersive experiences and developing innovative solutions through virtual reality technologies and full-stack applications. Academic foundation includes advanced studies in computer science with a focus on VR integration, mixed reality environments, and interactive user experiences.
+					</p>
+				</ListItem>
+				<ListItem>
+					<p className='nerf-p'>
+						<b>High-Potential Professional</b>, poised to deliver on corporate objectives and develop creative solutions to complex challenges, such as VR simulations for surgical training and algorithm-driven web applications.
+					</p>
+				</ListItem>
+				<ListItem>
+					<p className='nerf-p'>
+						<b>Dedicated Team Player</b>, who thrives on solving problems, guiding others to meet project goals, and cultivating innovative ideas.
+					</p>
+				</ListItem>
+				<ListItem>
+					Currently enhancing expertise through a Master’s in Computer Science at the University of Central Florida
 				</ListItem>
 			</List>
 		</CustomBox>
@@ -284,12 +299,21 @@ function EducationBox (props) {
 				</Grid>
 				<ListGrid item xs pl={2} ml={2} pb={1}>
 					<div>
-						{school.degree} | {school.school}
+						{school.degree} | <i>{school.school}</i>
 					</div>
-					<List dense sx={{color: '#bcbcbc'}}>
-						<ListItem>
-							GPA: {school.gpa}
-						</ListItem>
+					<List dense className='text-desc'>
+						{school.concentration ? (
+							<ListItem>
+								{school.concentration}
+							</ListItem>
+						) : (<div/>)}
+						{school.gpa ? (
+							<ListItem>
+								GPA: {school.gpa}
+							</ListItem>
+						) : (
+							<div/>
+						)}
 					</List>
 				</ListGrid>
 			</Grid>
@@ -333,9 +357,9 @@ function ExperienceBox (props) {
 				</Grid>
 				<ListGrid item xs pl={2} ml={2} pb={4}>
 					<div>
-						{job.title} | {job.company}
+						{job.title} | <i>{job.company}</i>
 					</div>
-					<List dense sx={{color: '#bcbcbc'}}>
+					<List dense className='text-desc'>
 						{job.description.map((desc, index) => (
 							<ListItem key={index}>
 								{desc}
@@ -396,7 +420,7 @@ function ProjectsBox (props) {
 							<div>
 								{project.title}
 							</div>
-							<List dense sx={{color: '#bcbcbc'}}>
+							<List dense className='text-desc'>
 								{project.description.map((desc, index) => (
 									<ListItem key={index}>{desc}</ListItem>
 								))}
